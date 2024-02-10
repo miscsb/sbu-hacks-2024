@@ -25,7 +25,14 @@ export default async function Home() {
         <div className="notes flex-grow bg-[#888] p-8">
           <Markdown markdown={markdown} />
           <div className="data">
-            {data.answer}
+            {data.map(
+              (post: { id: number; title: string; body: string }) => (
+                <div key={post.id}>
+                  <h2>{post.title}</h2>
+                  <p>{post.body}</p>
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

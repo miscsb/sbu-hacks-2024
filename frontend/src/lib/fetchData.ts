@@ -7,13 +7,9 @@ async function fetchData(url: URL | string | undefined) {
 
         const response = await fetch(url);
 
-        // console.log(response)
-
         if (!response.ok) {
             throw new Error('Bad response from server');
         }
-
-        // const data = await response.json();
 
         return response
 

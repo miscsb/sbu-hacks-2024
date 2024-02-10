@@ -1,27 +1,36 @@
-from flask import Flask, request, render_template, make_response, redirect, jsonify
+from flask import Flask, abort, request, render_template, make_response, redirect, jsonify
 import joblib 
 import json
-
-print("hello word")
+import sys
+from db import create_user, get_session
+from bson.objectid import ObjectId
 
 application = Flask(__name__)
 
-@application.route('/api', methods=['POST'])
-def predict():
+@application.route('/sessions', methods=['GET', 'POST'])
+def ProcessSession():
 
-    input_json = request.get_json(force=True) 
-    # force=True, above, is necessary if another developer 
-    # forgot to set the MIME type to 'application/json'
-    print ('data from client:', input_json)
-    dictToReturn = {'answer':69}
-    return jsonify(dictToReturn)
+    if request.method == "POST":
+        
+        payloadType = request.headers.get('Content-Type')
+        if (payloadType == 'application/json'):
 
-    '''payloadType = request.headers.get('Content-Type')
-    if (payloadType == 'application/json'):
+            data = request.get_json() 
+            return jsonify(data)
 
-        data = request.get_json() 
+    if request.method == "GET":
+        return 'This is a GET request test'
+        
+    return "none"
     
-    return 'TEST RETURN AMOUNT'''
+@application.route('/users', methods=['POST'])
+def prcoess_create_user():
+    result = create_user()
+    print(result)
+    if isinstance(result, ObjectId):
+        return jsonify({'user_id': str(result)})
+    else:
+        return abort(401, 'Could not create user.')
 
 if __name__ == '__main__':
     application.run(debug=True) # deployment: remove debug=True

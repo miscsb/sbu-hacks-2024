@@ -16,12 +16,12 @@ db = client.notely
 def create_user() -> ObjectId:
     try:
         print('database is ', db.notely.users)
-        result = db.users.insert_one({'sessions': []})
+        result = db.users.insert_one({'summaries': []})
         return result.inserted_id
     except Exception as e:
         return e
 
-def create_session(title : str, text_content : str) -> ObjectId:
+def create_summary(title : str, text_content : str) -> ObjectId:
     try:
         result = db.users.insert_one({'title': title, 'text_content': text_content})
         return result.inserted_id
@@ -35,26 +35,26 @@ def get_user(user_id : ObjectId) -> object:
     except Exception as e:
         return e
 
-def get_session(session_id : ObjectId) -> object:
+def get_summary(summary_id : ObjectId) -> object:
     try:
-        return db.sessions.find_one({'_id' : session_id})
+        return db.summaries.find_one({'_id' : summary_id})
     except Exception as e:
         return e
 
-# get sessions
-def get_sessions() -> list:
+# get summaries
+def get_summaries() -> list:
     try:
-        return list(db.sessions.find({}))
+        return list(db.summaries.find({}))
     except Exception as e:
         return e
     
-# # add session to user
-# def add_session_to_user(user_id : ObjectId, session_id : ObjectId) -> None:
+# # add summary to user
+# def add_summary_to_user(user_id : ObjectId, summary_id : ObjectId) -> None:
 #     try:
-#         session_ids = get_user(user_id)
-#         print(session_ids.sessions)
+#         summary_ids = get_user(user_id)
+#         print(summary_ids.summaries)
 #         return 'hi'
-#         # sessions = map(get_session, session_ids)
+#         # summaries = map(get_summary, summary_ids)
 #         # print('not implemented')
 #     except Exception as e:
 #         return e

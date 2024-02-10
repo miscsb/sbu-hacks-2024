@@ -111,6 +111,7 @@ def process_summary():
             a =  openAI_API_Request(curr).split("\n")
             a = [a[0]]+["## "+stuff(start)+"-"+stuff(end)+"\n"]+a[1:]
             result_for_sammy+="\n".join(a)+"\n"
+            i+=1
             """
             result_for_sammy += "## "+stuff(start)+"-"+stuff(end)+"\n"
             print(eval(start),eval(end),start,end)

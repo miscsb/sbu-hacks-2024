@@ -1,0 +1,11 @@
+.create-button {
+    @apply
+        flex items-center justify-center
+        h-10 w-10 rounded-full
+}
+
+.create-button > svg {
+    @apply
+        w-full h-full
+        fill-white hover:fill-red-200 transition-colors duration-300
+}

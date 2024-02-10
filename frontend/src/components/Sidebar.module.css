@@ -1,6 +1,16 @@
 .sidebar {
     @apply
-        bg-gray-800
+        bg-gray-900 
         top-0 left-0 relative
-        w-64 h-screen
+        h-[calc(100vh-64px)] w-80
+        p-2
+        overflow-auto
+}
+
+.title {
+    @apply
+        text-white text-sm
+        p-4 my-2
+        border border-gray-700 rounded-lg
+        hover:bg-gray-800 transition-colors duration-300
 }

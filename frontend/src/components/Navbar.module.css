@@ -1,6 +1,6 @@
 .navbar {
     @apply 
-        bg-blue-500
+        bg-red-900
         text-white 
         flex justify-between items-center 
         p-4 h-16

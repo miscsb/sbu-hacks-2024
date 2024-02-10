@@ -8,6 +8,8 @@ import fetchData from "@/lib/fetchData";
 export default async function Home() {
 
   const markdown = `# Hello World
+  ## Hello World
+  ### Hello world
   This is a test of the markdown component.
   ~~~javascript
   console.log('Hello World');
@@ -20,9 +22,9 @@ export default async function Home() {
   return (
     <main className="h-screen flex flex-col">
       <Navbar />
-      <div className="flex flex-row flex-grow pt-16">
+      <div className="flex flex-row flex-grow h-full pt-16 overflow-auto">
         <Sidebar />
-        <div className="notes flex-grow bg-[#888] p-8">
+        <div className="notes flex-grow bg-gray-100 p-8 overflow-auto">
           <Markdown markdown={markdown} />
           <div className="data">
             {data.map(

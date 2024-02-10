@@ -2,7 +2,7 @@ from flask import Flask, abort, request, render_template, make_response, redirec
 import joblib 
 import json
 import sys
-from db import create_user, get_session
+from db import create_user, create_session, get_user, get_session, get_sessions
 from bson.objectid import ObjectId
 
 application = Flask(__name__)
@@ -52,25 +52,41 @@ def ProcessSession():
     if request.method == "POST":
 
         if (payloadType == 'application/json'):
-
+            # call create_session(title, content) here
             data = request.get_json() 
             return jsonify(data)
             
         return "This is a POST request"
         
     if request.method == "GET":
+<<<<<<< HEAD
         return 'This is a GET request'
+=======
+        # return get_session(ObjectId(session_id)) here
+        return 'This is a GET request test'
+>>>>>>> be476e364c4c0ebbc06974d07277f5dc5a359d0f
         
     return "none"
     
 @application.route('/users', methods=['POST'])
-def prcoess_create_user():
+def process_create_user():
     result = create_user()
     print(result)
     if isinstance(result, ObjectId):
         return jsonify({'user_id': str(result)})
     else:
         return abort(401, 'Could not create user.')
+    
+# [when we add users]
+# bence can you create a POST /users/<userid>/sessions route
+# where POST with payload session_id calls `add_session_to_user(ObjectId(user_id), ObjectId(session_id))`
+# and   GET returns `get_user_sessions(ObjectId(user_id))`
+
+@application.route('/test', methods=['POST'])
+def test_thing():
+    result = get_sessions()
+    print(result)
+    return jsonify({})
 
 if __name__ == '__main__':
     application.run(debug=True) # deployment: remove debug=True

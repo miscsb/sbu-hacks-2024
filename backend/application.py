@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, make_response, redirect, jsonify
 import joblib 
 import json
+import sys
 
 application = Flask(__name__)
 
@@ -13,7 +14,6 @@ def processSession():
         if (payloadType == 'application/json'):
 
             data = request.get_json() 
-            print(data)
             return jsonify(data)
 
     if request.method == "GET":

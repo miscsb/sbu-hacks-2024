@@ -4,5 +4,5 @@ def make_bionic_paragraph(text):
 
 def make_bionic_word(word):
     mid = (1 + len(word)) // 2
-    return '<b>' + word[0:mid] + '</b>' + word[mid:]
+    return '**' + word[0:mid] + '**' + word[mid:]
     

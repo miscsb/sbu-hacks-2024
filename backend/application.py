@@ -7,19 +7,59 @@ from bson.objectid import ObjectId
 
 application = Flask(__name__)
 
-@application.route('/sessions', methods=['GET', 'POST'])
+@application.route('/summaries', methods=['GET', 'POST'])
 def ProcessSession():
 
+    # print(request.headers.get('Content-Type'))
+    #print(request.form['title'])
+    #vtt = request.files['file'].read()
+    #print(vtt[0:10])
+
+    payloadType = request.headers.get('Content-Type')
+    print(payloadType)
+
+    #if (payloadType == 'multipart/form-data'):
+
+    title = request.form['title']
+    print(title)
+    inp = request.files['file'].read()
+    print(inp[0:50])
+
+    data = inp.split("\n")[:-1]
+    x=len(data)
+    info = []
+    for i in range(1,x,5):
+        times = data[i+1].split(" --> ")
+        words = data[i+2].split(">")[1]
+        info.append([times,words])
+    def eval(x):
+        curr = [float(x) for x in x.split(":")]
+        return curr[0]*3600+curr[1]*60+curr[2]
+    i = 0
+    while i < len(info):
+        start = info[i][0][0]
+        end = info[i][0][1]
+        curr = info[i][1]
+        while i < len(info) and eval(end)-eval(start)<300:
+            i+=1
+            if i!=len(info): 
+                if curr[-1] in "?.": curr+=" "
+                curr+=info[i][1]
+                end = info[i][0][1]
+        print(eval(start),eval(end))
+        print(curr)
+
     if request.method == "POST":
-        
-        payloadType = request.headers.get('Content-Type')
+
         if (payloadType == 'application/json'):
 
             data = request.get_json() 
             return jsonify(data)
-
+            
+        return "This is a POST request"
+        
     if request.method == "GET":
-        return 'This is a GET request test'
+        return 'This is a GET request'
         
     return "none"
     

@@ -16,7 +16,7 @@ export default async function Home() {
   ~~~
   `;
 
-  const res = await fetchData('http://127.0.0.1:5000/sessions');
+  const res = await fetchData('http://127.0.0.1:5000/summaries');
   const data = await res.json();
 
   return (

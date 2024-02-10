@@ -22,11 +22,13 @@ def ProcessSession():
 
     title = request.form['title']
     print(title)
-    inp = request.files['file'].read()
-    print(inp[0:50])
+    inp = str(request.files.get('file').read(), "utf-8")
+    print(inp[0:200])
 
     data = inp.split("\n")[:-1]
-    x=len(data)
+    print(data[0:30])
+
+    '''x=len(data)
     info = []
     for i in range(1,x,5):
         times = data[i+1].split(" --> ")
@@ -47,7 +49,7 @@ def ProcessSession():
                 curr+=info[i][1]
                 end = info[i][0][1]
         print(eval(start),eval(end))
-        print(curr)
+        print(curr)'''
 
     if request.method == "POST":
 
@@ -59,12 +61,7 @@ def ProcessSession():
         return "This is a POST request"
         
     if request.method == "GET":
-<<<<<<< HEAD
         return 'This is a GET request'
-=======
-        # return get_session(ObjectId(session_id)) here
-        return 'This is a GET request test'
->>>>>>> be476e364c4c0ebbc06974d07277f5dc5a359d0f
         
     return "none"
     

@@ -12,6 +12,7 @@ from bson.errors import InvalidId
 client = MongoClient('mongodb+srv://sbuhacks:sbuhacks123@cluster0.jkkkjsb.mongodb.net/?retryWrites=true&w=majority')
 db = client.notely
 
+# create
 def create_user() -> ObjectId:
     try:
         print('database is ', db.notely.users)
@@ -27,15 +28,33 @@ def create_session(title : str, text_content : str) -> ObjectId:
     except Exception as e:
         return e
 
-def get_session(session_id : ObjectId) -> list:
+# get individual
+def get_user(user_id : ObjectId) -> object:
     try:
-        return list(db.notely.find({'session_id' : session_id}))
+        return list(db.users.find_one({'_id' : user_id}))
     except Exception as e:
         return e
 
-def add_session_to_user(user_id : ObjectId, session_id : ObjectId) -> None:
+def get_session(session_id : ObjectId) -> object:
     try:
-        # ?
-        print('not implemented')
+        return db.sessions.find_one({'_id' : session_id})
     except Exception as e:
         return e
+
+# get sessions
+def get_sessions() -> list:
+    try:
+        return list(db.sessions.find({}))
+    except Exception as e:
+        return e
+    
+# # add session to user
+# def add_session_to_user(user_id : ObjectId, session_id : ObjectId) -> None:
+#     try:
+#         session_ids = get_user(user_id)
+#         print(session_ids.sessions)
+#         return 'hi'
+#         # sessions = map(get_session, session_ids)
+#         # print('not implemented')
+#     except Exception as e:
+#         return e

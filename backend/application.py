@@ -92,10 +92,11 @@ def process_summary():
             curr = [float(x) for x in x.split(":")]
             return curr[0]*3600+curr[1]*60+curr[2]
         def stuff(x):
+            x = x.split(":")
             val = ""
             if int(x[0])!=0: val += x[0]+":"
             val+=x[1]+":"
-            val+=x[2]
+            val+=x[2][:x[2].index(".")]
             return val
         i = 0
         while i < len(info):
@@ -108,10 +109,15 @@ def process_summary():
                 if i!=len(info): 
                     curr+=" "
                     end = info[i][0][1]
-            result_for_sammy += "# Time: "+stuff(start)+"-"+stuff(end)+"\n"
-            print(eval(start),eval(end))
+            curr =  openAI_API_Request(curr).split("\n")
+            curr = curr[0]+["## "+stuff(start)+"-"+stuff(end)+"\n"]+curr[1:]
+            result_for_sammy+="\n".join(curr)+"\n"
+            """
+            result_for_sammy += "## "+stuff(start)+"-"+stuff(end)+"\n"
+            print(eval(start),eval(end),start,end)
             #print(curr)
             result_for_sammy += openAI_API_Request(curr)+"\n"
+            """
             #break
         
         create_summary(title, result_for_sammy)

@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, make_response, redirect, jsonify
 import joblib 
 import json
+import os
+import configparser
 
 print("hello word")
 
@@ -23,6 +25,11 @@ def predict():
     
     return 'TEST RETURN AMOUNT'''
 
+config = configparser.ConfigParser()
+config.read(os.path.abspath(os.path.join(".ini")))
+
 if __name__ == '__main__':
+    application.config['DEBUG'] = True
+    application.config['MONGO_URI'] = config['PROD']['DB_URI']
     application.run(debug=True) # deployment: remove debug=True
     

@@ -108,6 +108,7 @@ def process_summary():
                 if i!=len(info): 
                     curr+=" "
                     end = info[i][0][1]
+            print(eval(start),eval(end))
             a =  openAI_API_Request(curr).split("\n")
             a = [a[0]]+["## "+stuff(start)+"-"+stuff(end)+"\n"]+a[1:]
             result_for_sammy+="\n".join(a)+"\n"

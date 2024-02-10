@@ -56,6 +56,7 @@ def get_specific_user(id):
 @application.route('/summaries', methods=['GET', 'POST'])
 @cross_origin()
 def process_summary():
+    result_for_sammy = ""
 
     if request.method == "POST":
 
@@ -92,10 +93,10 @@ def process_summary():
                     end = info[i][0][1]
             print(eval(start),eval(end))
             #print(curr)
-            print(openAI_API_Request(curr))
+            result_for_sammy += openAI_API_Request(curr)+'\n'
             #break
         
-        create_summary(title, summary)
+        create_summary(title, result_for_sammy)
         
         return jsonify({'result': 'success'})
         

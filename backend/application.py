@@ -6,6 +6,7 @@ import sys
 from db import add_summary_to_user, create_user, create_summary, get_user, get_summary, get_summaries
 from bson.objectid import ObjectId
 import openai
+import markdown
 
 openai_key = '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'
 openai.api_key = openai_key
@@ -93,7 +94,7 @@ def process_summary():
                     end = info[i][0][1]
             print(eval(start),eval(end))
             #print(curr)
-            result_for_sammy += openAI_API_Request(curr)+'\n'
+            result_for_sammy += markdown.markdown(openAI_API_Request(curr)+"\n")
             #break
         
         create_summary(title, result_for_sammy)

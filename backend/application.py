@@ -1,8 +1,4 @@
 from flask import Flask, request, render_template, make_response, redirect, jsonify
-import joblib 
-import json
-import os
-import configparser
 from db import create_user, get_session
 
 print("hello word")
@@ -25,12 +21,13 @@ def predict():
         data = request.get_json() 
     
     return 'TEST RETURN AMOUNT'''
-
-config = configparser.ConfigParser()
-config.read(os.path.abspath(os.path.join(".ini")))
+    
+@application.route('/test', methods=['GET'])
+def test_create():
+    result = create_user()
+    print(result)
+    return jsonify({'user_id': str(result)})
 
 if __name__ == '__main__':
-    application.config['DEBUG'] = True
-    application.config['MONGO_URI'] = config['PROD']['DB_URI']
     application.run(debug=True) # deployment: remove debug=True
     

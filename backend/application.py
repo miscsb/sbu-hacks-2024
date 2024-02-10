@@ -67,6 +67,7 @@ def process_summary():
         for summary in result:
             summary['id'] = str(summary['_id'])
             del summary['_id']
+            del summary['text_content']
         return result
         
     return "none"

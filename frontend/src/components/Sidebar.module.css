@@ -14,3 +14,8 @@
         border border-gray-700 rounded-lg
         hover:bg-gray-800 transition-colors duration-300
 }
+
+.active {
+    @apply
+        bg-gray-800
+}

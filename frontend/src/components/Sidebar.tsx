@@ -1,8 +1,23 @@
+"use client";
+
 import Link from 'next/link';
 import styles from './Sidebar.module.css';
 
+import { useParams } from 'next/navigation';
 
 const Sidebar = () => {
+
+    const params = useParams();
+
+    let currentId = '';
+
+    if ('summaryId' in params) {
+        if (typeof params.summaryId === 'string') {
+            currentId = params.summaryId;
+        } else {
+            currentId = params.summaryId[0];
+        }
+    }
 
     type Summary = {
         id: string;
@@ -11,32 +26,34 @@ const Sidebar = () => {
 
     // get all summaries
 
-    const res = await fetch('http://127.0.0.1:5000/summaries', {
-        method: 'GET',
-    });
+    // const res = await fetch('http://127.0.0.1:5000/summaries', {
+    //     method: 'GET',
+    // });
 
-    const summaries: Summary[] = await res.json();
+    // const summaries: Summary[] = await res.json();
 
-    // const summaries = [
-    //     {
-    //         id: '1',
-    //         title: "Test summary 1",
-    //     },
-    //     {
-    //         id: '2',
-    //         title: "Test summary 2",
-    //     },
-    //     {
-    //         id: '3',
-    //         title: "Test summary 3",
-    //     },
-    // ]
+    const summaries = [
+        {
+            id: '1',
+            title: "Test summary 1",
+        },
+        {
+            id: '2',
+            title: "Test summary 2",
+        },
+        {
+            id: '3',
+            title: "Test summary 3",
+        },
+    ]
 
     return ( 
         <div className={styles.sidebar}>
             {summaries.map((summary) => (
                 <Link key={summary.id} href={`/summary/${summary.id}`}>
-                    <div className={styles.title}>
+                    <div 
+                        className={`${styles.title} ${summary.id === currentId ? styles['active'] : ''}`}
+                    >
                         {summary.title}
                     </div>
                 </Link>

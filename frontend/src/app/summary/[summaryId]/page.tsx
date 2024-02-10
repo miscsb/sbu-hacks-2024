@@ -14,16 +14,16 @@ const SummaryPage = async ({params: { summaryId }}: Props) => {
         text_content: string;
     }
 
-    const res = await fetch(`http://127.0.0.1:5000/summaries/${summaryId}`, {
-        method: 'GET',
-    });
+    // const res = await fetch(`http://127.0.0.1:5000/summaries/${summaryId}`, {
+    //     method: 'GET',
+    // });
 
-    const summary: Summary = await res.json();
-    // const summary = {
-    //     id: '1',
-    //     title: "Test summary 1",
-    //     text_content: "This is a test summary.",
-    // }
+    // const summary: Summary = await res.json();
+    const summary = {
+        id: '1',
+        title: "Test summary 1",
+        text_content: "This is a test summary.",
+    }
 
     return (
         <div>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import styles from './Sidebar.module.css';
 
 
-const Sidebar = () => {
+const Sidebar = async () => {
 
     type Summary = {
         id: string;

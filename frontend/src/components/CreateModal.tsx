@@ -43,7 +43,7 @@ const CreateModal = ({ trigger }: Props) => {
         formData.append('file', file);
     
         try {
-            const response = await fetch('/api/endpoint', { // replace '/api/endpoint' with your API endpoint
+            const response = await fetch('http://127.0.0.1:5000/summaries', { // replace '/api/endpoint' with your API endpoint
                 method: 'POST',
                 body: formData,
             });

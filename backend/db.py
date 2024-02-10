@@ -12,30 +12,49 @@ from bson.errors import InvalidId
 client = MongoClient('mongodb+srv://sbuhacks:sbuhacks123@cluster0.jkkkjsb.mongodb.net/?retryWrites=true&w=majority')
 db = client.notely
 
+# create
 def create_user() -> ObjectId:
     try:
         print('database is ', db.notely.users)
-        result = db.users.insert_one({'sessions': []})
+        result = db.users.insert_one({'summaries': []})
         return result.inserted_id
     except Exception as e:
         return e
 
-def create_session(title : str, text_content : str) -> ObjectId:
+def create_summary(title : str, text_content : str) -> ObjectId:
     try:
         result = db.users.insert_one({'title': title, 'text_content': text_content})
         return result.inserted_id
     except Exception as e:
         return e
 
-def get_session(session_id : ObjectId) -> list:
+# get individual
+def get_user(user_id : ObjectId) -> object:
     try:
-        return list(db.notely.find({'session_id' : session_id}))
+        return list(db.users.find_one({'_id' : user_id}))
     except Exception as e:
         return e
 
-def add_session_to_user(user_id : ObjectId, session_id : ObjectId) -> None:
+def get_summary(summary_id : ObjectId) -> object:
     try:
-        # ?
-        print('not implemented')
+        return db.summaries.find_one({'_id' : summary_id})
     except Exception as e:
         return e
+
+# get summaries
+def get_summaries() -> list:
+    try:
+        return list(db.summaries.find({}))
+    except Exception as e:
+        return e
+    
+# # add summary to user
+# def add_summary_to_user(user_id : ObjectId, summary_id : ObjectId) -> None:
+#     try:
+#         summary_ids = get_user(user_id)
+#         print(summary_ids.summaries)
+#         return 'hi'
+#         # summaries = map(get_summary, summary_ids)
+#         # print('not implemented')
+#     except Exception as e:
+#         return e

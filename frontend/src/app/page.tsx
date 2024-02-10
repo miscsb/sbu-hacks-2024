@@ -16,7 +16,7 @@ export default async function Home() {
   ~~~
   `;
 
-  const res = await fetchData('https://jsonplaceholder.typicode.com/posts');
+  const res = await fetchData('http://127.0.0.1:5000/sessions');
   const data = await res.json();
 
   return (
@@ -27,14 +27,7 @@ export default async function Home() {
         <div className="notes flex-grow bg-gray-100 p-8 overflow-auto">
           <Markdown markdown={markdown} />
           <div className="data">
-            {data.map(
-              (post: { id: number; title: string; body: string }) => (
-                <div key={post.id}>
-                  <h2>{post.title}</h2>
-                  <p>{post.body}</p>
-                </div>
-              )
-            )}
+            {data.answer}
           </div>
         </div>
       </div>

@@ -2,26 +2,22 @@ from flask import Flask, request, render_template, make_response, redirect, json
 import joblib 
 import json
 
-print("hello word")
-
 application = Flask(__name__)
 
-@application.route('/api', methods=['POST'])
-def predict():
+@application.route('/sessions', methods=['GET', 'POST'])
+def processSession():
 
-    input_json = request.get_json(force=True) 
-    # force=True, above, is necessary if another developer 
-    # forgot to set the MIME type to 'application/json'
-    print ('data from client:', input_json)
-    dictToReturn = {'answer':69}
-    return jsonify(dictToReturn)
+    if request.method == "POST":
+        
+        payloadType = request.headers.get('Content-Type')
+        if (payloadType == 'application/json'):
 
-    '''payloadType = request.headers.get('Content-Type')
-    if (payloadType == 'application/json'):
+            data = request.get_json() 
+            print(data)
+            return jsonify(data)
 
-        data = request.get_json() 
-    
-    return 'TEST RETURN AMOUNT'''
+    if request.method == "GET":
+        return 'This is a GET request test'
 
 if __name__ == '__main__':
     application.run(debug=True) # deployment: remove debug=True

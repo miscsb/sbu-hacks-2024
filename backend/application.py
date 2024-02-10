@@ -25,10 +25,11 @@ def ProcessSession():
     inp = str(request.files.get('file').read(), "utf-8")
     print(inp[0:200])
 
-    data = inp.split("\n")[:-1]
+    data = [x.strip() for x in inp.split("\n")[:-1]]
     print(data[0:30])
 
-    '''x=len(data)
+    x=len(data)
+    print(x)
     info = []
     for i in range(1,x,5):
         times = data[i+1].split(" --> ")
@@ -37,6 +38,7 @@ def ProcessSession():
     def eval(x):
         curr = [float(x) for x in x.split(":")]
         return curr[0]*3600+curr[1]*60+curr[2]
+    
     i = 0
     while i < len(info):
         start = info[i][0][0]
@@ -49,7 +51,8 @@ def ProcessSession():
                 curr+=info[i][1]
                 end = info[i][0][1]
         print(eval(start),eval(end))
-        print(curr)'''
+        print(curr)
+    
 
 # @application.route('/summaries', methods=['GET', 'POST'])
 def process_summary():

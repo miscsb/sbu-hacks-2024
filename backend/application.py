@@ -1,4 +1,5 @@
 from flask import Flask, abort, request, render_template, make_response, redirect, jsonify
+from flask_cors import CORS, cross_origin
 import joblib 
 import json
 import sys
@@ -6,8 +7,11 @@ from db import add_summary_to_user, create_user, create_summary, get_user, get_s
 from bson.objectid import ObjectId
 
 application = Flask(__name__)
+cors = CORS(application)
+application.config['CORS_HEADERS'] = 'Content-Type'
 
 @application.route('/summaries/<string:id>', methods=['GET'])
+@cross_origin()
 def get_specific_summary(id):
     result = get_summary(ObjectId(id))
     print(result)
@@ -19,6 +23,7 @@ def get_specific_summary(id):
         abort(404)
         
 @application.route('/users/<string:id>', methods=['GET'])
+@cross_origin()
 def get_specific_user(id):
     result = get_user(ObjectId(id))
     print(result)
@@ -30,6 +35,7 @@ def get_specific_user(id):
         abort(404)
     
 @application.route('/summaries', methods=['GET', 'POST'])
+@cross_origin()
 def process_summary():
 
     if request.method == "POST":
@@ -91,6 +97,7 @@ def process_summary():
     return "none"
     
 @application.route('/users', methods=['POST'])
+@cross_origin()
 def process_create_user():
     result = create_user()
     print(result)
@@ -100,6 +107,7 @@ def process_create_user():
         return abort(401, 'Could not create user.')
 
 @application.route('/test', methods=['POST'])
+@cross_origin()
 def test_thing():
     add_summary_to_user(ObjectId('65c7e44b794484671c72a08c'), ObjectId('65c7e45a794484671c72a08d'))
     return jsonify({})

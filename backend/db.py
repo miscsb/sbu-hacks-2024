@@ -67,7 +67,8 @@ def get_summaries() -> list:
 def add_summary_to_user(user_id : ObjectId, summary_id : ObjectId):
     try:
         user = get_user(user_id)
-        user['summaries'] += [str(summary_id)]
+        if str(summary_id) not in user['summaries']:
+            user['summaries'] += [str(summary_id)]
         db.users.update_one({'_id': user_id}, {'$set': {'summaries': user['summaries']}})
     except Exception as e:
         return e

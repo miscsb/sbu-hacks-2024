@@ -1,36 +1,45 @@
+import Link from 'next/link';
 import styles from './Sidebar.module.css';
+
 
 const Sidebar = () => {
 
-    const titles = [
-        "Test title 1",
-        "Test title 2",
-        "Test title 3",
-        "Test title 4",
-        "Test title 5",
-        "Test title 6",
-        "Test title 7",
-        "Test title 8",
-        "Test title 9",
-        "Test title 10",
-        "Test title 11",
-        "Test title 12",
-        "Test title 13",
-        "Test title 14",
-        "Test title 15",
-        "Test title 16",
-        "Test title 17",
-        "Test title 18",
-        "Test title 19",
-        "Test title 20",
-    ]
+    type Summary = {
+        id: string;
+        title: string;
+    }
+
+    // get all summaries
+
+    const res = await fetch('http://127.0.0.1:5000/summaries', {
+        method: 'GET',
+    });
+
+    const summaries: Summary[] = await res.json();
+
+    // const summaries = [
+    //     {
+    //         id: '1',
+    //         title: "Test summary 1",
+    //     },
+    //     {
+    //         id: '2',
+    //         title: "Test summary 2",
+    //     },
+    //     {
+    //         id: '3',
+    //         title: "Test summary 3",
+    //     },
+    // ]
 
     return ( 
         <div className={styles.sidebar}>
-            {titles.map((title, index) => (
-                <div key={index} className={styles.title}>
-                    {title}
-                </div>
+            {summaries.map((summary) => (
+                <Link key={summary.id} href={`/summary/${summary.id}`}>
+                    <div className={styles.title}>
+                        {summary.title}
+                    </div>
+                </Link>
             ))}
         </div>
     );

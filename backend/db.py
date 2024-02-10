@@ -17,14 +17,21 @@ db = client.notely
 def create_user() -> ObjectId:
     try:
         print('database is ', db.notely.users)
-        result = db.users.insert_one({'summaries': [], 'created_at': datetime.datetime.now()})
+        result = db.users.insert_one({
+            'summaries': [], 
+            # 'created_at': datetime.datetime.now()
+        })
         return result.inserted_id
     except Exception as e:
         return e
 
 def create_summary(title : str, text_content : str) -> ObjectId:
     try:
-        result = db.users.insert_one({'title': title, 'text_content': text_content, 'created_at': datetime.datetime.now()})
+        result = db.summaries.insert_one({
+            'title': title, 
+            'text_content': text_content, 
+            # 'created_at': datetime.datetime.now()
+        })
         return result.inserted_id
     except Exception as e:
         print(e)
@@ -50,13 +57,3 @@ def get_summaries() -> list:
     except Exception as e:
         return e
     
-# # add summary to user
-# def add_summary_to_user(user_id : ObjectId, summary_id : ObjectId) -> None:
-#     try:
-#         summary_ids = get_user(user_id)
-#         print(summary_ids.summaries)
-#         return 'hi'
-#         # summaries = map(get_summary, summary_ids)
-#         # print('not implemented')
-#     except Exception as e:
-#         return e

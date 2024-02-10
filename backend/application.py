@@ -6,6 +6,17 @@ from db import create_user, create_summary, get_user, get_summary, get_summaries
 from bson.objectid import ObjectId
 
 application = Flask(__name__)
+
+@application.route('/summaries/<string:id>', methods=['GET'])
+def get_specific_summary(id):
+    result = get_summary(ObjectId(id))
+    print(result)
+    if isinstance(result, object):
+        result['id'] = str(result['_id'])
+        del result['_id']
+        return jsonify(result)
+    else:
+        abort(404)
     
 @application.route('/summaries', methods=['GET', 'POST'])
 def process_summary():
@@ -58,7 +69,6 @@ def process_summary():
 
         return jsonify({'result': 'success'})
         
-    print(request.method)
     if request.method == "GET":
         result = get_summaries()
         for summary in result:

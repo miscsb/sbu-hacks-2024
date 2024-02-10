@@ -8,7 +8,8 @@ from bson.objectid import ObjectId
 application = Flask(__name__)
 
 @application.route('/sessions', methods=['GET', 'POST'])
-def processSession():
+def ProcessSession():
+
     if request.method == "POST":
         
         payloadType = request.headers.get('Content-Type')
@@ -19,8 +20,8 @@ def processSession():
 
     if request.method == "GET":
         return 'This is a GET request test'
-        data = request.get_json() 
-    return 'TEST RETURN AMOUNT'''
+        
+    return "none"
     
 @application.route('/users', methods=['POST'])
 def prcoess_create_user():

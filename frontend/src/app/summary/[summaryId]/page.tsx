@@ -22,7 +22,7 @@ const SummaryPage = async ({params: { summaryId }}: Props) => {
     const summary = {
         id: '1',
         title: "Test summary 1",
-        text_content: "This is a test summary.",
+        text_content: "# hi\n- test",
     }
 
     return (

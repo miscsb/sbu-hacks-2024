@@ -2,7 +2,7 @@ from flask import Flask, abort, request, render_template, make_response, redirec
 import joblib 
 import json
 import sys
-from db import create_user, create_session, get_user, get_session, get_sessions
+from db import create_user, create_summary, get_user, get_summary, get_summaries
 from bson.objectid import ObjectId
 
 application = Flask(__name__)
@@ -51,17 +51,23 @@ def ProcessSession():
         print(eval(start),eval(end))
         print(curr)'''
 
+# @application.route('/summaries', methods=['GET', 'POST'])
+def process_summary():
     if request.method == "POST":
-
+        payloadType = request.headers.get('Content-Type')
         if (payloadType == 'application/json'):
-            # call create_session(title, content) here
+            # call create_summary(title, content) here
             data = request.get_json() 
             return jsonify(data)
             
         return "This is a POST request"
         
     if request.method == "GET":
-        return 'This is a GET request'
+        result = get_summaries()
+        for summary in result:
+            summary['id'] = str(summary['_id'])
+            del summary['_id']
+        return result
         
     return "none"
     
@@ -75,15 +81,9 @@ def process_create_user():
         return abort(401, 'Could not create user.')
     
 # [when we add users]
-# bence can you create a POST /users/<userid>/sessions route
-# where POST with payload session_id calls `add_session_to_user(ObjectId(user_id), ObjectId(session_id))`
-# and   GET returns `get_user_sessions(ObjectId(user_id))`
-
-@application.route('/test', methods=['POST'])
-def test_thing():
-    result = get_sessions()
-    print(result)
-    return jsonify({})
+# bence can you create a POST /users/<userid>/summaries route
+# where POST with payload summary_id calls `add_summary_to_user(ObjectId(user_id), ObjectId(summary_id))`
+# and   GET returns `get_user_summaries(ObjectId(user_id))`
 
 if __name__ == '__main__':
     application.run(debug=True) # deployment: remove debug=True

@@ -1,0 +1,6 @@
+.sidebar {
+    @apply
+        bg-gray-800
+        top-0 left-0 relative
+        w-64 h-screen
+}

@@ -1,0 +1,9 @@
+.navbar {
+    @apply 
+        bg-blue-500
+        text-white 
+        flex justify-between items-center 
+        p-4 h-16
+        z-10
+        fixed top-0 w-full
+}

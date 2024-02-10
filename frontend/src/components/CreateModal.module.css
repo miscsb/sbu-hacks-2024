@@ -1,0 +1,61 @@
+.background {
+    @apply
+        bg-opacity-50 bg-black
+        backdrop-blur-sm
+        h-screen w-screen absolute top-0 left-0
+        flex items-center justify-center
+        cursor-default
+        opacity-0 transition-opacity duration-300 ease-in-out;
+}
+.modal {
+    @apply
+        relative
+        bg-slate-100 border-2 border-gray-400
+        rounded-xl
+        flex items-center justify-center
+        z-50
+        p-12
+}
+.close-button {
+    @apply
+        absolute top-2 right-2
+        w-6 h-6
+        bg-red-900 hover:bg-red-700 duration-300
+        rounded-full
+        flex items-center justify-center
+        cursor-pointer;
+}
+.visible {
+    @apply
+        opacity-100
+}
+.create-form {
+    @apply
+        text-black
+        flex flex-col justify-center items-center
+        gap-2
+}
+.form-group {
+    @apply
+        mb-4
+        flex items-center gap-4
+        w-full
+}
+.form-group label {
+    @apply
+        font-bold
+}
+.text-input {
+    @apply
+        w-full
+        flex-grow
+        p-2
+        border-2 border-gray-900 rounded-lg
+}
+.submit-button {
+    @apply
+        bg-red-900 hover:bg-red-700 transition-colors duration-300
+        text-white font-bold
+        p-2 w-auto
+        rounded-lg
+}

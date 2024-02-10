@@ -94,7 +94,7 @@ def process_summary():
                     end = info[i][0][1]
             print(eval(start),eval(end))
             #print(curr)
-            result_for_sammy += markdown.markdown(openAI_API_Request(curr)+"\n")
+            result_for_sammy += openAI_API_Request(curr)+"\n"
             #break
         
         create_summary(title, result_for_sammy)

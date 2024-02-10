@@ -40,7 +40,7 @@ def create_summary(title : str, text_content : str) -> ObjectId:
 # get individual
 def get_user(user_id : ObjectId) -> object:
     try:
-        return list(db.users.find_one({'_id' : user_id}))
+        return db.users.find_one({'_id' : user_id})
     except Exception as e:
         return e
 
@@ -54,6 +54,14 @@ def get_summary(summary_id : ObjectId) -> object:
 def get_summaries() -> list:
     try:
         return list(db.summaries.find({}))
+    except Exception as e:
+        return e
+    
+def add_summary_to_user(user_id : ObjectId, summary_id : ObjectId):
+    try:
+        user = get_user(user_id)
+        user['summaries'] += [str(summary_id)]
+        db.users.update_one({'_id': user_id}, {'$set': {'summaries': user['summaries']}})
     except Exception as e:
         return e
     

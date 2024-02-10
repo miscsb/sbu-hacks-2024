@@ -2,7 +2,7 @@ from flask import Flask, abort, request, render_template, make_response, redirec
 import joblib 
 import json
 import sys
-from db import create_user, create_summary, get_user, get_summary, get_summaries
+from db import add_summary_to_user, create_user, create_summary, get_user, get_summary, get_summaries
 from bson.objectid import ObjectId
 
 application = Flask(__name__)
@@ -10,6 +10,17 @@ application = Flask(__name__)
 @application.route('/summaries/<string:id>', methods=['GET'])
 def get_specific_summary(id):
     result = get_summary(ObjectId(id))
+    print(result)
+    if isinstance(result, object):
+        result['id'] = str(result['_id'])
+        del result['_id']
+        return jsonify(result)
+    else:
+        abort(404)
+        
+@application.route('/users/<string:id>', methods=['GET'])
+def get_specific_user(id):
+    result = get_user(ObjectId(id))
     print(result)
     if isinstance(result, object):
         result['id'] = str(result['_id'])
@@ -87,11 +98,11 @@ def process_create_user():
         return jsonify({'user_id': str(result)})
     else:
         return abort(401, 'Could not create user.')
-    
-# [when we add users]
-# bence can you create a POST /users/<userid>/summaries route
-# where POST with payload summary_id calls `add_summary_to_user(ObjectId(user_id), ObjectId(summary_id))`
-# and   GET returns `get_user_summaries(ObjectId(user_id))`
+
+@application.route('/test', methods=['POST'])
+def test_thing():
+    add_summary_to_user(ObjectId('65c7e44b794484671c72a08c'), ObjectId('65c7e45a794484671c72a08d'))
+    return jsonify({})
 
 if __name__ == '__main__':
     application.run(debug=True) # deployment: remove debug=True

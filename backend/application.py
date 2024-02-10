@@ -8,7 +8,7 @@ from bson.objectid import ObjectId
 import openai
 import markdown
 
-openai_key = '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'
+openai_key = API_KEY # as a string
 openai.api_key = openai_key
 
 # first system message: You are a lecture summarizer. Your job is to provide short and helpful summaries of academic lectures

@@ -1,4 +1,5 @@
 # https://www.mongodb.com/compatibility/setting-up-flask-with-mongodb
+import datetime
 import bson
 
 from flask import current_app, g
@@ -16,14 +17,14 @@ db = client.notely
 def create_user() -> ObjectId:
     try:
         print('database is ', db.notely.users)
-        result = db.users.insert_one({'summaries': []})
+        result = db.users.insert_one({'summaries': [], 'created_at': datetime.datetime.now()})
         return result.inserted_id
     except Exception as e:
         return e
 
 def create_summary(title : str, text_content : str) -> ObjectId:
     try:
-        result = db.users.insert_one({'title': title, 'text_content': text_content})
+        result = db.users.insert_one({'title': title, 'text_content': text_content, 'created_at': datetime.datetime.now()})
         return result.inserted_id
     except Exception as e:
         return e

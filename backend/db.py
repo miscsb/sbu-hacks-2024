@@ -41,7 +41,7 @@ def create_summary(title : str, text_content : str) -> ObjectId:
 def get_user(user_id : ObjectId) -> object:
     try:
         user = db.users.find_one({'_id' : user_id})
-        del user['created_at']
+        user.pop('created_at', None)
         return user
     except Exception as e:
         return e
@@ -49,7 +49,7 @@ def get_user(user_id : ObjectId) -> object:
 def get_summary(summary_id : ObjectId) -> object:
     try:
         summary = db.summaries.find_one({'_id' : summary_id})
-        del summary['created_at']
+        summary.pop('created_at', None)
         return summary
     except Exception as e:
         return e
@@ -58,8 +58,11 @@ def get_summary(summary_id : ObjectId) -> object:
 def get_summaries() -> list:
     try:
         summaries = list(db.summaries.find({}))
+        print('1', summaries)
         for summary in summaries:
-            del summary['created_at']
+            print('2', summary)
+            summary.pop('created_at', None)
+        print('3', summaries)
         return summaries
     except Exception as e:
         return e

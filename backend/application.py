@@ -1,3 +1,5 @@
+import configparser
+import os
 from flask import Flask, abort, request, render_template, make_response, redirect, jsonify
 from flask_cors import CORS, cross_origin
 import joblib 
@@ -8,7 +10,10 @@ from bson.objectid import ObjectId
 import openai
 import markdown
 
-openai_key = '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'
+config = configparser.ConfigParser()
+config.read(os.path.abspath(os.path.join(".ini")))
+
+openai_key = config['KEYS']['API_KEY']
 openai.api_key = openai_key
 
 # first system message: You are a lecture summarizer. Your job is to provide short and helpful summaries of academic lectures
@@ -16,7 +21,10 @@ openai.api_key = openai_key
 def openAI_API_Request(text):
 
     completion = openai.ChatCompletion.create(
-        model="gpt-4-0125-preview", # gpt-3.5-turbo-0125   # gpt-4-0125-preview
+        model=
+            # "gpt-4-0125-preview", 
+            "gpt-3.5-turbo-0125",
+            # "gpt-4-0125-preview",
         messages=[
             {"role": "system", "content": "You are a student in a lecture."},
             {"role": "user", "content": "Imagine you need to take good notes on a lecture to pass your finals. Really put yourself in the shoes of your average college student here: they don't want to write things about the specific lecture in particular, like specific info about a homework due that week, or stories that the professor tells that don't pertain to the content that may show up on the exam. Don't feel bad if you don't take notes over a long period. At the same time, don't take too many notes: limit yourself to small-medium bullet points and limit redundancy. You will be highlighting only the most crucial concepts that will be useful for studying later, or rather, only things that it would be reasonable to say might be on a final exam for the class. You will recieve the text transcript for an excerpt from a lecture. Please expect errors in the speech recoginition for the transcript: if something doesn't make sense, infer what was meant based on the context. Please take notes for the following excerpt of a lecture:"+'\n'+"~~~"+'\n'+text}
@@ -37,7 +45,7 @@ def get_specific_summary(id):
     print(result)
     if isinstance(result, object):
         result['id'] = str(result['_id'])
-        del result['_id']
+        result.pop('_id', None)
         return jsonify(result)
     else:
         abort(404)
@@ -49,7 +57,7 @@ def get_specific_user(id):
     print(result)
     if isinstance(result, object):
         result['id'] = str(result['_id'])
-        del result['_id']
+        result.pop('_id', None)
         return jsonify(result)
     else:
         abort(404)
@@ -103,11 +111,14 @@ def process_summary():
         
     if request.method == "GET":
         result = get_summaries()
-        for summary in result:
-            summary['id'] = str(summary['_id'])
-            del summary['_id']
-            del summary['text_content']
-        return result
+        if isinstance(result, list):
+            for summary in result:
+                summary['id'] = str(summary['_id'])
+                summary.pop('_id', None)
+                summary.pop('text_content', None)
+        else:
+            print('result is', result)
+        return jsonify(result)
         
     return "NO TYPE"
     

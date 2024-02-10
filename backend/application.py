@@ -4,6 +4,25 @@ import json
 import sys
 from db import add_summary_to_user, create_user, create_summary, get_user, get_summary, get_summaries
 from bson.objectid import ObjectId
+import openai
+
+openai_key = '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'
+openai.api_key = openai_key
+
+# first system message: You are a lecture summarizer. Your job is to provide short and helpful summaries of academic lectures
+# first prompt: Summarize this excerpt from an academic lecture in a succinct and concise manner by highlighting the important concepts that a student would find useful when reviewing for homeworks and exams. Remember to keep the summary as short as possible without sacrificing important academic concepts
+def openAI_API_Request(text):
+
+    completion = openai.ChatCompletion.create(
+        model="gpt-4-0125-preview", # gpt-3.5-turbo-0125   # gpt-4-0125-preview
+        messages=[
+            {"role": "system", "content": "You are a student in a lecture."},
+            {"role": "user", "content": "Imagine you need to take good notes on a lecture to pass your finals. Really put yourself in the shoes of your average college student here: they don't want to write things about the specific lecture in particular, like specific info about a homework due that week, or stories that the professor tells that don't pertain to the content that may show up on the exam. Don't feel bad if you don't take notes over a long period. At the same time, don't take too many notes: limit yourself to small-medium bullet points and limit redundancy. You will be highlighting only the most crucial concepts that will be useful for studying later, or rather, only things that it would be reasonable to say might be on a final exam for the class. You will recieve the text transcript for an excerpt from a lecture. Please expect errors in the speech recoginition for the transcript: if something doesn't make sense, infer what was meant based on the context. Please take notes for the following excerpt of a lecture:"+'\n'+"~~~"+'\n'+text}
+        ]
+    )
+
+    # print(completion)
+    return completion.choices[0].message['content']
 
 application = Flask(__name__)
 
@@ -34,50 +53,44 @@ def process_summary():
 
     if request.method == "POST":
 
-        payloadType = request.headers.get('Content-Type')
-        print(payloadType)
-
-        #if (payloadType == 'multipart/form-data'):
+        # payloadType = request.headers.get('Content-Type')
+        # print(payloadType)
+        # if (payloadType == 'multipart/form-data'):
 
         title = request.form['title']
-        print(title)
-        inp = str(request.files.get('file').read(), "utf-8")
-        # print(inp[0:200])
+        # print(title)
 
+        inp = str(request.files.get('file').read(), "utf-8")
         data = [x.strip() for x in inp.split("\n")[:-1]]
-        # print(data[0:30])
 
         x=len(data)
-        # print(x)
         info = []
         for i in range(1,x,5):
             times = data[i+1].split(" --> ")
             words = data[i+2].split(">")[1]
-            info.append([times,words])
+            info.append([times,words])              
+
         def eval(x):
             curr = [float(x) for x in x.split(":")]
             return curr[0]*3600+curr[1]*60+curr[2]
-        
         i = 0
         while i < len(info):
             start = info[i][0][0]
             end = info[i][0][1]
-            curr = info[i][1]
+            curr = ""
             while i < len(info) and eval(end)-eval(start)<300:
+                curr+=info[i][1]
                 i+=1
                 if i!=len(info): 
-                    if curr[-1] in "?.": curr+=" "
-                    curr+=info[i][1]
+                    curr+=" "
                     end = info[i][0][1]
-            # print(eval(start),eval(end))
-            # print(curr)
+            print(eval(start),eval(end))
+            #print(curr)
+            print(openAI_API_Request(curr))
+            #break
         
-        summary = "summary"
-
-        print('loop ended')
-        print(create_summary(title, summary))
-        print('hi')
-
+        create_summary(title, summary)
+        
         return jsonify({'result': 'success'})
         
     if request.method == "GET":
@@ -88,7 +101,7 @@ def process_summary():
             del summary['text_content']
         return result
         
-    return "none"
+    return "NO TYPE"
     
 @application.route('/users', methods=['POST'])
 def process_create_user():

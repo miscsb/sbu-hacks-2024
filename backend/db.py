@@ -16,6 +16,7 @@ db = client.notely
 def create_user() -> ObjectId:
     try:
         print('database is ', db.notely.users)
+
         result = db.users.insert_one({'summaries': []})
         return result.inserted_id
     except Exception as e:
@@ -23,9 +24,13 @@ def create_user() -> ObjectId:
 
 def create_summary(title : str, text_content : str) -> ObjectId:
     try:
+        print(title, text_content)
+        print("70")
         result = db.users.insert_one({'title': title, 'text_content': text_content})
+        print(result)
         return result.inserted_id
     except Exception as e:
+        print(e)
         return e
 
 # get individual

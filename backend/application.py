@@ -9,6 +9,7 @@ from db import add_summary_to_user, create_user, create_summary, get_user, get_s
 from bson.objectid import ObjectId
 import openai
 import markdown
+import bionic
 
 config = configparser.ConfigParser()
 config.read(os.path.abspath(os.path.join(".ini")))
@@ -46,6 +47,7 @@ def get_specific_summary(id):
     if isinstance(result, object):
         result['id'] = str(result['_id'])
         result.pop('_id', None)
+        # result['text_content'] = bionic.make_bionic_paragraph(result['text_content'])
         return jsonify(result)
     else:
         abort(404)

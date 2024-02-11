@@ -79,6 +79,6 @@ def add_summary_to_user(user_id : ObjectId, summary_id : ObjectId):
 # update summary
 def update_summary(summary_id : ObjectId, text_content : str):
     try:
-        print(db.users.update_one({'_id': summary_id}, {'$set': {'text_content': text_content}}))
+        print(db.summaries.update_one({'_id': summary_id}, {'$set': {'text_content': text_content}}))
     except Exception as e:
         return e

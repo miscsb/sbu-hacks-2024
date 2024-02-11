@@ -66,7 +66,7 @@ const make_bionic_line = (line : string) => {
 const make_bionic_content = (text : string) => {
     var lines = text.split('\n');
     lines = lines.map(make_bionic_line);
-    return lines.join('\n');
+    return lines.join('\n').replace('****', '');
 }
  
 export default SummaryPage;

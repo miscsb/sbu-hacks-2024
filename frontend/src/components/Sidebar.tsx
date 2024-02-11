@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import styles from './Sidebar.module.css';
@@ -65,5 +65,7 @@ const Sidebar = async () => {
         </div>
     );
 }
+
+
  
 export default Sidebar;

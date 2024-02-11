@@ -123,9 +123,6 @@ def process_summary():
             """
             #break
         
-        '''tts = gTTS(text=result_for_sammy, lang='en', slow=False)
-        tts.save("response.mp3")
-        os.system("mpg123 response.mp3")'''
         summary_id = create_summary(title, result_for_sammy)
         
         return jsonify({'id': str(summary_id)})
@@ -158,6 +155,17 @@ def process_create_user():
 def test_thing():
     add_summary_to_user(ObjectId('65c7e44b794484671c72a08c'), ObjectId('65c7e45a794484671c72a08d'))
     return jsonify({})
+
+@application.route('/tts', methods=['GET'])
+@cross_origin()
+def text_to_speech():
+
+    # inputText = (request entire final summary from mongo)
+    inputText = "sample text"
+
+    tts = gTTS(text=inputText, lang='en', slow=False)
+    tts.save("response.mp3")
+    os.system("mpg123 response.mp3")
 
 if __name__ == '__main__':
     application.run(debug=True) # deployment: remove debug=True

@@ -166,5 +166,5 @@ def text_to_speech():
     os.system("mpg123 response.mp3")
 
 if __name__ == '__main__':
-    application.run(debug=True) # deployment: remove debug=True
+    application.run(debug=True, threaded=True) # deployment: remove debug=True
     

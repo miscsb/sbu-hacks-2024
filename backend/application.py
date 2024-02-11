@@ -44,7 +44,6 @@ application.config['CORS_HEADERS'] = 'Content-Type'
 @cross_origin()
 def get_specific_summary(id):
     result = get_summary(ObjectId(id))
-    print(result)
     if isinstance(result, object):
         result['id'] = str(result['_id'])
         result.pop('_id', None)

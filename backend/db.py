@@ -20,7 +20,6 @@ db = client.notely
 # create
 def create_user() -> ObjectId:
     try:
-        print('database is ', db.notely.users)
         result = db.users.insert_one({
             'summaries': [], 
             'created_at': datetime.datetime.now()
@@ -38,7 +37,6 @@ def create_summary(title : str, text_content : str) -> ObjectId:
         })
         return result.inserted_id
     except Exception as e:
-        print(e)
         return e
 
 # get individual
@@ -62,11 +60,8 @@ def get_summary(summary_id : ObjectId) -> object:
 def get_summaries() -> list:
     try:
         summaries = list(db.summaries.find({}))
-        print('1', summaries)
         for summary in summaries:
-            print('2', summary)
             summary.pop('created_at', None)
-        print('3', summaries)
         return summaries
     except Exception as e:
         return e

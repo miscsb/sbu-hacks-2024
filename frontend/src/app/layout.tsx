@@ -28,7 +28,7 @@ export default function RootLayout({children}: Props) {
 
           <div className="flex flex-row flex-grow h-full pt-16 overflow-auto">
             <Sidebar />
-            <div className="notes flex-grow bg-slate-200 p-8 overflow-auto">
+            <div className="notes flex-grow bg-white p-8 overflow-auto">
               {children}
             </div>
           </div>

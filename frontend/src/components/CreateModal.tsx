@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { FaTimes, FaPlusCircle } from "react-icons/fa";
+import { FaTimes } from "react-icons/fa";
 import styles from './CreateModal.module.css';
 
 import Snackbar from '@mui/material/Snackbar';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 
 import { useRouter } from 'next/navigation';
 
@@ -76,34 +78,49 @@ const CreateModal = ({ trigger }: Props) => {
         }
     };
 
+    const body = (
+        <Box sx={{ 
+            position: 'absolute', 
+            top: '50%', 
+            left: '50%', 
+            transform: 'translate(-50%, -50%)', 
+            bgcolor: 'background.paper', 
+            boxShadow: 24, 
+            p: 4 
+        }}>
+            <button className={styles['close-button']} onClick={toggleOpen}>
+                <FaTimes />
+            </button>
+            <form className={styles['create-form']} onSubmit={submitForm}>
+                <h2>Create a new lecture summary</h2>
+                <div>
+                    <div className={styles['form-group']}>
+                        <label>Title</label>
+                        <input className={styles['text-input']} type="text" id="title" onKeyDown={handleKeyPress} onChange={handleTitleChange}/>
+                    </div>
+                    <div className={styles['form-group']}>
+                        <label>Upload VTT transcript file</label>
+                        <input type="file" onChange={handleFileChange}/>
+                    </div>
+                </div>
+                <button type="submit" className={styles['submit-button']}>Summarize</button>
+            </form>
+        </Box>
+    );
+
     return (
         <>
             <div className="trigger" onClick={toggleOpen}>
                 {trigger}
             </div>
-            {isOpen &&
-                <div className={`${styles.background} ${isOpen ? styles.visible : ""}`}>
-                    <div className={styles.modal}>
-                        <button className={styles['close-button']} onClick={toggleOpen}>
-                            <FaTimes />
-                        </button>
-                        <form className={styles['create-form']} onSubmit={submitForm}>
-                            <h2 className='mb-'>Create a new lecture summary</h2>
-                            <div className={styles['form-group']}>
-                                <label>Title</label>
-                                <input className={styles['text-input']} type="text" id="title" onKeyDown={handleKeyPress} onChange={handleTitleChange}/>
-                            </div>
-                            <div className={styles['form-group']}>
-                                <label>Upload VTT transcript file</label>
-                                <input type="file" onChange={handleFileChange}/>
-                            </div>
-                            <button type="submit" className={styles['submit-button']}>Summarize</button>
-                        </form>
-                    </div>
-
-                </div>
-            }
-
+            <Modal
+                open={isOpen}
+                onClose={toggleOpen}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                {body}
+            </Modal>
             <Snackbar
                 open={isSnackbarOpen}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
@@ -111,7 +128,6 @@ const CreateModal = ({ trigger }: Props) => {
                 onClose={() => setIsSnackbarOpen(false)}
                 message="Your summary is being written. You will be redirected upon completion"
             />
-
         </>
     );
 }

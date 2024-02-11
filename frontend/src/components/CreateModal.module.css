@@ -25,6 +25,13 @@
         flex items-center justify-center
         cursor-pointer;
 }
+
+.close-button svg {
+    @apply
+        w-4 h-4
+        fill-current text-white
+}
+
 .visible {
     @apply
         opacity-100
@@ -33,7 +40,7 @@
     @apply
         text-black
         flex flex-col justify-center items-center
-        gap-2
+        gap-6
 }
 .form-group {
     @apply
@@ -56,6 +63,7 @@
     @apply
         bg-red-900 hover:bg-red-700 transition-colors duration-300
         text-white font-bold
-        p-2 w-auto
+        px-4 py-2 w-auto
+        text-lg
         rounded-lg
 }

@@ -31,19 +31,26 @@ const SummaryPage = async ({params: { summaryId }}: Props) => {
     //     text_content: "# hi\n- test",
     // }
 
-    var bionic = searchParams.get('bionic') ?? "false"
+    var bionic = searchParams.get('bionic') ?? "false";
+    var bionicLink = 'http://127.0.0.1:3000/summaries/' + summaryId + '?bionic=true';
+
+    const makeBionic = () => {
+        var separator = (window.location.href.indexOf("?")===-1)?"?":"&";
+        window.location.href = window.location.href + separator + "bionic=true";
+    }
 
     return (
         <div>
             <h1 className="mb-8 text-4xl underline">{summary.title}</h1>
-            <Markdown markdown={bionic == 'true' ? make_bionic_content(summary.text_content) : summary.text_content} />
+            <Markdown markdown={make_bionic_content(summary.text_content)} />
+            <Markdown markdown={summary.text_content} />
         </div>
     );
 
 }
 
 const is_word = (word : string) => {
-    var match = word.match('[a-zA-Z]+')
+    var match = word.match('^[a-zA-Z]+[.?!()]?$')
     return match != null && match.length > 0;
 }
 
@@ -66,7 +73,7 @@ const make_bionic_line = (line : string) => {
 const make_bionic_content = (text : string) => {
     var lines = text.split('\n');
     lines = lines.map(make_bionic_line);
-    return lines.join('\n').replace('****', '');
+    return lines.join('\n');
 }
  
 export default SummaryPage;

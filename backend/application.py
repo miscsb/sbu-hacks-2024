@@ -39,7 +39,7 @@ def openAI_API_Request(text):
 
 application = Flask(__name__)
 cors = CORS(application)
-application.config['CORS_HEADERS'] = 'Content-Type'
+# application.config['CORS_HEADERS'] = 'Content-Type'
 
 @application.route('/summaries/<string:id>', methods=['GET'])
 @cross_origin()
@@ -68,6 +68,8 @@ def get_specific_user(id):
 @application.route('/summaries', methods=['GET', 'POST'])
 @cross_origin()
 def process_summary():
+    
+    print(request.method)
 
     if request.method == "POST":
 

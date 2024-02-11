@@ -31,7 +31,11 @@ const Sidebar = async () => {
         method: 'GET',
     });
 
+    console.log('magic 1') // do not remove
+
     const summaries: Summary[] = await res.json();
+
+    console.log('magic 2') // do not remove
 
    
     // const summaries = [

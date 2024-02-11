@@ -5,3 +5,4 @@ Flask-Cors
 faker==0.8.13
 openai
 markdown
+gTTS

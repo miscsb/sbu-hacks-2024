@@ -2,11 +2,16 @@ import { useState } from 'react';
 import { FaTimes, FaPlusCircle } from "react-icons/fa";
 import styles from './CreateModal.module.css';
 
+import { useRouter } from 'next/navigation';
+
 type Props = {
     trigger: React.ReactNode;
 }
 
 const CreateModal = ({ trigger }: Props) => {
+
+    const router = useRouter();
+
     const [isOpen, setIsOpen] = useState(false);
     const [title, setTitle] = useState('');
     const [file, setFile] = useState<File | null>(null);
@@ -41,6 +46,11 @@ const CreateModal = ({ trigger }: Props) => {
         const formData = new FormData();
         formData.append('title', title);
         formData.append('file', file);
+
+        // reset form and close modal
+        setTitle('');
+        setFile(null);
+        toggleOpen();
     
         try {
             const response = await fetch('http://127.0.0.1:5000/summaries', { // replace '/api/endpoint' with your API endpoint
@@ -52,13 +62,11 @@ const CreateModal = ({ trigger }: Props) => {
                 throw new Error('Network response was not ok');
             }
     
-            const data = await response.json();
-            console.log(data);
-    
-            // reset form and close modal
-            setTitle('');
-            setFile(null);
-            toggleOpen();
+            const newSummary = await response.json();
+
+            router.push(`/summary/${newSummary.id}`);
+
+
         } catch (error) {
             console.error('Error:', error);
         }

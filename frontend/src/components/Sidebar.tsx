@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from './Sidebar.module.css';
 
 import { useParams } from 'next/navigation';
+import CreateButton from './CreateButton';
 
 const Sidebar = async () => {
 
@@ -32,6 +33,7 @@ const Sidebar = async () => {
 
     const summaries: Summary[] = await res.json();
 
+   
     // const summaries = [
     //     {
     //         id: '1',
@@ -49,15 +51,17 @@ const Sidebar = async () => {
 
     return ( 
         <div className={styles.sidebar}>
-            {summaries.map((summary) => (
-                <Link key={summary.id} href={`/summary/${summary.id}`}>
-                    <div 
-                        className={`${styles.title} ${summary.id === currentId ? styles['active'] : ''}`}
-                    >
-                        {summary.title}
-                    </div>
-                </Link>
-            ))}
+            <div className={styles.summaries}>
+                {summaries.map((summary) => (
+                    <Link key={summary.id} href={`/summary/${summary.id}`}>
+                        <div 
+                            className={`${styles.title} ${summary.id === currentId ? styles['active'] : ''}`}
+                        >
+                            {summary.title}
+                        </div>
+                    </Link>
+                ))} 
+            </div>  
         </div>
     );
 }

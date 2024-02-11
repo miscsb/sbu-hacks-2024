@@ -5,7 +5,7 @@ import CreateModal from './CreateModal';
 
 import { useState } from 'react';
 
-import { FaPlusCircle } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 
 const CreateButton = () => {
 
@@ -13,7 +13,7 @@ const CreateButton = () => {
         <CreateModal 
             trigger={
                 <button className={styles['create-button']}>
-                    <FaPlusCircle />
+                    <FaPlus />
                 </button>
             }
         />

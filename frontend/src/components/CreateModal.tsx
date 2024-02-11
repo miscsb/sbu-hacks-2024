@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { FaTimes, FaPlusCircle } from "react-icons/fa";
 import styles from './CreateModal.module.css';
 
+import Snackbar from '@mui/material/Snackbar';
+
 import { useRouter } from 'next/navigation';
 
 type Props = {
@@ -15,6 +17,7 @@ const CreateModal = ({ trigger }: Props) => {
     const [isOpen, setIsOpen] = useState(false);
     const [title, setTitle] = useState('');
     const [file, setFile] = useState<File | null>(null);
+    const [isSnackbarOpen, setIsSnackbarOpen] = useState(false);
 
     const toggleOpen = () => {
         setIsOpen(!isOpen);
@@ -51,6 +54,7 @@ const CreateModal = ({ trigger }: Props) => {
         setTitle('');
         setFile(null);
         toggleOpen();
+        setIsSnackbarOpen(true);
     
         try {
             const response = await fetch('http://127.0.0.1:5000/summaries', { // replace '/api/endpoint' with your API endpoint
@@ -96,8 +100,18 @@ const CreateModal = ({ trigger }: Props) => {
                             <button type="submit" className={styles['submit-button']}>Summarize</button>
                         </form>
                     </div>
+
                 </div>
             }
+
+            <Snackbar
+                open={isSnackbarOpen}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                autoHideDuration={5000}
+                onClose={() => setIsSnackbarOpen(false)}
+                message="Your summary is being written. You will be redirected upon completion"
+            />
+
         </>
     );
 }

@@ -10,6 +10,7 @@ from bson.objectid import ObjectId
 import openai
 import markdown
 import bionic
+from gtts import gTTS
 
 config = configparser.ConfigParser()
 config.read(os.path.abspath(os.path.join(".ini")))
@@ -122,6 +123,9 @@ def process_summary():
             """
             #break
         
+        '''tts = gTTS(text=result_for_sammy, lang='en', slow=False)
+        tts.save("response.mp3")
+        os.system("mpg123 response.mp3")'''
         summary_id = create_summary(title, result_for_sammy)
         
         return jsonify({'id': str(summary_id)})

@@ -1,6 +1,6 @@
 import sys
 import markdown
-inp = str(open("AMS 301-02-transcript.vtt").read(), "utf-8")
+inp = open("AMS 301-02-transcript.vtt").read()
 # print(inp[0:200])
 
 data = [x.strip() for x in inp.split("\n")[:-1]]
@@ -14,6 +14,13 @@ for i in range(1,x,5):
 def eval(x):
     curr = [float(x) for x in x.split(":")]
     return curr[0]*3600+curr[1]*60+curr[2]
+def stuff(x):
+    x = x.split(":")
+    val = ""
+    if int(x[0])!=0: val += x[0]+":"
+    val+=x[1]+":"
+    val+=x[2][:x[2].index(".")]
+    return val
 i = 0
 
 while i < len(info):
@@ -26,8 +33,8 @@ while i < len(info):
         if i!=len(info): 
             curr+=" "
             end = info[i][0][1]
-    print(eval(start),eval(end))
-    print(curr.count(".")+curr.count("?"))
+    print("# "+stuff(start)+"-"+stuff(end)+"\n")
+    print(eval(start),eval(end),start,end)
 
 """
 import sys

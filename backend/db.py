@@ -1,5 +1,7 @@
 # https://www.mongodb.com/compatibility/setting-up-flask-with-mongodb
+import configparser
 import datetime
+import os
 import bson
 
 from flask import current_app, g
@@ -10,7 +12,9 @@ from pymongo.errors import DuplicateKeyError, OperationFailure
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
 
-client = MongoClient('mongodb+srv://sbuhacks:sbuhacks123@cluster0.jkkkjsb.mongodb.net/?retryWrites=true&w=majority')
+config = configparser.ConfigParser()
+config.read(os.path.abspath(os.path.join(".ini")))
+client = MongoClient(config['DB']['CONNECTION_STRING'])
 db = client.notely
 
 # create

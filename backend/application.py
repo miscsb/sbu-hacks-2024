@@ -27,7 +27,8 @@ def openAI_API_Request(text):
             "gpt-3.5-turbo-0125",
             # "gpt-4-0125-preview",
         messages=[
-            {"role": "user", "content": "Firstly, GENERATE A SHORT PHRASE/TITLE (A HEADING AT THE TOP) THAT ACCURATELY DESCRIBES THE LECTURE EXCERPT'S CONTENTS, AND GIVE IT IN THE FORMAT OF MARKDOWN H1. Secondly, imagine you need to take good notes on a lecture to pass your finals. Really put yourself in the shoes of your average college student here: they don't want to write things about the specific lecture in particular, like specific info about a homework due that week, or stories that the professor tells that don't pertain to the content that may show up on the exam. Don't feel bad if you don't take notes over a long period. At the same time, don't take too many notes: limit yourself to small-medium bullet points and limit redundancy. You will be highlighting only the most crucial concepts that will be useful for studying later, or rather, only things that it would be reasonable to say might be on a final exam for the class. You will recieve the text transcript for an excerpt from a lecture. Please expect errors in the speech recoginition for the transcript: if something doesn't make sense, infer what was meant based on the context. Please take notes for the following excerpt of a lecture:"+'\n'+"~~~"+'\n'+text} 
+            {"role": "system", "content": "You are a lecture summarizer. Your job is to provide short and helpful summaries of academic lectures."},
+            {"role": "user", "content": "Firstly, GENERATE A SHORT PHRASE/TITLE (A HEADING AT THE TOP) THAT ACCURATELY DESCRIBES THE LECTURE EXCERPT'S CONTENTS. Secondly, summarize this excerpt from an academic lecture in a succinct and concise manner by highlighting the important concepts that a student would find useful when reviewing for homework and exams. Remember to keep the summary as short as possible without sacrificing important academic concepts"}
         ]
     )
 
@@ -120,9 +121,9 @@ def process_summary():
             """
             #break
         
-        create_summary(title, result_for_sammy)
+        summary_id = create_summary(title, result_for_sammy)
         
-        return jsonify({'result': 'success'})
+        return jsonify({'id': str(summary_id)})
         
     if request.method == "GET":
         result = get_summaries()

@@ -13,22 +13,23 @@ import bionic
 
 config = configparser.ConfigParser()
 config.read(os.path.abspath(os.path.join(".ini")))
-
-openai_key = config['KEYS']['API_KEY']
-openai.api_key = openai_key
+openai.api_key = config['OPENAI']['API_KEY']
 
 # first system message: You are a lecture summarizer. Your job is to provide short and helpful summaries of academic lectures
 # first prompt: Summarize this excerpt from an academic lecture in a succinct and concise manner by highlighting the important concepts that a student would find useful when reviewing for homeworks and exams. Remember to keep the summary as short as possible without sacrificing important academic concepts
 def openAI_API_Request(text):
 
     completion = openai.ChatCompletion.create(
-        model=
-            # "gpt-4-0125-preview", 
-            "gpt-3.5-turbo-0125",
-            # "gpt-4-0125-preview",
+        model=config['OPENAI']['VERSION'],
         messages=[
-            {"role": "system", "content": "You are a lecture summarizer. Your job is to provide short and helpful summaries of academic lectures."},
-            {"role": "user", "content": "Firstly, GENERATE A SHORT PHRASE/TITLE (A HEADING AT THE TOP) THAT ACCURATELY DESCRIBES THE LECTURE EXCERPT'S CONTENTS. Secondly, summarize this excerpt from an academic lecture in a succinct and concise manner by highlighting the important concepts that a student would find useful when reviewing for homework and exams. Remember to keep the summary as short as possible without sacrificing important academic concepts"}
+            {
+                "role": "system", 
+                "content": config['PROMPT']['USER']
+            },
+            {
+                "role": "user", 
+                "content": config['PROMPT']['SYSTEM'] + '\n~~~\n' + text
+            }
         ]
     )
 

@@ -158,7 +158,7 @@ def test_thing():
     return jsonify({})
 
 @application.route('/tts', methods=['GET'])
-@cross.origin()
+@cross_origin()
 def text_to_speech():
 
     # inputText = (request entire final summary from mongo)

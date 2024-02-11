@@ -5,7 +5,7 @@ from flask_cors import CORS, cross_origin
 import joblib 
 import json
 import sys
-from db import add_summary_to_user, create_user, create_summary, get_user, get_summary, get_summaries
+from db import add_summary_to_user, create_user, create_summary, get_user, get_summary, get_summaries, update_summary
 from bson.objectid import ObjectId
 import openai
 import markdown
@@ -68,7 +68,6 @@ def get_specific_user(id):
 @application.route('/summaries', methods=['GET', 'POST'])
 @cross_origin()
 def process_summary():
-    result_for_sammy = ""
 
     if request.method == "POST":
 
@@ -78,6 +77,9 @@ def process_summary():
 
         title = request.form['title']
         # print(title)
+        
+        result_for_sammy = ""
+        summary_id = create_summary(title, result_for_sammy)
 
         inp = str(request.files.get('file').read(), "utf-8")
         data = [x.strip() for x in inp.split("\n")[:-1]]
@@ -115,15 +117,11 @@ def process_summary():
             a = [a[0]]+["## "+stuff(start)+"-"+stuff(end)+"\n"]+a[1:]
             result_for_sammy+="\n".join(a)+"\n"
             i+=1
-            """
+            
             result_for_sammy += "## "+stuff(start)+"-"+stuff(end)+"\n"
             print(eval(start),eval(end),start,end)
-            #print(curr)
             result_for_sammy += openAI_API_Request(curr)+"\n"
-            """
-            #break
-        
-        summary_id = create_summary(title, result_for_sammy)
+            update_summary(summary_id, result_for_sammy)
         
         return jsonify({'id': str(summary_id)})
         

@@ -43,11 +43,13 @@ const SummaryPage = async ({params: { summaryId }}: Props) => {
 }
 
 const is_word = (word : string) => {
-    return word.match('[a-zA-Z]+') != null;
+    var match = word.match('[a-zA-Z]+')
+    return match != null && match.length > 0;
 }
 
 const make_bionic_word = (word : string) => {
-    var mid = (1 + word.length) / 2;
+    if (word.length <= 1) return word
+    var mid = word.length / 2;
     return '**' + word.substring(0, mid) + '**' + word.substring(mid);
 }
 

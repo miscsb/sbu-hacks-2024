@@ -1,0 +1,5321 @@
+WEBVTT
+
+00:00:02.470 --> 00:00:02.579
+<v Speaker 0>Ultrasound.
+
+NOTE CONF {"raw":[40]}
+
+00:00:13.369 --> 00:00:22.280
+<v Speaker 0>What I like you were found dead for us.
+
+NOTE CONF {"raw":[41,71,45,58,41,75,54,50,68]}
+
+00:00:23.959 --> 00:00:33.990
+<v Speaker 0>Oh No, because I think so like OK, good afternoon
+
+NOTE CONF {"raw":[80,97,94,99,95,89,47,46,99,99]}
+
+00:00:35.099 --> 00:00:35.549
+<v Speaker 0>join.
+
+NOTE CONF {"raw":[99]}
+
+00:00:36.599 --> 00:00:42.900
+<v Speaker 1>Uh Let's see today, we're going to continue talking about
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:00:42.909 --> 00:00:46.419
+<v Speaker 3>some of these discrete distributions, right?
+
+NOTE CONF {"raw":[99,99,99,3,99,98]}
+
+00:00:47.229 --> 00:00:52.209
+<v Speaker 2>Uh So we went through some background information, some important
+
+NOTE CONF {"raw":[86,99,99,99,99,99,99,99,94,99]}
+
+00:00:52.220 --> 00:00:59.000
+<v Speaker 1>definitions the last time um things like defining a random
+
+NOTE CONF {"raw":[99,98,99,99,95,99,99,43,99,99]}
+
+00:00:59.009 --> 00:01:00.029
+<v Speaker 1>variable.
+
+NOTE CONF {"raw":[99]}
+
+00:01:00.090 --> 00:01:03.900
+<v Speaker 1>Now you mentioned that variable so that you don't break
+
+NOTE CONF {"raw":[33,94,99,99,99,99,85,91,67,99]}
+
+00:01:03.909 --> 00:01:04.250
+<v Speaker 3>up.
+
+NOTE CONF {"raw":[99]}
+
+00:01:05.370 --> 00:01:08.410
+<v Speaker 3>Uh It's a discrete versus continuous.
+
+NOTE CONF {"raw":[99,48,84,73,99,99]}
+
+00:01:08.639 --> 00:01:12.650
+<v Speaker 3>Remember our definition of a random variable is a function
+
+NOTE CONF {"raw":[99,99,56,99,93,65,99,51,85,63]}
+
+00:01:12.660 --> 00:01:17.389
+<v Speaker 1>that assigned to numerical values to each uh outcome of
+
+NOTE CONF {"raw":[99,55,70,98,99,96,99,99,99,99]}
+
+00:01:17.410 --> 00:01:18.230
+<v Speaker 1>the experiment.
+
+NOTE CONF {"raw":[82,99]}
+
+00:01:19.559 --> 00:01:22.669
+<v Speaker 3>And then we just went through a few examples and
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:01:22.680 --> 00:01:29.569
+<v Speaker 3>the first sort of name discrete distribution uh that we'll
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,95]}
+
+00:01:29.580 --> 00:01:32.550
+<v Speaker 1>look at is called the binomial distribution.
+
+NOTE CONF {"raw":[89,99,99,99,99,63,99]}
+
+00:01:33.769 --> 00:01:35.199
+<v Speaker 3>So we'll look at a few of those.
+
+NOTE CONF {"raw":[71,51,98,98,99,99,99,99]}
+
+00:01:35.209 --> 00:01:36.629
+<v Speaker 3>Let's sort of start with that.
+
+NOTE CONF {"raw":[35,88,90,99,99,99]}
+
+00:01:36.849 --> 00:01:41.349
+<v Speaker 1>I wanna show you how to find probabilities using R.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,72,99,94]}
+
+00:01:42.250 --> 00:01:45.730
+<v Speaker 2>So we'll do that today and probably get through most
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:01:45.739 --> 00:01:50.250
+<v Speaker 3>of these distributions in the chapter before I do.
+
+NOTE CONF {"raw":[99,99,99,99,98,86,99,99,99]}
+
+00:01:50.970 --> 00:01:51.879
+<v Speaker 3>I don't have any questions.
+
+NOTE CONF {"raw":[78,61,99,99,99]}
+
+00:01:51.930 --> 00:01:56.110
+<v Speaker 3>I everything going well.
+
+NOTE CONF {"raw":[51,86,99,99]}
+
+00:01:56.120 --> 00:01:59.489
+<v Speaker 1>So it's T A si think are slowly correcting homework.
+
+NOTE CONF {"raw":[99,60,80,99,60,99,99,99,99,99]}
+
+00:01:59.500 --> 00:02:01.559
+<v Speaker 2>So I don't know if they've got too much done,
+
+NOTE CONF {"raw":[99,80,34,88,90,70,91,99,99,99]}
+
+00:02:01.569 --> 00:02:06.599
+<v Speaker 3>but um I did post the next homework though.
+
+NOTE CONF {"raw":[99,99,56,99,99,99,99,99,91]}
+
+00:02:07.040 --> 00:02:11.500
+<v Speaker 3>Not due until I think it, it's February 18th, not
+
+NOTE CONF {"raw":[99,99,99,99,98,54,63,99,82,84]}
+
+00:02:11.509 --> 00:02:12.919
+<v Speaker 1>this Sunday, but the Sunday happened.
+
+NOTE CONF {"raw":[99,99,95,72,81,92]}
+
+00:02:13.240 --> 00:02:14.919
+<v Speaker 3>So, so that's up there.
+
+NOTE CONF {"raw":[99,94,99,99,99]}
+
+00:02:15.119 --> 00:02:18.479
+<v Speaker 3>Um, you can probably do some of those already.
+
+NOTE CONF {"raw":[89,83,76,99,90,99,99,99,99]}
+
+00:02:20.919 --> 00:02:21.380
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+00:02:21.389 --> 00:02:23.740
+<v Speaker 2>So we've got that cooking first test.
+
+NOTE CONF {"raw":[99,89,99,99,99,99,99]}
+
+00:02:24.710 --> 00:02:30.229
+<v Speaker 1>February 20th, which is how many weeks from today?
+
+NOTE CONF {"raw":[99,29,99,99,99,99,99,99,99]}
+
+00:02:32.380 --> 00:02:32.750
+<v Speaker 2>Three weeks.
+
+NOTE CONF {"raw":[99,83]}
+
+00:02:33.149 --> 00:02:35.419
+<v Speaker 2>I, uh, yes, three weeks.
+
+NOTE CONF {"raw":[60,99,83,99,95]}
+
+00:02:35.520 --> 00:02:36.789
+<v Speaker 1>Sometimes its not that far away.
+
+NOTE CONF {"raw":[50,51,99,99,99,99]}
+
+00:02:37.029 --> 00:02:39.100
+<v Speaker 3>I will post some practice tests as we get a
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:02:39.110 --> 00:02:39.940
+<v Speaker 1>little bit closer.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:02:41.419 --> 00:02:41.889
+<v Speaker 1>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:02:41.899 --> 00:02:50.660
+<v Speaker 1>So let's talk of the binomial distribution binomial.
+
+NOTE CONF {"raw":[99,99,99,84,98,0,99,90]}
+
+00:02:50.669 --> 00:02:51.100
+<v Speaker 3>Really?
+
+NOTE CONF {"raw":[99]}
+
+00:02:51.110 --> 00:02:52.630
+<v Speaker 3>It has two parameters.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:02:52.639 --> 00:02:53.160
+<v Speaker 3>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:02:53.440 --> 00:02:59.259
+<v Speaker 3>And um and it is your number of independent trials
+
+NOTE CONF {"raw":[52,99,56,97,99,99,99,99,99,99]}
+
+00:03:00.009 --> 00:03:04.059
+<v Speaker 3>and he is the probability of a success on each
+
+NOTE CONF {"raw":[99,99,99,99,99,99,97,99,99,99]}
+
+00:03:04.240 --> 00:03:07.089
+<v Speaker 1>trial and that stays constant, right?
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:03:07.220 --> 00:03:09.470
+<v Speaker 3>That, that's an important thing to realize it sort of
+
+NOTE CONF {"raw":[97,99,96,99,99,99,99,99,99,99]}
+
+00:03:09.479 --> 00:03:10.690
+<v Speaker 3>stays constant.
+
+NOTE CONF {"raw":[99,99]}
+
+00:03:11.550 --> 00:03:17.770
+<v Speaker 0>And one of the implications of that when you have
+
+NOTE CONF {"raw":[99,96,99,99,99,99,99,99,99,99]}
+
+00:03:17.779 --> 00:03:21.169
+<v Speaker 3>sort of a binomial distribution, you wanna think of it
+
+NOTE CONF {"raw":[99,99,99,0,99,99,98,99,99,99]}
+
+00:03:21.179 --> 00:03:26.169
+<v Speaker 1>as a case where uh you have replacement in the
+
+NOTE CONF {"raw":[99,97,99,99,99,99,99,99,99,88]}
+
+00:03:26.179 --> 00:03:29.440
+<v Speaker 1>sense that you pick an item, then you're gonna sort
+
+NOTE CONF {"raw":[99,53,99,99,99,99,99,56,77,99]}
+
+00:03:29.449 --> 00:03:30.830
+<v Speaker 3>of record it and put it back.
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99]}
+
+00:03:30.960 --> 00:03:34.669
+<v Speaker 3>You're not changing the probability of a success from one
+
+NOTE CONF {"raw":[99,99,99,99,99,99,98,99,99,99]}
+
+00:03:34.699 --> 00:03:35.770
+<v Speaker 2>job to another.
+
+NOTE CONF {"raw":[0,99,99]}
+
+00:03:36.089 --> 00:03:36.690
+<v Speaker 2>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:03:38.270 --> 00:03:42.419
+<v Speaker 3>Your random variable X is the number of successes in,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,98]}
+
+00:03:42.429 --> 00:03:43.440
+<v Speaker 3>in trials.
+
+NOTE CONF {"raw":[78,99]}
+
+00:03:44.419 --> 00:03:48.820
+<v Speaker 3>So you might see this notation in certain variations of
+
+NOTE CONF {"raw":[99,99,99,99,99,99,79,99,99,99]}
+
+00:03:48.830 --> 00:03:53.940
+<v Speaker 3>it, you know, interpret this, that X is binomial um
+
+NOTE CONF {"raw":[99,99,99,99,99,95,99,94,67,99]}
+
+00:03:54.179 --> 00:03:57.979
+<v Speaker 3>where the end trials and the probability of the success
+
+NOTE CONF {"raw":[99,83,75,99,99,99,99,99,97,99]}
+
+00:03:57.990 --> 00:03:58.610
+<v Speaker 1>is peak.
+
+NOTE CONF {"raw":[99,92]}
+
+00:03:59.169 --> 00:03:59.619
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:03:59.630 --> 00:04:02.000
+<v Speaker 2>So, so a lot of books have a notation, something
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,94,99]}
+
+00:04:02.009 --> 00:04:05.419
+<v Speaker 2>like that and even software would be something like that.
+
+NOTE CONF {"raw":[99,99,99,99,99,82,99,99,99,99]}
+
+00:04:05.669 --> 00:04:11.759
+<v Speaker 1>So I mentioned some of these examples and let's see.
+
+NOTE CONF {"raw":[99,69,99,99,99,99,99,99,99,99]}
+
+00:04:12.050 --> 00:04:16.489
+<v Speaker 3>Um So, so a couple of the conditions, you know,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,92,96]}
+
+00:04:16.500 --> 00:04:20.489
+<v Speaker 3>the experiment consists of and repeated for new trials.
+
+NOTE CONF {"raw":[99,99,89,62,99,99,99,92,99]}
+
+00:04:20.790 --> 00:04:25.750
+<v Speaker 3>Um I mentioned this one here, probability of success, it
+
+NOTE CONF {"raw":[99,99,99,99,99,98,99,89,99,72]}
+
+00:04:25.760 --> 00:04:29.369
+<v Speaker 3>says is the same, the trials have to be independent
+
+NOTE CONF {"raw":[51,32,99,99,99,99,99,99,99,99]}
+
+00:04:29.459 --> 00:04:30.390
+<v Speaker 3>from each other.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:04:30.989 --> 00:04:31.649
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:04:31.859 --> 00:04:36.000
+<v Speaker 3>And then we have this probability mass function.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:04:36.309 --> 00:04:42.429
+<v Speaker 3>Um the probability of, let's say, you know, uh X
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,96,99]}
+
+00:04:42.440 --> 00:04:44.739
+<v Speaker 3>being equal to some value.
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+00:04:44.950 --> 00:04:47.589
+<v Speaker 3>So we might say in here a lot of times
+
+NOTE CONF {"raw":[87,99,99,99,99,99,99,99,99,99]}
+
+00:04:47.600 --> 00:04:52.130
+<v Speaker 3>you'll see notation like this, the probability that your random
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,83]}
+
+00:04:52.140 --> 00:04:57.950
+<v Speaker 3>variable X is equal to some value X.
+
+NOTE CONF {"raw":[99,99,99,99,99,84,99,99]}
+
+00:04:57.959 --> 00:04:59.600
+<v Speaker 1>That's how you wanna interpret that.
+
+NOTE CONF {"raw":[99,99,99,88,99,99]}
+
+00:05:00.149 --> 00:05:05.089
+<v Speaker 2>Um You mind N choose X key to the X
+
+NOTE CONF {"raw":[99,23,96,99,99,99,48,94,99,99]}
+
+00:05:05.390 --> 00:05:08.350
+<v Speaker 3>times one minus P to the N minus X.
+
+NOTE CONF {"raw":[79,99,99,97,99,99,99,99,99]}
+
+00:05:08.359 --> 00:05:08.670
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:05:08.679 --> 00:05:11.690
+<v Speaker 1>So that's the probability mass function.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:05:13.140 --> 00:05:15.730
+<v Speaker 1>I think we did this example.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:05:16.299 --> 00:05:17.529
+<v Speaker 1>There are a couple of examples.
+
+NOTE CONF {"raw":[87,78,99,99,99,99]}
+
+00:05:17.540 --> 00:05:19.940
+<v Speaker 1>I don't think we did this one.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:05:19.950 --> 00:05:21.750
+<v Speaker 3>So let's start with this one here today.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:05:22.820 --> 00:05:30.109
+<v Speaker 2>Uh This tells us X is a binomial, N is
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,98,98,99]}
+
+00:05:30.119 --> 00:05:33.070
+<v Speaker 3>five and P is point two.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:05:33.760 --> 00:05:38.179
+<v Speaker 3>Use the PM F to find your answers.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,41,99]}
+
+00:05:38.260 --> 00:05:39.959
+<v Speaker 1>Uh For these, that will be here.
+
+NOTE CONF {"raw":[99,99,99,98,92,99,99]}
+
+00:05:40.130 --> 00:05:40.390
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[96]}
+
+00:05:40.519 --> 00:05:45.940
+<v Speaker 1>So if we want the probability that X is equal
+
+NOTE CONF {"raw":[99,98,99,99,99,99,99,99,99,99]}
+
+00:05:45.950 --> 00:05:49.839
+<v Speaker 3>to one, let's set that up.
+
+NOTE CONF {"raw":[99,99,99,99,99,98]}
+
+00:05:53.420 --> 00:05:53.799
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+00:05:54.089 --> 00:06:03.700
+<v Speaker 2>Uh So probability N is equal to 12, probably X
+
+NOTE CONF {"raw":[99,99,90,99,99,99,83,86,99,99]}
+
+00:06:03.709 --> 00:06:04.709
+<v Speaker 3>is equal to one.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:06:04.940 --> 00:06:08.339
+<v Speaker 3>And so we could just straight down the parameters, N
+
+NOTE CONF {"raw":[85,68,70,68,95,95,99,99,99,99]}
+
+00:06:08.350 --> 00:06:11.869
+<v Speaker 1>is five, P is equal to zero.
+
+NOTE CONF {"raw":[99,93,99,99,99,99,99]}
+
+00:06:11.880 --> 00:06:12.950
+<v Speaker 1>Point two.
+
+NOTE CONF {"raw":[99,99]}
+
+00:06:14.019 --> 00:06:23.470
+<v Speaker 3>So this would be 521 times point 2.2 to the
+
+NOTE CONF {"raw":[99,99,99,99,51,99,99,99,99,99]}
+
+00:06:23.480 --> 00:06:27.410
+<v Speaker 3>X and then it's one minus P.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:06:27.420 --> 00:06:31.829
+<v Speaker 3>So in that case, it would be 0.8 to the
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:06:31.839 --> 00:06:32.730
+<v Speaker 1>fourth power.
+
+NOTE CONF {"raw":[99,98]}
+
+00:06:34.119 --> 00:06:34.820
+<v Speaker 1>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:06:34.940 --> 00:06:35.950
+<v Speaker 1>So let's see.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:06:35.959 --> 00:06:39.670
+<v Speaker 1>So this would be five, choose one is easy with
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,91,99,65]}
+
+00:06:39.679 --> 00:06:40.619
+<v Speaker 1>five, choose one.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:06:43.299 --> 00:06:44.359
+<v Speaker 1>That's the spot, right?
+
+NOTE CONF {"raw":[98,97,98,99]}
+
+00:06:44.369 --> 00:06:46.390
+<v Speaker 3>Then you can choose one, it just like the top
+
+NOTE CONF {"raw":[97,99,99,99,99,53,98,62,99,99]}
+
+00:06:46.399 --> 00:06:46.890
+<v Speaker 3>number.
+
+NOTE CONF {"raw":[99]}
+
+00:06:46.989 --> 00:06:54.619
+<v Speaker 3>So that would be five times uh 1.2 to the
+
+NOTE CONF {"raw":[97,99,99,99,99,99,99,95,99,99]}
+
+00:06:54.630 --> 00:06:55.890
+<v Speaker 3>first power just right?
+
+NOTE CONF {"raw":[99,98,96,99]}
+
+00:06:55.899 --> 00:06:59.489
+<v Speaker 3>Like that 1.8 to the fourth power.
+
+NOTE CONF {"raw":[99,99,83,99,99,99,99]}
+
+00:07:06.140 --> 00:07:07.839
+<v Speaker 3>0.8 to the fourth pound.
+
+NOTE CONF {"raw":[99,99,99,98,65]}
+
+00:07:07.850 --> 00:07:10.119
+<v Speaker 3>This is, this is where it's, it's a real good
+
+NOTE CONF {"raw":[99,99,99,99,61,31,99,99,99,99]}
+
+00:07:10.130 --> 00:07:12.179
+<v Speaker 3>idea to bring your calculators to classes.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,98]}
+
+00:07:12.679 --> 00:07:20.670
+<v Speaker 1>So now you have zero, 044096.
+
+NOTE CONF {"raw":[99,96,51,54,98,59]}
+
+00:07:22.029 --> 00:07:22.390
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:07:22.399 --> 00:07:22.929
+<v Speaker 2>Good.
+
+NOTE CONF {"raw":[99]}
+
+00:07:23.140 --> 00:07:25.640
+<v Speaker 1>And then what do you get when you multiply those
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:07:25.649 --> 00:07:27.250
+<v Speaker 3>three numbers?
+
+NOTE CONF {"raw":[99,99]}
+
+00:07:28.970 --> 00:07:32.750
+<v Speaker 2>See, I think it's just this number, it's five times
+
+NOTE CONF {"raw":[85,99,99,99,99,99,99,65,99,92]}
+
+00:07:32.760 --> 00:07:33.850
+<v Speaker 2>point two is one.
+
+NOTE CONF {"raw":[99,99,97,99]}
+
+00:07:34.350 --> 00:07:39.690
+<v Speaker 3>So, so this is zero point 40, no, Citrus.
+
+NOTE CONF {"raw":[50,99,99,99,99,99,44,99,40]}
+
+00:07:41.339 --> 00:07:41.899
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:07:41.929 --> 00:07:45.040
+<v Speaker 2>So that's finding the probability X is one.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,96,99]}
+
+00:07:45.049 --> 00:07:50.470
+<v Speaker 1>Now, if we wanted the probability X is less than
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99,99,99,99]}
+
+00:07:50.480 --> 00:07:51.049
+<v Speaker 2>three.
+
+NOTE CONF {"raw":[99]}
+
+00:07:52.529 --> 00:07:52.950
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:07:52.959 --> 00:07:56.470
+<v Speaker 2>So here, well, you have to keep in mind that
+
+NOTE CONF {"raw":[99,99,92,99,99,99,99,99,99,99]}
+
+00:07:58.179 --> 00:08:00.420
+<v Speaker 3>X is the street.
+
+NOTE CONF {"raw":[99,99,79,91]}
+
+00:08:01.899 --> 00:08:05.799
+<v Speaker 3>So if it's less than three, that means it could
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:08:05.809 --> 00:08:08.549
+<v Speaker 3>be two, could be one, could be zero.
+
+NOTE CONF {"raw":[99,99,73,99,99,64,99,98]}
+
+00:08:09.600 --> 00:08:12.149
+<v Speaker 3>So, so here we wanna think.
+
+NOTE CONF {"raw":[98,99,99,99,98,99]}
+
+00:08:12.160 --> 00:08:15.200
+<v Speaker 3>All right, so this is equal to the probability, let's
+
+NOTE CONF {"raw":[99,98,99,99,99,99,99,99,99,99]}
+
+00:08:15.209 --> 00:08:16.859
+<v Speaker 1>say X is zero.
+
+NOTE CONF {"raw":[99,99,93,99]}
+
+00:08:18.239 --> 00:08:20.950
+<v Speaker 2>What's the probability X 51?
+
+NOTE CONF {"raw":[40,99,99,94,89]}
+
+00:08:22.519 --> 00:08:25.609
+<v Speaker 2>The probability X there's two.
+
+NOTE CONF {"raw":[59,99,73,84,99]}
+
+00:08:28.149 --> 00:08:28.769
+<v Speaker 2>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:08:29.959 --> 00:08:31.769
+<v Speaker 1>We did one of these up here.
+
+NOTE CONF {"raw":[54,51,99,99,99,99,99]}
+
+00:08:32.150 --> 00:08:36.960
+<v Speaker 3>Um The probability X is zero.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:08:37.179 --> 00:08:37.359
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:08:37.830 --> 00:08:44.710
+<v Speaker 3>Well, that would be 520 and then we would have
+
+NOTE CONF {"raw":[99,99,99,99,98,99,99,99,99,99]}
+
+00:08:44.719 --> 00:08:50.679
+<v Speaker 3>the point two to the zero, let's say 0.8 percent
+
+NOTE CONF {"raw":[81,99,99,99,99,99,99,99,99,77]}
+
+00:08:53.070 --> 00:08:56.809
+<v Speaker 3>plus the probability X is one which I'm just going
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:08:56.820 --> 00:08:57.599
+<v Speaker 3>to put in here.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:08:57.609 --> 00:09:06.030
+<v Speaker 1>Zero 0.4096 plus the probability X true.
+
+NOTE CONF {"raw":[99,99,76,72,99,99,99]}
+
+00:09:06.820 --> 00:09:11.729
+<v Speaker 2>So that would be five, choose two and we would
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:09:11.739 --> 00:09:19.799
+<v Speaker 2>have 0.2 squares plus 0.8.
+
+NOTE CONF {"raw":[99,99,72,99,99]}
+
+00:09:23.780 --> 00:09:24.510
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+00:09:25.260 --> 00:09:37.099
+<v Speaker 2>So uh CFI 152, zero, if a then choose zero,
+
+NOTE CONF {"raw":[99,99,27,49,99,81,99,71,99,99]}
+
+00:09:37.150 --> 00:09:41.289
+<v Speaker 3>A two zero is one, right?
+
+NOTE CONF {"raw":[94,36,99,99,98,99]}
+
+00:09:41.320 --> 00:09:44.570
+<v Speaker 2>We put it in the form you get one 0.2
+
+NOTE CONF {"raw":[48,99,95,48,66,53,44,60,99,99]}
+
+00:09:44.580 --> 00:09:46.299
+<v Speaker 1>to the zero is one.
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+00:09:46.640 --> 00:09:55.950
+<v Speaker 3>So this is just point A yeah, plus 0.4096.
+
+NOTE CONF {"raw":[78,99,99,98,99,63,55,84,99]}
+
+00:09:55.960 --> 00:10:02.880
+<v Speaker 2>We work that one out and I choose two.
+
+NOTE CONF {"raw":[95,99,99,99,99,75,99,99,99]}
+
+00:10:05.270 --> 00:10:05.969
+<v Speaker 2>You know that one.
+
+NOTE CONF {"raw":[49,96,99,99]}
+
+00:10:06.280 --> 00:10:07.710
+<v Speaker 2>That's five shoes too.
+
+NOTE CONF {"raw":[71,97,40,53]}
+
+00:10:09.549 --> 00:10:11.729
+<v Speaker 2>That was where no, it comes up a lot.
+
+NOTE CONF {"raw":[99,98,96,90,99,99,99,99,99]}
+
+00:10:17.190 --> 00:10:19.690
+<v Speaker 2>Well, you had five times 4 to 3.
+
+NOTE CONF {"raw":[98,99,90,99,99,99,92,99]}
+
+00:10:19.700 --> 00:10:21.409
+<v Speaker 2>Factorial cancers.
+
+NOTE CONF {"raw":[4,84]}
+
+00:10:21.599 --> 00:10:28.840
+<v Speaker 2>And so it's five times 4/2 you get, and let's
+
+NOTE CONF {"raw":[99,99,78,99,99,99,99,55,92,99]}
+
+00:10:28.849 --> 00:10:37.280
+<v Speaker 2>say times 0.2 where she probably just work that 0.2
+
+NOTE CONF {"raw":[99,98,99,98,60,99,99,99,99,99]}
+
+00:10:37.289 --> 00:10:39.679
+<v Speaker 2>square is what?
+
+NOTE CONF {"raw":[99,97,87]}
+
+00:10:41.130 --> 00:10:42.059
+<v Speaker 2>One of four?
+
+NOTE CONF {"raw":[92,54,92]}
+
+00:10:42.070 --> 00:10:42.349
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:10:54.500 --> 00:10:56.309
+<v Speaker 2>0 45 right?
+
+NOTE CONF {"raw":[99,90,59]}
+
+00:10:58.049 --> 00:11:01.390
+<v Speaker 2>And point eight to the third tower.
+
+NOTE CONF {"raw":[95,99,99,99,99,99,74]}
+
+00:11:03.710 --> 00:11:03.770
+<v Speaker 0>Ok.
+
+NOTE CONF {"raw":[50]}
+
+00:11:05.190 --> 00:11:10.419
+<v Speaker 2>0.5 0.2 0.512.
+
+NOTE CONF {"raw":[99,97,99]}
+
+00:11:10.429 --> 00:11:11.039
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:11:12.289 --> 00:11:14.059
+<v Speaker 1>Well, you can see we have a little bit of
+
+NOTE CONF {"raw":[67,98,45,99,74,99,99,99,99,99]}
+
+00:11:14.500 --> 00:11:18.500
+<v Speaker 2>number crunching to do with the calculator question yet.
+
+NOTE CONF {"raw":[99,98,99,99,68,26,63,99,90]}
+
+00:11:19.489 --> 00:11:25.039
+<v Speaker 0>We on the phone, it's one minus P So if
+
+NOTE CONF {"raw":[72,36,72,69,99,99,99,99,99,99]}
+
+00:11:25.049 --> 00:11:29.659
+<v Speaker 3>you go back to this formula that I showed you
+
+NOTE CONF {"raw":[99,99,99,99,99,99,98,99,99,99]}
+
+00:11:29.669 --> 00:11:30.739
+<v Speaker 1>a couple of minutes ago.
+
+NOTE CONF {"raw":[99,99,92,99,99]}
+
+00:11:32.159 --> 00:11:37.359
+<v Speaker 2>It and your X to the at and then one
+
+NOTE CONF {"raw":[93,54,53,71,98,99,70,99,99,99]}
+
+00:11:37.369 --> 00:11:40.109
+<v Speaker 2>minus P within my designs.
+
+NOTE CONF {"raw":[99,99,69,74,40]}
+
+00:11:41.000 --> 00:11:44.869
+<v Speaker 1>So this problem our, he was going to the one
+
+NOTE CONF {"raw":[99,99,99,72,36,80,50,76,99,99]}
+
+00:11:44.880 --> 00:11:46.960
+<v Speaker 2>minus 0.2 is the 0.8.
+
+NOTE CONF {"raw":[98,99,99,99,99]}
+
+00:11:52.590 --> 00:11:54.489
+<v Speaker 0>So the month you have to the bus so you
+
+NOTE CONF {"raw":[99,80,58,82,65,98,67,74,36,89]}
+
+00:11:54.530 --> 00:11:55.200
+<v Speaker 0>just had to fall.
+
+NOTE CONF {"raw":[99,60,51,54]}
+
+00:11:56.609 --> 00:11:57.049
+<v Speaker 3>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+00:11:57.059 --> 00:11:57.289
+<v Speaker 3>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+00:11:57.299 --> 00:11:59.890
+<v Speaker 3>Yeah, the probability X is less than three.
+
+NOTE CONF {"raw":[89,99,99,99,99,99,99,99]}
+
+00:12:00.799 --> 00:12:03.650
+<v Speaker 3>You're just adding all the cases for X.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:12:03.989 --> 00:12:07.979
+<v Speaker 2>So X could be, you know, 01 or two.
+
+NOTE CONF {"raw":[99,99,91,99,98,98,99,99,99]}
+
+00:12:09.059 --> 00:12:13.169
+<v Speaker 2>Yeah, probability mass function.
+
+NOTE CONF {"raw":[65,99,99,99]}
+
+00:12:14.250 --> 00:12:14.789
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:12:15.270 --> 00:12:18.030
+<v Speaker 2>Or you can just bring it as a probability function,
+
+NOTE CONF {"raw":[99,99,76,99,73,96,99,99,99,99]}
+
+00:12:20.080 --> 00:12:25.440
+<v Speaker 3>but it, it will be different when we're doing continuous.
+
+NOTE CONF {"raw":[99,78,99,99,99,99,99,94,99,77]}
+
+00:12:27.200 --> 00:12:30.770
+<v Speaker 2>So, so one called a PDF and the other called
+
+NOTE CONF {"raw":[99,82,99,77,76,63,99,99,99,86]}
+
+00:12:30.780 --> 00:12:34.960
+<v Speaker 1>PM F, right?
+
+NOTE CONF {"raw":[99,99,95]}
+
+00:12:35.030 --> 00:12:39.669
+<v Speaker 3>So when we work these out and add everything up,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:12:40.429 --> 00:12:45.630
+<v Speaker 3>anybody have a number you should get, I have it
+
+NOTE CONF {"raw":[99,99,99,99,73,99,99,99,99,99]}
+
+00:12:45.640 --> 00:12:46.700
+<v Speaker 2>over here.
+
+NOTE CONF {"raw":[99,99]}
+
+00:12:46.880 --> 00:12:52.909
+<v Speaker 2>0.9521 0.9421.
+
+NOTE CONF {"raw":[99,99]}
+
+00:13:06.760 --> 00:13:07.260
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:13:07.270 --> 00:13:08.760
+<v Speaker 1>So this is what you want to get through that.
+
+NOTE CONF {"raw":[99,99,99,99,99,58,54,98,98,89]}
+
+00:13:08.770 --> 00:13:11.140
+<v Speaker 2>This is the sort of thing we'll do on the
+
+NOTE CONF {"raw":[99,99,93,99,99,99,95,99,99,99]}
+
+00:13:11.150 --> 00:13:11.760
+<v Speaker 1>test.
+
+NOTE CONF {"raw":[99]}
+
+00:13:11.950 --> 00:13:14.570
+<v Speaker 3>They might have several case, not too many cases.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99]}
+
+00:13:14.619 --> 00:13:17.580
+<v Speaker 3>Uh But sometimes it's just, you know, this is, this
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:13:17.590 --> 00:13:20.700
+<v Speaker 3>is what I call an exact probability uh where you
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:13:20.710 --> 00:13:24.219
+<v Speaker 1>have equals here, you have to do a few cases.
+
+NOTE CONF {"raw":[93,99,99,99,99,99,99,99,99,99]}
+
+00:13:26.909 --> 00:13:27.280
+<v Speaker 3>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:13:27.289 --> 00:13:32.969
+<v Speaker 3>Now, the mean for binomial, I know you said this,
+
+NOTE CONF {"raw":[99,99,99,99,95,80,39,83,99,99]}
+
+00:13:33.450 --> 00:13:36.190
+<v Speaker 2>uh hang it up to here.
+
+NOTE CONF {"raw":[99,54,54,99,98,80]}
+
+00:13:42.229 --> 00:13:44.250
+<v Speaker 2>It said somewhere up here.
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+00:13:45.989 --> 00:13:48.309
+<v Speaker 2>If not, I'll just, I'm just gonna point I don't
+
+NOTE CONF {"raw":[95,99,38,95,79,99,70,96,59,26]}
+
+00:13:48.510 --> 00:13:48.630
+<v Speaker 1>need it.
+
+NOTE CONF {"raw":[67,92]}
+
+00:13:48.890 --> 00:13:54.219
+<v Speaker 1>So the need for Bonal has this nice simple formula
+
+NOTE CONF {"raw":[99,99,77,99,0,97,99,99,99,99]}
+
+00:13:54.270 --> 00:13:56.710
+<v Speaker 3>U is equal to NP.
+
+NOTE CONF {"raw":[99,97,99,99,98]}
+
+00:13:57.080 --> 00:14:02.530
+<v Speaker 3>Um So, so if we want to mean it's N
+
+NOTE CONF {"raw":[95,99,97,99,99,99,99,99,93,99]}
+
+00:14:02.539 --> 00:14:08.450
+<v Speaker 1>times P and in this case N is five and
+
+NOTE CONF {"raw":[99,96,99,99,99,99,99,99,99,99]}
+
+00:14:08.460 --> 00:14:12.010
+<v Speaker 3>he is point two, so the me would be one.
+
+NOTE CONF {"raw":[68,99,99,99,99,99,81,98,99,97]}
+
+00:14:14.280 --> 00:14:14.820
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:14:15.030 --> 00:14:17.400
+<v Speaker 1>It's just, you know, the idea is if, if this
+
+NOTE CONF {"raw":[77,99,99,99,99,99,99,99,90,99]}
+
+00:14:17.409 --> 00:14:19.969
+<v Speaker 3>was an experiment and you repeated it over and over
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:14:19.979 --> 00:14:23.479
+<v Speaker 2>and over again, your average X value would be one.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:14:23.489 --> 00:14:29.320
+<v Speaker 3>Now the standard deviation you will get the first, let's
+
+NOTE CONF {"raw":[99,99,99,99,99,85,98,41,99,56]}
+
+00:14:29.340 --> 00:14:36.070
+<v Speaker 1>say we very, the variance is N and P and
+
+NOTE CONF {"raw":[42,48,40,99,95,99,99,90,99,51]}
+
+00:14:36.080 --> 00:14:40.849
+<v Speaker 2>one mine is OK.
+
+NOTE CONF {"raw":[82,61,55,99]}
+
+00:14:40.859 --> 00:14:45.419
+<v Speaker 2>So now we can put in, we get five, he
+
+NOTE CONF {"raw":[99,99,99,76,99,99,99,87,99,96]}
+
+00:14:45.429 --> 00:14:50.809
+<v Speaker 3>is 0.2 and one minus P would be point eight.
+
+NOTE CONF {"raw":[99,99,99,99,99,95,94,78,99,99]}
+
+00:14:53.359 --> 00:14:56.710
+<v Speaker 2>And we know that five and 42 is the one.
+
+NOTE CONF {"raw":[65,85,99,99,99,98,98,99,69,99]}
+
+00:14:57.010 --> 00:15:03.260
+<v Speaker 2>So this just gives us, but that's the variance.
+
+NOTE CONF {"raw":[99,99,99,99,51,99,99,99,85]}
+
+00:15:03.669 --> 00:15:08.570
+<v Speaker 3>The standard deviation is the square root of that.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,63,67,98]}
+
+00:15:11.580 --> 00:15:14.830
+<v Speaker 1>And remember when you take the square root of a
+
+NOTE CONF {"raw":[99,99,99,99,67,99,99,99,99,99]}
+
+00:15:14.840 --> 00:15:19.840
+<v Speaker 1>number between zero and one, the number actually gets larger,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:15:21.099 --> 00:15:21.659
+<v Speaker 1>right?
+
+NOTE CONF {"raw":[99]}
+
+00:15:22.020 --> 00:15:28.450
+<v Speaker 3>So this is about point nine 0.894.
+
+NOTE CONF {"raw":[99,99,99,80,99,99,99]}
+
+00:15:28.460 --> 00:15:28.820
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:15:29.309 --> 00:15:32.090
+<v Speaker 2>So it's zero and 89.
+
+NOTE CONF {"raw":[99,39,99,99,66]}
+
+00:15:34.530 --> 00:15:35.590
+<v Speaker 2>So where's your skin?
+
+NOTE CONF {"raw":[99,66,99,99]}
+
+00:15:42.690 --> 00:15:43.190
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:15:44.080 --> 00:15:49.729
+<v Speaker 1>So that's, that, that's a basic uh binomial problem.
+
+NOTE CONF {"raw":[98,79,95,99,98,99,98,99,99]}
+
+00:15:50.539 --> 00:15:53.729
+<v Speaker 1>Most of the things that come up from there, what
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,96,99,98]}
+
+00:15:53.739 --> 00:16:00.590
+<v Speaker 2>I want to show you next, let's, this just sort
+
+NOTE CONF {"raw":[99,99,99,99,99,80,98,97,99,98]}
+
+00:16:00.599 --> 00:16:08.469
+<v Speaker 1>of justifies that you get um a probability distribution to
+
+NOTE CONF {"raw":[99,99,99,99,99,99,91,99,99,99]}
+
+00:16:08.479 --> 00:16:09.820
+<v Speaker 2>add up all these things.
+
+NOTE CONF {"raw":[99,92,99,99,99]}
+
+00:16:09.830 --> 00:16:12.479
+<v Speaker 2>But down here is what I want to look at,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:16:14.880 --> 00:16:21.979
+<v Speaker 1>um, when you have numbers where end is large, let's
+
+NOTE CONF {"raw":[95,99,99,99,99,99,90,85,99,98]}
+
+00:16:21.989 --> 00:16:24.630
+<v Speaker 2>say greater than 10.
+
+NOTE CONF {"raw":[99,98,99,99]}
+
+00:16:24.640 --> 00:16:25.090
+<v Speaker 1>Ok.
+
+NOTE CONF {"raw":[99]}
+
+00:16:25.380 --> 00:16:28.530
+<v Speaker 1>Uh, 1520 50 100.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:16:28.770 --> 00:16:31.010
+<v Speaker 1>Um, it, it could be very large.
+
+NOTE CONF {"raw":[81,93,99,99,99,99,99]}
+
+00:16:31.020 --> 00:16:31.590
+<v Speaker 1>Ok.
+
+NOTE CONF {"raw":[99]}
+
+00:16:31.960 --> 00:16:35.099
+<v Speaker 3>We would use some sort of software to find it.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:16:35.679 --> 00:16:38.409
+<v Speaker 3>So I'll, I'll try to focus on our.
+
+NOTE CONF {"raw":[99,99,99,82,79,99,99,57]}
+
+00:16:38.520 --> 00:16:40.890
+<v Speaker 1>Ok, because that's what your book tries to do a
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:16:40.900 --> 00:16:41.530
+<v Speaker 1>little bit.
+
+NOTE CONF {"raw":[99,99]}
+
+00:16:43.080 --> 00:16:47.510
+<v Speaker 3>So for a binomial distribution, if you wanted to calculate
+
+NOTE CONF {"raw":[99,99,98,98,99,99,99,87,99,99]}
+
+00:16:47.520 --> 00:16:54.169
+<v Speaker 3>certain probabilities, you would start out your, your code with
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:16:54.179 --> 00:16:55.429
+<v Speaker 3>AD OK.
+
+NOTE CONF {"raw":[99,99]}
+
+00:16:55.669 --> 00:16:59.940
+<v Speaker 3>D is used when you want the exact probability.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99]}
+
+00:17:01.369 --> 00:17:04.819
+<v Speaker 3>So to use the language probability, if you wanted to
+
+NOTE CONF {"raw":[99,54,99,89,99,99,99,99,99,99]}
+
+00:17:04.829 --> 00:17:09.229
+<v Speaker 3>use sort of your PM F to use D, OK,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,95,99,66,99]}
+
+00:17:09.808 --> 00:17:14.818
+<v Speaker 3>if you wanted to find something like the probability that
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:17:14.828 --> 00:17:16.879
+<v Speaker 3>the X was, was less than three.
+
+NOTE CONF {"raw":[73,99,49,99,99,99,99]}
+
+00:17:16.889 --> 00:17:17.379
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:17:17.479 --> 00:17:21.060
+<v Speaker 1>Here you would use the C DS, there would be
+
+NOTE CONF {"raw":[99,99,95,99,99,99,42,95,97,99]}
+
+00:17:21.069 --> 00:17:24.060
+<v Speaker 1>a few in practical only you were only going sort
+
+NOTE CONF {"raw":[99,94,56,0,99,98,81,99,94,99]}
+
+00:17:24.069 --> 00:17:25.130
+<v Speaker 3>of up to two.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:17:26.109 --> 00:17:26.688
+<v Speaker 1>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:17:27.400 --> 00:17:35.550
+<v Speaker 3>So let's take a look at an example using R
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,97]}
+
+00:17:35.569 --> 00:17:36.099
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:17:36.469 --> 00:17:38.140
+<v Speaker 1>Here's what we, we'll look at a couple.
+
+NOTE CONF {"raw":[99,86,88,92,99,99,99,99]}
+
+00:17:38.609 --> 00:17:46.510
+<v Speaker 1>Um So, so this one here, um let's say X
+
+NOTE CONF {"raw":[97,99,99,99,99,99,99,99,99,78]}
+
+00:17:46.680 --> 00:17:53.709
+<v Speaker 3>of binomial and N is 12, he is 0.3.
+
+NOTE CONF {"raw":[32,37,99,98,84,99,98,99,99]}
+
+00:17:55.280 --> 00:18:02.349
+<v Speaker 2>So, so put that over here, the X say X,
+
+NOTE CONF {"raw":[99,99,99,99,97,89,64,99,65,99]}
+
+00:18:06.939 --> 00:18:11.489
+<v Speaker 2>you find it on me, let's say 10 is 12
+
+NOTE CONF {"raw":[90,88,55,57,48,99,99,55,78,99]}
+
+00:18:13.160 --> 00:18:21.310
+<v Speaker 2>and P you said here is 0.3 zero point if
+
+NOTE CONF {"raw":[99,99,87,98,83,32,99,99,99,99]}
+
+00:18:21.319 --> 00:18:28.829
+<v Speaker 2>I wanted to fall probability that X is less than,
+
+NOTE CONF {"raw":[99,98,99,64,99,99,71,99,99,99]}
+
+00:18:28.839 --> 00:18:35.040
+<v Speaker 1>or equal to seven, right?
+
+NOTE CONF {"raw":[99,99,99,85,99]}
+
+00:18:35.050 --> 00:18:40.219
+<v Speaker 3>So if you were doing this, let's say, you know,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:18:40.229 --> 00:18:43.699
+<v Speaker 3>pencil or paper pencil on a calculator.
+
+NOTE CONF {"raw":[99,99,99,99,75,99,99]}
+
+00:18:43.949 --> 00:18:46.329
+<v Speaker 3>You would have to look at the cases where it's
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:18:46.339 --> 00:18:49.260
+<v Speaker 3>012345, 67.
+
+NOTE CONF {"raw":[49,66]}
+
+00:18:50.380 --> 00:18:50.839
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+00:18:50.849 --> 00:18:52.020
+<v Speaker 2>Work them out with the form.
+
+NOTE CONF {"raw":[99,99,99,99,79,99]}
+
+00:18:52.030 --> 00:18:52.319
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+00:18:52.329 --> 00:18:55.310
+<v Speaker 2>So that, that's a little long p, it's doable but
+
+NOTE CONF {"raw":[99,99,99,99,99,97,45,53,68,99]}
+
+00:18:55.319 --> 00:19:00.660
+<v Speaker 3>it's long and T, yeah, let's say we have a
+
+NOTE CONF {"raw":[90,99,87,52,67,99,99,99,99,99]}
+
+00:19:00.670 --> 00:19:01.739
+<v Speaker 3>technology.
+
+NOTE CONF {"raw":[99]}
+
+00:19:02.099 --> 00:19:05.660
+<v Speaker 1>Um, we'll do it with R but a lot of
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:19:05.670 --> 00:19:07.660
+<v Speaker 3>the other technologies work the same way.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:19:07.780 --> 00:19:11.810
+<v Speaker 3>So it might have no sort of calculators do probabilities
+
+NOTE CONF {"raw":[99,82,99,99,89,99,99,99,83,99]}
+
+00:19:11.819 --> 00:19:14.290
+<v Speaker 3>with the distributions or, or Excel.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:19:14.300 --> 00:19:14.920
+<v Speaker 3>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:19:14.969 --> 00:19:15.979
+<v Speaker 3>That works also.
+
+NOTE CONF {"raw":[93,99,99]}
+
+00:19:15.989 --> 00:19:18.699
+<v Speaker 3>But I, I'll show you with R, let me clean
+
+NOTE CONF {"raw":[99,82,99,99,99,99,98,98,95,99]}
+
+00:19:18.709 --> 00:19:21.239
+<v Speaker 3>up this mess, take the broom out and sweep.
+
+NOTE CONF {"raw":[99,99,59,99,99,99,99,99,85]}
+
+00:19:21.939 --> 00:19:22.719
+<v Speaker 3>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:19:23.160 --> 00:19:27.680
+<v Speaker 3>So what I would do here is, first of all,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:19:27.689 --> 00:19:31.209
+<v Speaker 3>you have to think is this exact or is it
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:19:31.219 --> 00:19:37.290
+<v Speaker 3>cumulative, exact is when you have an equal sign, cumulative
+
+NOTE CONF {"raw":[67,99,99,99,99,99,99,99,99,99]}
+
+00:19:37.300 --> 00:19:39.109
+<v Speaker 1>is when you have a less than an equal two?
+
+NOTE CONF {"raw":[99,99,99,99,85,99,99,93,99,73]}
+
+00:19:39.180 --> 00:19:39.449
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:19:39.459 --> 00:19:41.209
+<v Speaker 1>So it's cumulative.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:19:41.260 --> 00:19:47.079
+<v Speaker 3>Remember this thing I just told you, yeah, you have
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,66,99,99]}
+
+00:19:47.089 --> 00:19:50.270
+<v Speaker 3>to start out with P when it's cumulative.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,91,0]}
+
+00:19:51.189 --> 00:19:51.319
+<v Speaker 1>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:19:51.420 --> 00:19:55.170
+<v Speaker 1>And this is true for all, all the discrete probabilities,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,98,99]}
+
+00:19:55.180 --> 00:19:55.640
+<v Speaker 3>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:19:55.739 --> 00:20:00.229
+<v Speaker 3>This little um D versus P works, you know, in
+
+NOTE CONF {"raw":[99,99,96,70,99,99,99,99,99,99]}
+
+00:20:00.239 --> 00:20:00.920
+<v Speaker 3>R.
+
+NOTE CONF {"raw":[99]}
+
+00:20:00.930 --> 00:20:08.479
+<v Speaker 3>So I would put P I know now we are,
+
+NOTE CONF {"raw":[99,99,99,99,99,0,37,86,45,48]}
+
+00:20:08.489 --> 00:20:13.339
+<v Speaker 1>it's just PB and sort of prompts you a little
+
+NOTE CONF {"raw":[82,95,61,99,99,99,99,99,99,99]}
+
+00:20:13.349 --> 00:20:13.770
+<v Speaker 1>bit.
+
+NOTE CONF {"raw":[99]}
+
+00:20:14.119 --> 00:20:19.599
+<v Speaker 2>Um So, so typically, you know, well, art puts it
+
+NOTE CONF {"raw":[99,99,99,99,99,99,98,98,99,67]}
+
+00:20:19.609 --> 00:20:20.579
+<v Speaker 1>in a Q there.
+
+NOTE CONF {"raw":[61,99,92,95]}
+
+00:20:20.810 --> 00:20:26.829
+<v Speaker 3>Um This first value is, is what most software we
+
+NOTE CONF {"raw":[99,98,99,99,57,99,99,99,99,90]}
+
+00:20:26.839 --> 00:20:28.400
+<v Speaker 3>call you on the X value.
+
+NOTE CONF {"raw":[52,81,93,99,99,90]}
+
+00:20:28.530 --> 00:20:30.089
+<v Speaker 1>The first thing you put in here would be the
+
+NOTE CONF {"raw":[92,99,99,82,99,97,99,99,99,99]}
+
+00:20:30.099 --> 00:20:30.609
+<v Speaker 1>set.
+
+NOTE CONF {"raw":[85]}
+
+00:20:33.290 --> 00:20:37.390
+<v Speaker 2>So I put in seven the size, well, that, that's
+
+NOTE CONF {"raw":[46,94,76,97,99,99,99,93,87,99]}
+
+00:20:37.400 --> 00:20:39.780
+<v Speaker 3>n that would be 12.
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+00:20:40.930 --> 00:20:46.069
+<v Speaker 1>Um, and then the probability, that's the probability of success
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:20:46.189 --> 00:20:49.270
+<v Speaker 2>that would be 0.3.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:20:52.219 --> 00:20:55.250
+<v Speaker 2>And that's all we really need.
+
+NOTE CONF {"raw":[88,99,98,99,99,99]}
+
+00:20:55.260 --> 00:20:57.579
+<v Speaker 2>We don't need those other items.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:20:57.640 --> 00:21:02.119
+<v Speaker 2>Um, so let's see, let's not put my count here
+
+NOTE CONF {"raw":[82,99,99,99,99,99,99,80,94,99]}
+
+00:21:02.250 --> 00:21:03.280
+<v Speaker 2>and then we hit.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:21:04.020 --> 00:21:04.800
+<v Speaker 1>Thank you.
+
+NOTE CONF {"raw":[99,99]}
+
+00:21:05.689 --> 00:21:09.949
+<v Speaker 1>And you get more probability 0.9905.
+
+NOTE CONF {"raw":[99,99,99,54,99,99]}
+
+00:21:11.930 --> 00:21:15.020
+<v Speaker 1>So, so what did we do?
+
+NOTE CONF {"raw":[99,99,99,88,99,99]}
+
+00:21:15.030 --> 00:21:16.839
+<v Speaker 2>Let's see, we'll write the number here.
+
+NOTE CONF {"raw":[99,99,58,97,99,99,99]}
+
+00:21:16.849 --> 00:21:21.199
+<v Speaker 2>We have 0.9905.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:21:23.359 --> 00:21:31.650
+<v Speaker 2>We use the I 712.
+
+NOTE CONF {"raw":[86,99,91,81,99]}
+
+00:21:32.280 --> 00:21:40.410
+<v Speaker 2>You uh point ok.
+
+NOTE CONF {"raw":[80,57,82,99]}
+
+00:21:40.489 --> 00:21:42.400
+<v Speaker 2>Questions about that.
+
+NOTE CONF {"raw":[99,99,90]}
+
+00:21:43.680 --> 00:21:48.640
+<v Speaker 2>Yeah, let's say we wanted an exact probability.
+
+NOTE CONF {"raw":[99,99,99,99,99,77,99,99]}
+
+00:21:48.650 --> 00:21:49.160
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:21:49.319 --> 00:21:52.369
+<v Speaker 2>So you could see that here in, in part two,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:21:53.589 --> 00:22:03.150
+<v Speaker 1>we want probability uh X is equals.
+
+NOTE CONF {"raw":[99,99,95,92,96,99,98]}
+
+00:22:04.910 --> 00:22:08.369
+<v Speaker 3>So that would just be the, you know, the case
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:22:08.380 --> 00:22:11.969
+<v Speaker 1>where uh you wanna find, you know, be at seven.
+
+NOTE CONF {"raw":[99,99,99,98,99,99,98,55,51,99]}
+
+00:22:13.599 --> 00:22:15.760
+<v Speaker 1>Now, that would be a fair test question, right?
+
+NOTE CONF {"raw":[96,99,99,99,99,99,99,99,98]}
+
+00:22:15.969 --> 00:22:17.739
+<v Speaker 3>You know, less than, or equal to on, on a
+
+NOTE CONF {"raw":[99,99,99,99,47,99,98,75,78,95]}
+
+00:22:17.750 --> 00:22:18.119
+<v Speaker 3>test.
+
+NOTE CONF {"raw":[99]}
+
+00:22:18.130 --> 00:22:19.599
+<v Speaker 3>Like I said, you have to do, you know the
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,98]}
+
+00:22:19.609 --> 00:22:22.770
+<v Speaker 3>eight cases which it's not that it's that hard, it's
+
+NOTE CONF {"raw":[99,99,99,88,99,99,97,99,99,95]}
+
+00:22:22.780 --> 00:22:25.000
+<v Speaker 3>just, you know, long and t, so here we have
+
+NOTE CONF {"raw":[99,72,89,99,99,31,88,99,99,73]}
+
+00:22:25.010 --> 00:22:26.930
+<v Speaker 1>three cases that's sort of long enough.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:22:27.089 --> 00:22:27.459
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:22:27.469 --> 00:22:32.869
+<v Speaker 2>But um, but if you need to know this and
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:22:32.880 --> 00:22:36.930
+<v Speaker 3>you wanted to use R, now we would start with
+
+NOTE CONF {"raw":[99,99,99,99,99,99,97,92,97,99]}
+
+00:22:36.939 --> 00:22:45.010
+<v Speaker 3>D so D vinyl and then these inputs are exactly
+
+NOTE CONF {"raw":[88,99,99,95,99,65,99,98,98,95]}
+
+00:22:45.020 --> 00:22:55.430
+<v Speaker 1>the same seven 12 and 0.3 and then we get
+
+NOTE CONF {"raw":[24,85,99,99,99,99,99,99,99,99]}
+
+00:22:55.439 --> 00:22:55.719
+<v Speaker 2>it.
+
+NOTE CONF {"raw":[99]}
+
+00:22:56.489 --> 00:23:01.680
+<v Speaker 2>Uh You see, we got 0.029 uh one, let's say,
+
+NOTE CONF {"raw":[93,96,99,99,91,97,99,85,88,99]}
+
+00:23:06.189 --> 00:23:17.319
+<v Speaker 2>OK, so here you d why?
+
+NOTE CONF {"raw":[99,99,99,46,54,53]}
+
+00:23:18.599 --> 00:23:18.689
+<v Speaker 2>So?
+
+NOTE CONF {"raw":[38]}
+
+00:23:20.109 --> 00:23:30.760
+<v Speaker 2>Well, ok, now let's take a look at another minor
+
+NOTE CONF {"raw":[56,99,99,99,99,99,99,99,99,99]}
+
+00:23:30.770 --> 00:23:31.689
+<v Speaker 2>wrinkle.
+
+NOTE CONF {"raw":[99]}
+
+00:23:33.020 --> 00:23:40.829
+<v Speaker 2>Um let's say we wanted something like this number greater
+
+NOTE CONF {"raw":[78,99,99,99,99,99,99,99,99,99]}
+
+00:23:40.839 --> 00:23:43.989
+<v Speaker 2>than people a pro, right?
+
+NOTE CONF {"raw":[99,99,58,99,99]}
+
+00:23:44.260 --> 00:23:52.089
+<v Speaker 2>So, ok, greater than are equal to self.
+
+NOTE CONF {"raw":[99,54,99,97,99,99,99,77]}
+
+00:23:55.339 --> 00:23:55.390
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[50]}
+
+00:23:56.780 --> 00:23:59.540
+<v Speaker 1>So, so what you need to at least think of,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:23:59.550 --> 00:24:00.599
+<v Speaker 3>I'll write it out.
+
+NOTE CONF {"raw":[39,99,99,99]}
+
+00:24:01.250 --> 00:24:05.550
+<v Speaker 1>But this, this would be the sum of the probability
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,98]}
+
+00:24:05.930 --> 00:24:08.959
+<v Speaker 1>of seven, 89, 1011 and 12.
+
+NOTE CONF {"raw":[45,99,49,99,99,99]}
+
+00:24:11.770 --> 00:24:15.050
+<v Speaker 3>Me, it can't be more than 12, right?
+
+NOTE CONF {"raw":[51,98,99,99,99,99,99,99]}
+
+00:24:15.060 --> 00:24:18.349
+<v Speaker 3>If you're looking for the, you know, the probability of
+
+NOTE CONF {"raw":[60,97,99,99,82,99,99,99,99,99]}
+
+00:24:18.359 --> 00:24:21.550
+<v Speaker 3>seven or more successes in 12 tries.
+
+NOTE CONF {"raw":[99,99,99,99,79,99,42]}
+
+00:24:23.469 --> 00:24:24.010
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:24:24.020 --> 00:24:25.489
+<v Speaker 2>So seven or more.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:24:26.650 --> 00:24:27.219
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:24:27.229 --> 00:24:30.280
+<v Speaker 2>So you wanna include the K seven and you wanna
+
+NOTE CONF {"raw":[99,99,96,99,99,77,99,99,99,93]}
+
+00:24:30.290 --> 00:24:33.760
+<v Speaker 2>go 7897, that's if you were sort of doing it
+
+NOTE CONF {"raw":[99,49,74,99,99,56,99,98,99,99]}
+
+00:24:33.770 --> 00:24:36.270
+<v Speaker 1>out by hand, you would, you know, include all those
+
+NOTE CONF {"raw":[99,99,99,90,99,99,99,99,99,99]}
+
+00:24:36.280 --> 00:24:42.510
+<v Speaker 1>cases if we have a technology to use like our
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,97]}
+
+00:24:42.589 --> 00:24:45.660
+<v Speaker 1>and all, like I said, all of these, you know,
+
+NOTE CONF {"raw":[99,97,99,96,96,99,88,99,99,99]}
+
+00:24:45.680 --> 00:24:49.479
+<v Speaker 3>calculators and software enrollments actually are all the same.
+
+NOTE CONF {"raw":[99,98,99,77,78,71,99,99,99]}
+
+00:24:49.969 --> 00:24:53.689
+<v Speaker 3>Um You have to use the top of it here
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,55,41,97]}
+
+00:24:54.319 --> 00:24:55.900
+<v Speaker 3>and use the CD F.
+
+NOTE CONF {"raw":[99,99,99,99,89]}
+
+00:24:56.079 --> 00:25:02.910
+<v Speaker 3>So, so this would be one minus and have to
+
+NOTE CONF {"raw":[99,99,99,99,99,99,96,99,97,99]}
+
+00:25:02.920 --> 00:25:08.410
+<v Speaker 3>be careful X less than equal to six.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:25:08.510 --> 00:25:10.770
+<v Speaker 3>Well, it would be strictly less than seven or less
+
+NOTE CONF {"raw":[60,99,64,99,99,99,99,99,95,75]}
+
+00:25:10.780 --> 00:25:11.530
+<v Speaker 2>than equal to six.
+
+NOTE CONF {"raw":[71,99,42,99]}
+
+00:25:12.849 --> 00:25:18.660
+<v Speaker 2>The discreetness plays an important role, right?
+
+NOTE CONF {"raw":[99,97,99,99,99,93,99]}
+
+00:25:18.989 --> 00:25:21.099
+<v Speaker 2>So, um, all right.
+
+NOTE CONF {"raw":[99,98,98,98]}
+
+00:25:21.109 --> 00:25:26.959
+<v Speaker 3>So now, right, so if we were doing this.
+
+NOTE CONF {"raw":[99,99,85,47,99,99,99,99,99]}
+
+00:25:27.680 --> 00:25:29.469
+<v Speaker 3>Well, you all right, let me show it to you
+
+NOTE CONF {"raw":[68,54,67,87,75,77,97,98,99,99]}
+
+00:25:29.479 --> 00:25:30.979
+<v Speaker 1>first and I'll write it out there.
+
+NOTE CONF {"raw":[99,55,77,99,99,98,99]}
+
+00:25:35.150 --> 00:25:39.969
+<v Speaker 3>You would have to do one minus.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:25:41.479 --> 00:25:44.020
+<v Speaker 3>Now, do I need an E or A P?
+
+NOTE CONF {"raw":[99,99,99,99,78,96,99,95,99]}
+
+00:25:48.069 --> 00:25:48.209
+<v Speaker 3>You?
+
+NOTE CONF {"raw":[84]}
+
+00:25:48.319 --> 00:25:48.459
+<v Speaker 3>Pee?
+
+NOTE CONF {"raw":[49]}
+
+00:25:48.469 --> 00:25:52.589
+<v Speaker 3>Yeah, because I want the Q uh so one LP
+
+NOTE CONF {"raw":[94,99,99,92,97,94,78,99,99,0]}
+
+00:25:53.489 --> 00:26:03.969
+<v Speaker 1>and then it's final and we said six 12 and
+
+NOTE CONF {"raw":[97,89,34,95,99,99,99,99,99,96]}
+
+00:26:04.000 --> 00:26:17.270
+<v Speaker 2>we still point so we get 0.0386 zero.
+
+NOTE CONF {"raw":[44,38,67,99,99,99,97,99]}
+
+00:26:21.609 --> 00:26:30.020
+<v Speaker 2>So, so here the code would be one minus mm
+
+NOTE CONF {"raw":[88,99,99,99,99,99,99,99,92,40]}
+
+00:26:33.339 --> 00:26:38.969
+<v Speaker 2>final six 01.
+
+NOTE CONF {"raw":[99,99,45]}
+
+00:26:40.339 --> 00:26:42.150
+<v Speaker 1>Now, if you're doing homework and I ask you to
+
+NOTE CONF {"raw":[99,99,93,99,99,99,99,99,99,99]}
+
+00:26:42.160 --> 00:26:47.310
+<v Speaker 3>use R to do a probability um and I say,
+
+NOTE CONF {"raw":[99,99,99,99,96,99,99,99,99,99]}
+
+00:26:47.319 --> 00:26:49.689
+<v Speaker 1>you know, copy and paste the code, I mean, this,
+
+NOTE CONF {"raw":[70,66,99,99,99,99,99,93,54,99]}
+
+00:26:49.699 --> 00:26:51.349
+<v Speaker 1>this is sort of what I want to do.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,64,41]}
+
+00:26:51.660 --> 00:26:55.000
+<v Speaker 1>So, so you could just, you know, in R you
+
+NOTE CONF {"raw":[76,99,99,99,99,99,99,99,99,99]}
+
+00:26:55.010 --> 00:27:00.209
+<v Speaker 1>could just go here and copy or, you know, highlight
+
+NOTE CONF {"raw":[99,99,99,99,99,99,73,99,97,99]}
+
+00:27:00.219 --> 00:27:04.729
+<v Speaker 1>those two things, the mouse, you could hit copy and
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:27:04.739 --> 00:27:09.770
+<v Speaker 2>then you could, you know, paste it um in your,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:27:09.969 --> 00:27:14.969
+<v Speaker 2>your word document, I just put it in a like
+
+NOTE CONF {"raw":[99,99,99,98,98,86,55,70,64,36]}
+
+00:27:15.010 --> 00:27:17.829
+<v Speaker 2>slide here and I hit pace.
+
+NOTE CONF {"raw":[97,99,99,99,99,63]}
+
+00:27:22.380 --> 00:27:24.760
+<v Speaker 3>Sometimes you gotta, you can sort of see it here.
+
+NOTE CONF {"raw":[99,99,75,99,93,99,99,99,99,99]}
+
+00:27:24.890 --> 00:27:27.140
+<v Speaker 3>I don't know why it, when you paste it, it
+
+NOTE CONF {"raw":[99,99,99,99,90,99,99,98,99,99]}
+
+00:27:27.150 --> 00:27:31.109
+<v Speaker 1>comes across being so small but you just have to,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,95,99]}
+
+00:27:33.770 --> 00:27:35.209
+<v Speaker 2>he said that it on me.
+
+NOTE CONF {"raw":[76,97,63,62,49,88]}
+
+00:27:37.709 --> 00:27:38.369
+<v Speaker 2>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:27:38.640 --> 00:27:42.729
+<v Speaker 1>Um And then, you know, if you had something like
+
+NOTE CONF {"raw":[99,99,62,99,99,99,99,99,99,99]}
+
+00:27:42.739 --> 00:27:45.439
+<v Speaker 1>this, it's one other case I have, it's, it's a
+
+NOTE CONF {"raw":[99,33,99,98,99,99,99,55,91,99]}
+
+00:27:45.449 --> 00:27:52.849
+<v Speaker 1>good one to look at, find the probability with X
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,51,99]}
+
+00:27:54.239 --> 00:28:01.089
+<v Speaker 3>is between four and seven, right?
+
+NOTE CONF {"raw":[99,99,99,99,99,48]}
+
+00:28:01.979 --> 00:28:05.619
+<v Speaker 1>So that one you want to first think?
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,97]}
+
+00:28:05.630 --> 00:28:08.420
+<v Speaker 3>All right, I think the case is 45 67.
+
+NOTE CONF {"raw":[99,99,99,90,99,99,99,99,50]}
+
+00:28:09.500 --> 00:28:11.540
+<v Speaker 2>Not that you had to do it out but, but
+
+NOTE CONF {"raw":[99,54,58,78,99,99,99,99,99,99]}
+
+00:28:11.550 --> 00:28:15.880
+<v Speaker 3>if we're doing this with, with art, what you wanna
+
+NOTE CONF {"raw":[99,99,99,99,99,99,81,99,99,98]}
+
+00:28:15.890 --> 00:28:21.810
+<v Speaker 3>do is take everything up to seven.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:28:22.079 --> 00:28:32.439
+<v Speaker 3>So that would be something like this BB 712, 0.3
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,56,99,99]}
+
+00:28:33.209 --> 00:28:37.810
+<v Speaker 2>and then get rid of the cases from 0 to
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:28:37.819 --> 00:28:39.530
+<v Speaker 2>3, right?
+
+NOTE CONF {"raw":[99,98]}
+
+00:28:39.540 --> 00:28:41.810
+<v Speaker 2>Because you want to be left with 4567.
+
+NOTE CONF {"raw":[94,95,54,57,99,99,99,49]}
+
+00:28:42.140 --> 00:28:50.010
+<v Speaker 2>So minus, hey, well, I know six.
+
+NOTE CONF {"raw":[99,91,50,61,99,97,99]}
+
+00:28:50.020 --> 00:28:51.300
+<v Speaker 2>No, not six.
+
+NOTE CONF {"raw":[87,99,99]}
+
+00:28:51.630 --> 00:28:51.989
+<v Speaker 2>Great.
+
+NOTE CONF {"raw":[74]}
+
+00:29:07.910 --> 00:29:08.459
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:29:08.760 --> 00:29:11.709
+<v Speaker 2>And you can see if we can work that out.
+
+NOTE CONF {"raw":[99,99,92,99,99,99,0,99,99,99]}
+
+00:29:11.719 --> 00:29:14.209
+<v Speaker 1>We should get the number up here there.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,89]}
+
+00:29:14.469 --> 00:29:17.229
+<v Speaker 2>Um Yeah.
+
+NOTE CONF {"raw":[96,83]}
+
+00:29:23.829 --> 00:29:24.329
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:29:28.359 --> 00:29:30.550
+<v Speaker 2>And we get it all makes sense good.
+
+NOTE CONF {"raw":[73,99,79,63,99,74,99,99]}
+
+00:29:31.959 --> 00:29:34.959
+<v Speaker 2>Um OK.
+
+NOTE CONF {"raw":[98,99]}
+
+00:29:34.969 --> 00:29:36.199
+<v Speaker 2>So let's see.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:29:39.790 --> 00:29:42.199
+<v Speaker 1>Well, we'll do another one in our uh in a
+
+NOTE CONF {"raw":[83,83,99,99,99,99,99,90,99,99]}
+
+00:29:42.219 --> 00:29:43.089
+<v Speaker 1>little while.
+
+NOTE CONF {"raw":[99,99]}
+
+00:29:43.099 --> 00:29:49.810
+<v Speaker 3>Uh let's say here we have just the, the definition
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:29:49.819 --> 00:29:50.089
+<v Speaker 3>here.
+
+NOTE CONF {"raw":[99]}
+
+00:29:50.099 --> 00:29:51.800
+<v Speaker 3>I mean, I've showed you once but here it is
+
+NOTE CONF {"raw":[99,94,95,99,98,98,99,99,99,99]}
+
+00:29:51.810 --> 00:29:54.930
+<v Speaker 3>again, uh you know, the mean and variance for a
+
+NOTE CONF {"raw":[99,99,99,99,99,99,56,39,97,59]}
+
+00:29:54.939 --> 00:29:56.880
+<v Speaker 1>binomial distribution.
+
+NOTE CONF {"raw":[98,99]}
+
+00:29:57.349 --> 00:30:00.109
+<v Speaker 3>So, so the mean, we call it sometimes the X,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,90,99,56,95]}
+
+00:30:00.119 --> 00:30:05.520
+<v Speaker 3>sometimes U is N times P and the variance is
+
+NOTE CONF {"raw":[99,99,74,99,99,99,99,99,89,99]}
+
+00:30:05.540 --> 00:30:07.859
+<v Speaker 3>anti P one minus P.
+
+NOTE CONF {"raw":[46,98,99,99,96]}
+
+00:30:08.329 --> 00:30:10.819
+<v Speaker 2>So let's say we have something like this.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:30:10.829 --> 00:30:13.699
+<v Speaker 2>It says a, a coin is weighted so that the
+
+NOTE CONF {"raw":[97,98,80,99,88,99,99,99,99,99]}
+
+00:30:13.709 --> 00:30:19.739
+<v Speaker 1>probability of heads is 0.55 hes to 0.45.
+
+NOTE CONF {"raw":[99,99,99,99,99,29,54,99]}
+
+00:30:21.130 --> 00:30:24.310
+<v Speaker 1>The experiment consists of look at the corn two 100
+
+NOTE CONF {"raw":[83,98,99,99,73,93,99,67,99,99]}
+
+00:30:24.319 --> 00:30:30.400
+<v Speaker 3>times when X be the number of heads that occurs.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,84]}
+
+00:30:31.290 --> 00:30:34.349
+<v Speaker 1>What's the average number of heads for that experiment?
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99]}
+
+00:30:38.130 --> 00:30:38.359
+<v Speaker 1>Right?
+
+NOTE CONF {"raw":[98]}
+
+00:30:38.369 --> 00:30:41.540
+<v Speaker 1>So firstly, you should realize, I mean, you know, it's
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:30:41.550 --> 00:30:44.420
+<v Speaker 3>here because it's in the context, but that would be
+
+NOTE CONF {"raw":[99,99,99,99,54,99,99,99,99,99]}
+
+00:30:44.430 --> 00:30:46.300
+<v Speaker 3>a binomial experiment, right?
+
+NOTE CONF {"raw":[99,96,99,99]}
+
+00:30:46.310 --> 00:30:49.319
+<v Speaker 3>Because you flipping a coin and you have two outcomes,
+
+NOTE CONF {"raw":[97,99,65,99,99,98,99,99,99,99]}
+
+00:30:49.329 --> 00:30:50.780
+<v Speaker 2>head heads and tails.
+
+NOTE CONF {"raw":[97,96,99,97]}
+
+00:30:50.810 --> 00:30:53.739
+<v Speaker 2>Um And then you have the dependence.
+
+NOTE CONF {"raw":[99,99,99,99,99,78,51]}
+
+00:30:55.380 --> 00:31:04.550
+<v Speaker 3>So the average number of heads would be what again,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,95]}
+
+00:31:04.560 --> 00:31:07.160
+<v Speaker 3>imagine you're repeating this experiment, you know, over and over
+
+NOTE CONF {"raw":[99,53,99,99,99,99,99,99,99,99]}
+
+00:31:07.170 --> 00:31:07.449
+<v Speaker 3>again.
+
+NOTE CONF {"raw":[99]}
+
+00:31:07.479 --> 00:31:10.189
+<v Speaker 3>Yeah, 100 and 10 left.
+
+NOTE CONF {"raw":[61,99,99,99,80]}
+
+00:31:10.859 --> 00:31:11.650
+<v Speaker 2>Anybody see that.
+
+NOTE CONF {"raw":[67,99,99]}
+
+00:31:11.660 --> 00:31:12.380
+<v Speaker 2>How did you get it?
+
+NOTE CONF {"raw":[99,59,99,95,99]}
+
+00:31:12.520 --> 00:31:15.439
+<v Speaker 1>Um I did 0.55 times 200.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:31:15.619 --> 00:31:16.449
+<v Speaker 2>Yeah, that's right.
+
+NOTE CONF {"raw":[99,71,70]}
+
+00:31:16.459 --> 00:31:19.810
+<v Speaker 1>Yeah, you did N times BN is 200 is point
+
+NOTE CONF {"raw":[99,99,99,99,99,97,89,99,99,99]}
+
+00:31:19.819 --> 00:31:20.599
+<v Speaker 1>55.
+
+NOTE CONF {"raw":[66]}
+
+00:31:20.800 --> 00:31:23.849
+<v Speaker 2>So a 110 and that should make sense.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:31:23.859 --> 00:31:28.359
+<v Speaker 3>This is, this is one of those formulas that it's
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,71]}
+
+00:31:28.369 --> 00:31:30.739
+<v Speaker 1>easy to just, you know, figure out with, with or
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,96,99,99]}
+
+00:31:30.750 --> 00:31:31.920
+<v Speaker 2>without the formula.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:31:32.119 --> 00:31:35.339
+<v Speaker 2>Um What's the variant?
+
+NOTE CONF {"raw":[99,99,99,0]}
+
+00:31:38.380 --> 00:31:38.750
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:31:39.420 --> 00:31:44.719
+<v Speaker 1>So, so the variance for this um everybody should be
+
+NOTE CONF {"raw":[99,99,99,54,99,99,99,99,99,99]}
+
+00:31:44.729 --> 00:32:01.400
+<v Speaker 1>able to figure that out of the variance is N
+
+NOTE CONF {"raw":[99,99,99,99,99,91,98,99,99,99]}
+
+00:32:01.410 --> 00:32:04.780
+<v Speaker 2>times P times one minus P, right?
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99]}
+
+00:32:04.939 --> 00:32:13.489
+<v Speaker 1>So you take them the various and it was 200
+
+NOTE CONF {"raw":[99,75,82,54,74,98,99,95,90,99]}
+
+00:32:15.400 --> 00:32:22.859
+<v Speaker 1>P is 0.551 MP would be 0.45.
+
+NOTE CONF {"raw":[99,99,86,51,99,99,99]}
+
+00:32:24.130 --> 00:32:26.689
+<v Speaker 1>We don't when we multiply those two, I get 100
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:32:26.699 --> 00:32:27.349
+<v Speaker 1>and 10.
+
+NOTE CONF {"raw":[71,99]}
+
+00:32:28.459 --> 00:32:31.729
+<v Speaker 2>Is this 100 and 10 5.45.
+
+NOTE CONF {"raw":[58,86,99,99,99,86]}
+
+00:32:31.739 --> 00:32:32.819
+<v Speaker 2>What do we get from that back?
+
+NOTE CONF {"raw":[99,95,99,99,99,99,65]}
+
+00:32:34.199 --> 00:32:34.890
+<v Speaker 2>Where you at?
+
+NOTE CONF {"raw":[49,63,32]}
+
+00:32:41.540 --> 00:32:44.660
+<v Speaker 2>So switch to all those formulas and again, this is
+
+NOTE CONF {"raw":[96,95,69,90,99,92,73,99,99,99]}
+
+00:32:45.160 --> 00:32:49.229
+<v Speaker 3>the form distribution for, you know, a few reasons that
+
+NOTE CONF {"raw":[93,96,99,99,99,99,99,99,99,66]}
+
+00:32:49.239 --> 00:32:52.680
+<v Speaker 3>there's a lot of discrete situations that get modeled with
+
+NOTE CONF {"raw":[99,99,99,99,84,99,99,99,98,99]}
+
+00:32:52.689 --> 00:32:53.599
+<v Speaker 2>the binomial.
+
+NOTE CONF {"raw":[99,96]}
+
+00:32:53.869 --> 00:32:58.339
+<v Speaker 2>But also just from, you know, the course perspective, this
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:32:58.349 --> 00:33:03.680
+<v Speaker 1>comes up again in like chapters six, chapter seven, chapter
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:33:03.689 --> 00:33:06.280
+<v Speaker 3>eight, it comes up over and over and over again.
+
+NOTE CONF {"raw":[99,99,99,99,99,84,99,99,99,99]}
+
+00:33:06.300 --> 00:33:06.770
+<v Speaker 3>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:33:06.890 --> 00:33:11.400
+<v Speaker 3>So, and, and these formulas come up uh especially so,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:33:11.410 --> 00:33:13.050
+<v Speaker 3>so those are good to know.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:33:15.949 --> 00:33:18.550
+<v Speaker 1>All right, let's see here.
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+00:33:20.050 --> 00:33:26.310
+<v Speaker 2>No, wanna do that one.
+
+NOTE CONF {"raw":[80,71,81,99,99]}
+
+00:33:26.699 --> 00:33:29.280
+<v Speaker 2>I will skip that one because I have a bunch
+
+NOTE CONF {"raw":[99,99,99,99,75,63,99,95,99,99]}
+
+00:33:29.290 --> 00:33:30.459
+<v Speaker 2>of these that we'll look at.
+
+NOTE CONF {"raw":[99,99,99,90,99,99]}
+
+00:33:30.469 --> 00:33:34.660
+<v Speaker 2>But um histograms for the binomial, if you were to
+
+NOTE CONF {"raw":[99,79,99,98,99,99,99,99,99,99]}
+
+00:33:34.670 --> 00:33:39.880
+<v Speaker 3>make some sort of histogram or bar charts, then you
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,74,99,99]}
+
+00:33:39.890 --> 00:33:41.839
+<v Speaker 3>might, you know, notice a couple of things.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,80,99]}
+
+00:33:41.849 --> 00:33:46.390
+<v Speaker 3>I mean, consider the case when N is 15, if
+
+NOTE CONF {"raw":[99,99,99,99,99,99,98,99,99,91]}
+
+00:33:46.400 --> 00:33:49.920
+<v Speaker 3>P is, let's say small about 0.2.
+
+NOTE CONF {"raw":[98,99,98,99,99,99,99]}
+
+00:33:50.589 --> 00:33:51.380
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:33:51.709 --> 00:33:55.869
+<v Speaker 1>And you made a chart of the probabilities that you
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:33:55.880 --> 00:33:57.689
+<v Speaker 1>get at different values.
+
+NOTE CONF {"raw":[99,79,99,99]}
+
+00:33:57.790 --> 00:33:58.380
+<v Speaker 2>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:33:58.569 --> 00:34:00.660
+<v Speaker 2>You get something that looks like this.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:34:01.890 --> 00:34:02.430
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:34:02.530 --> 00:34:04.939
+<v Speaker 2>What can we say about this distribution?
+
+NOTE CONF {"raw":[99,77,99,99,99,99,99]}
+
+00:34:05.359 --> 00:34:08.350
+<v Speaker 2>Let's see, somewhat skewed, not skewed, right?
+
+NOTE CONF {"raw":[91,98,85,99,99,99,99]}
+
+00:34:09.370 --> 00:34:13.760
+<v Speaker 3>If he is, you know, on the large side 0.8.
+
+NOTE CONF {"raw":[99,96,99,99,99,99,54,99,99,99]}
+
+00:34:14.378 --> 00:34:16.719
+<v Speaker 3>So the skew the other way, let's skew.
+
+NOTE CONF {"raw":[97,54,97,99,99,99,63,93]}
+
+00:34:17.908 --> 00:34:19.790
+<v Speaker 1>But if he is sort of in the middle there
+
+NOTE CONF {"raw":[99,99,98,98,99,99,99,99,99,99]}
+
+00:34:19.800 --> 00:34:23.550
+<v Speaker 3>at point five, you get something that's almost vell shaped.
+
+NOTE CONF {"raw":[56,99,99,82,94,99,99,99,73,91]}
+
+00:34:24.438 --> 00:34:25.259
+<v Speaker 2>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:34:25.559 --> 00:34:27.059
+<v Speaker 2>And that's important.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:34:27.069 --> 00:34:27.569
+<v Speaker 1>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:34:27.857 --> 00:34:31.549
+<v Speaker 1>Because what a lot of folks used to do before
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:34:31.559 --> 00:34:35.259
+<v Speaker 1>they had the technology, you know, anywhere to turn, um
+
+NOTE CONF {"raw":[99,99,50,99,94,97,99,99,99,99]}
+
+00:34:36.398 --> 00:34:42.069
+<v Speaker 1>whenever you have large values for end uh you could
+
+NOTE CONF {"raw":[99,99,70,99,99,96,89,90,99,99]}
+
+00:34:42.079 --> 00:34:47.229
+<v Speaker 1>find a binomial probability using a normal distribution called the
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:34:47.239 --> 00:34:49.839
+<v Speaker 3>normal approximation to the binomial.
+
+NOTE CONF {"raw":[99,99,78,99,0]}
+
+00:34:49.979 --> 00:34:51.999
+<v Speaker 3>We're gonna do this, but not until we do the
+
+NOTE CONF {"raw":[99,99,99,99,99,99,94,99,99,99]}
+
+00:34:52.009 --> 00:34:53.168
+<v Speaker 3>normal distribution.
+
+NOTE CONF {"raw":[99,99]}
+
+00:34:53.438 --> 00:34:55.499
+<v Speaker 3>But here you could sort of see why it would
+
+NOTE CONF {"raw":[99,99,99,97,99,99,99,99,99,99]}
+
+00:34:55.509 --> 00:34:59.229
+<v Speaker 1>work because it's very close to being bell shaped.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,53,75]}
+
+00:34:59.529 --> 00:35:05.979
+<v Speaker 2>Um All right, let's check out.
+
+NOTE CONF {"raw":[99,99,99,99,99,94]}
+
+00:35:05.989 --> 00:35:06.939
+<v Speaker 2>Let's see.
+
+NOTE CONF {"raw":[99,99]}
+
+00:35:07.229 --> 00:35:16.610
+<v Speaker 2>Um, we have one, yeah, this is a 51, 5%
+
+NOTE CONF {"raw":[99,68,84,99,75,99,99,97,44,99]}
+
+00:35:17.090 --> 00:35:22.560
+<v Speaker 3>of Americans are afraid of being alone at night, right?
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:35:23.100 --> 00:35:27.719
+<v Speaker 1>If a random sample of 18 Americans is selected on
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,73]}
+
+00:35:27.729 --> 00:35:34.449
+<v Speaker 2>the following probabilities, hey, there's exactly one in the sample.
+
+NOTE CONF {"raw":[99,99,99,73,99,99,99,99,99,99]}
+
+00:35:34.459 --> 00:35:38.110
+<v Speaker 1>I'm afraid to be alone and B there's a low
+
+NOTE CONF {"raw":[51,99,99,99,99,97,99,99,99,99]}
+
+00:35:38.330 --> 00:35:41.110
+<v Speaker 2>at uh at most two.
+
+NOTE CONF {"raw":[56,97,99,99,78]}
+
+00:35:42.659 --> 00:35:43.199
+<v Speaker 3>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:35:43.209 --> 00:35:47.050
+<v Speaker 3>So for one, actually, I I don't have the complete
+
+NOTE CONF {"raw":[99,99,98,99,98,99,99,99,99,99]}
+
+00:35:47.060 --> 00:35:47.510
+<v Speaker 3>solution.
+
+NOTE CONF {"raw":[99]}
+
+00:35:47.520 --> 00:35:49.750
+<v Speaker 3>Let's see if you can work it out.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:35:49.770 --> 00:35:51.659
+<v Speaker 1>Try to get me the number.
+
+NOTE CONF {"raw":[99,98,99,99,99,99]}
+
+00:35:51.669 --> 00:35:55.750
+<v Speaker 3>Um What's the probability that we get?
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:35:55.760 --> 00:35:57.199
+<v Speaker 1>Exactly one?
+
+NOTE CONF {"raw":[99,99]}
+
+00:36:03.120 --> 00:36:04.699
+<v Speaker 2>Yeah, we got 10 is 18.
+
+NOTE CONF {"raw":[53,99,99,99,59,99]}
+
+00:37:13.189 --> 00:37:14.070
+<v Speaker 2>Do they have a number?
+
+NOTE CONF {"raw":[82,99,99,99,99]}
+
+00:37:15.939 --> 00:37:16.709
+<v Speaker 2>What did you get it again?
+
+NOTE CONF {"raw":[98,85,99,99,45,99]}
+
+00:37:18.419 --> 00:37:21.459
+<v Speaker 0>Seven 01.
+
+NOTE CONF {"raw":[96,57]}
+
+00:37:22.120 --> 00:37:32.209
+<v Speaker 2>Mhm Let me ask you that you're pointing 55.
+
+NOTE CONF {"raw":[71,80,76,99,99,99,78,97,66]}
+
+00:37:32.219 --> 00:37:34.979
+<v Speaker 3>So, so we definitely need to do it right?
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99]}
+
+00:37:35.679 --> 00:37:37.899
+<v Speaker 2>Oh, ok.
+
+NOTE CONF {"raw":[55,99]}
+
+00:37:39.090 --> 00:37:45.149
+<v Speaker 2>So we set it up and choose X would be
+
+NOTE CONF {"raw":[99,99,99,99,99,64,75,99,99,99]}
+
+00:37:45.159 --> 00:37:52.050
+<v Speaker 2>18, choose one that I have P to the X
+
+NOTE CONF {"raw":[99,66,99,56,99,99,99,61,99,99]}
+
+00:37:52.060 --> 00:37:59.840
+<v Speaker 3>power, which is one and then one minus P 2.95
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,76,95]}
+
+00:38:00.040 --> 00:38:02.739
+<v Speaker 2>to the NYX 5072.
+
+NOTE CONF {"raw":[89,99,66,78]}
+
+00:38:03.840 --> 00:38:06.239
+<v Speaker 2>And so these, these powers have to add up to
+
+NOTE CONF {"raw":[90,79,99,99,79,99,99,99,99,99]}
+
+00:38:06.250 --> 00:38:06.469
+<v Speaker 2>X.
+
+NOTE CONF {"raw":[95]}
+
+00:38:10.189 --> 00:38:13.989
+<v Speaker 2>So this will just be 18.
+
+NOTE CONF {"raw":[99,99,98,99,99,99]}
+
+00:38:16.189 --> 00:38:21.090
+<v Speaker 1>This will be point 05 and that's gonna be 0.95
+
+NOTE CONF {"raw":[99,99,99,99,96,99,98,95,99,99]}
+
+00:38:21.100 --> 00:38:23.219
+<v Speaker 2>to the 16, that calculator.
+
+NOTE CONF {"raw":[99,97,81,86,43]}
+
+00:38:24.260 --> 00:38:29.739
+<v Speaker 2>Um, let's see, I gotta check it out using R.
+
+NOTE CONF {"raw":[99,99,99,99,96,99,99,99,99,99]}
+
+00:38:32.310 --> 00:38:36.669
+<v Speaker 2>Ok, so we would have, now, is that exact or
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:38:36.679 --> 00:38:39.479
+<v Speaker 2>is it cumulative exact?
+
+NOTE CONF {"raw":[99,98,99,64]}
+
+00:38:39.510 --> 00:38:45.899
+<v Speaker 2>So, d what's going on?
+
+NOTE CONF {"raw":[99,99,64,94,64]}
+
+00:38:49.360 --> 00:38:59.169
+<v Speaker 2>Ee uh b then we want one that's our X
+
+NOTE CONF {"raw":[88,99,35,93,99,99,99,54,56,99]}
+
+00:38:59.179 --> 00:39:09.219
+<v Speaker 2>18 and 0.05 13763.
+
+NOTE CONF {"raw":[99,99,94,83]}
+
+00:39:09.969 --> 00:39:14.879
+<v Speaker 2>Uh So I'm not sure what went wrong here again.
+
+NOTE CONF {"raw":[65,99,99,99,99,99,99,99,99,99]}
+
+00:39:16.250 --> 00:39:16.419
+<v Speaker 3>Yeah.
+
+NOTE CONF {"raw":[96]}
+
+00:39:16.429 --> 00:39:16.649
+<v Speaker 3>yeah.
+
+NOTE CONF {"raw":[72]}
+
+00:39:16.739 --> 00:39:20.729
+<v Speaker 3>Again um this 18 it's gonna be point 05.
+
+NOTE CONF {"raw":[95,64,89,99,76,99,99,99,66]}
+
+00:39:21.149 --> 00:39:24.879
+<v Speaker 2>This is going to be, I don't know, 0.95 to
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,98]}
+
+00:39:24.889 --> 00:39:31.010
+<v Speaker 2>the 17th is tough but we do get 0.37 63.
+
+NOTE CONF {"raw":[99,83,69,83,99,99,99,99,99,66]}
+
+00:39:31.689 --> 00:39:32.409
+<v Speaker 2>Ok?
+
+NOTE CONF {"raw":[99]}
+
+00:39:32.600 --> 00:39:41.229
+<v Speaker 1>And then the second case and of the 18th um
+
+NOTE CONF {"raw":[99,99,95,99,99,95,82,99,92,96]}
+
+00:39:41.239 --> 00:39:46.340
+<v Speaker 2>one of the chances that it's at most two, most
+
+NOTE CONF {"raw":[99,99,99,99,99,3,99,99,99,99]}
+
+00:39:46.350 --> 00:39:48.760
+<v Speaker 1>two people crave to be alone at night.
+
+NOTE CONF {"raw":[99,99,24,99,99,99,99,99]}
+
+00:39:53.500 --> 00:39:57.399
+<v Speaker 2>So you have to look at three cases here.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99]}
+
+00:39:58.229 --> 00:40:03.429
+<v Speaker 1>X equals zero, X equals one and X equals so
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,95]}
+
+00:40:03.439 --> 00:40:07.189
+<v Speaker 2>just rate it like this, the probability of zero, it's
+
+NOTE CONF {"raw":[99,86,98,99,99,95,99,86,99,47]}
+
+00:40:07.199 --> 00:40:08.810
+<v Speaker 2>the probability of one.
+
+NOTE CONF {"raw":[98,99,54,99]}
+
+00:40:10.500 --> 00:40:11.830
+<v Speaker 2>What's the probability of?
+
+NOTE CONF {"raw":[61,99,99,99]}
+
+00:40:17.510 --> 00:40:21.409
+<v Speaker 2>So tell me what she did from that and they
+
+NOTE CONF {"raw":[86,99,99,99,99,56,99,99,69,93]}
+
+00:40:21.419 --> 00:40:23.209
+<v Speaker 1>were using the formula for now.
+
+NOTE CONF {"raw":[88,99,99,99,99,99]}
+
+00:40:24.149 --> 00:40:26.520
+<v Speaker 2>Uh you checking with the heart but I want you
+
+NOTE CONF {"raw":[87,64,91,99,99,99,99,99,99,99]}
+
+00:40:26.530 --> 00:40:28.919
+<v Speaker 2>to practice if you using the for me because like
+
+NOTE CONF {"raw":[99,99,77,61,81,99,52,50,97,99]}
+
+00:40:28.929 --> 00:40:31.209
+<v Speaker 2>I said, that's, that's what we be on the test,
+
+NOTE CONF {"raw":[99,99,99,93,98,71,96,98,67,81]}
+
+00:41:43.310 --> 00:41:44.060
+<v Speaker 2>how we do it now.
+
+NOTE CONF {"raw":[84,99,99,49,51]}
+
+00:41:45.330 --> 00:41:59.439
+<v Speaker 2>Oh yeah, zero points 941 uh 0.19441.
+
+NOTE CONF {"raw":[0,42,99,96,98,95,93]}
+
+00:41:59.520 --> 00:41:59.649
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[98]}
+
+00:42:00.260 --> 00:42:06.679
+<v Speaker 2>Just one right?
+
+NOTE CONF {"raw":[90,99,64]}
+
+00:42:09.060 --> 00:42:17.500
+<v Speaker 2>9419 or 90.9 41.
+
+NOTE CONF {"raw":[99,53,99,55]}
+
+00:42:18.250 --> 00:42:18.649
+<v Speaker 2>No good.
+
+NOTE CONF {"raw":[91,94]}
+
+00:42:19.489 --> 00:42:22.419
+<v Speaker 2>Anybody else is that you got that too?
+
+NOTE CONF {"raw":[83,99,57,94,95,78,99,99]}
+
+00:42:22.459 --> 00:42:22.719
+<v Speaker 1>Ok.
+
+NOTE CONF {"raw":[96]}
+
+00:42:24.550 --> 00:42:30.489
+<v Speaker 2>Um so let's see if you figure out each of
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:42:30.500 --> 00:42:30.770
+<v Speaker 3>these.
+
+NOTE CONF {"raw":[99]}
+
+00:42:30.780 --> 00:42:31.530
+<v Speaker 3>Do you still have it?
+
+NOTE CONF {"raw":[71,99,99,99,99]}
+
+00:42:31.540 --> 00:42:32.610
+<v Speaker 3>Probably zero?
+
+NOTE CONF {"raw":[81,99]}
+
+00:42:33.000 --> 00:42:33.570
+<v Speaker 1>Is what?
+
+NOTE CONF {"raw":[82,99]}
+
+00:42:36.169 --> 00:42:43.729
+<v Speaker 2>Oh yeah um I 520.
+
+NOTE CONF {"raw":[99,97,70,60,74]}
+
+00:42:43.760 --> 00:42:49.020
+<v Speaker 0>Ok so uh 520 is just one can choose zero
+
+NOTE CONF {"raw":[72,62,90,96,99,99,99,39,99,99]}
+
+00:42:49.260 --> 00:42:50.820
+<v Speaker 3>is one but, but I mean the reason why it's
+
+NOTE CONF {"raw":[98,90,98,99,99,99,99,99,99,99]}
+
+00:42:50.830 --> 00:42:59.189
+<v Speaker 3>one is use the definitions there would be five factorial,
+
+NOTE CONF {"raw":[99,99,72,99,93,69,67,98,99,80]}
+
+00:42:59.709 --> 00:43:00.489
+<v Speaker 2>it would be zero.
+
+NOTE CONF {"raw":[87,51,88,99]}
+
+00:43:00.500 --> 00:43:02.899
+<v Speaker 2>Factorial five factorial.
+
+NOTE CONF {"raw":[90,99,73]}
+
+00:43:04.610 --> 00:43:04.959
+<v Speaker 1>What the form?
+
+NOTE CONF {"raw":[39,65,95]}
+
+00:43:05.780 --> 00:43:06.050
+<v Speaker 3>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+00:43:06.060 --> 00:43:11.120
+<v Speaker 3>Yeah, I mean the formula looks like this you 10
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,87,76,92]}
+
+00:43:11.129 --> 00:43:12.969
+<v Speaker 1>to, let's see.
+
+NOTE CONF {"raw":[89,99,89]}
+
+00:43:14.889 --> 00:43:20.459
+<v Speaker 2>Yes, in factorial or ex factorial.
+
+NOTE CONF {"raw":[89,98,60,98,98,49]}
+
+00:43:21.040 --> 00:43:28.879
+<v Speaker 2>Um and mine is what P is zero.
+
+NOTE CONF {"raw":[54,80,86,89,91,99,89,99]}
+
+00:43:30.500 --> 00:43:48.469
+<v Speaker 2>Um Thanks when he was, we did that 13763 and
+
+NOTE CONF {"raw":[0,99,47,19,67,99,99,99,82,99]}
+
+00:43:48.479 --> 00:43:49.270
+<v Speaker 2>D of two.
+
+NOTE CONF {"raw":[48,84,99]}
+
+00:43:50.879 --> 00:43:51.110
+<v Speaker 0>OK.
+
+NOTE CONF {"raw":[70]}
+
+00:43:52.189 --> 00:43:55.530
+<v Speaker 2>1681 grapes.
+
+NOTE CONF {"raw":[79,0]}
+
+00:43:57.320 --> 00:43:57.870
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:43:58.219 --> 00:44:10.969
+<v Speaker 2>And then add them all up and good, good.
+
+NOTE CONF {"raw":[99,91,97,99,97,99,79,55,99]}
+
+00:44:10.979 --> 00:44:11.610
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:44:11.830 --> 00:44:17.840
+<v Speaker 2>Um One more this one that will do with R.
+
+NOTE CONF {"raw":[99,99,97,99,99,98,93,90,83,71]}
+
+00:44:21.090 --> 00:44:25.739
+<v Speaker 3>So let's say this is the final move now and
+
+NOTE CONF {"raw":[99,85,99,70,54,49,97,64,38,97]}
+
+00:44:25.750 --> 00:44:28.260
+<v Speaker 1>it's 58.47.
+
+NOTE CONF {"raw":[91,95]}
+
+00:44:29.979 --> 00:44:33.909
+<v Speaker 2>Find the following using on.
+
+NOTE CONF {"raw":[97,99,99,99,58]}
+
+00:44:34.570 --> 00:44:35.070
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:44:35.610 --> 00:44:42.860
+<v Speaker 2>So we want the first one we want is probability
+
+NOTE CONF {"raw":[99,99,99,94,99,99,99,99,99,99]}
+
+00:44:42.870 --> 00:44:46.689
+<v Speaker 1>X is equal to 35.
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+00:44:47.780 --> 00:44:50.820
+<v Speaker 3>So that would be an exact probability.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:44:51.000 --> 00:44:52.629
+<v Speaker 2>I'm gonna clean that up.
+
+NOTE CONF {"raw":[93,87,99,99,99]}
+
+00:44:53.820 --> 00:45:02.199
+<v Speaker 2>So this would be E by home X is 35
+
+NOTE CONF {"raw":[99,99,99,99,99,62,93,99,99,99]}
+
+00:45:03.820 --> 00:45:09.090
+<v Speaker 2>and it's 50 and E was 0.47.
+
+NOTE CONF {"raw":[93,40,99,99,60,99,99]}
+
+00:45:14.649 --> 00:45:19.389
+<v Speaker 2>So you can see we got 0.0005 and a bunch
+
+NOTE CONF {"raw":[99,99,53,99,99,92,99,99,99,99]}
+
+00:45:19.399 --> 00:45:21.719
+<v Speaker 2>of decimals I think.
+
+NOTE CONF {"raw":[99,36,99,99]}
+
+00:45:21.729 --> 00:45:24.939
+<v Speaker 2>I do have this on the next slide.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:45:26.379 --> 00:45:29.800
+<v Speaker 2>Uh Yeah, just like thank you.
+
+NOTE CONF {"raw":[96,81,49,87,99,99]}
+
+00:45:32.199 --> 00:45:39.219
+<v Speaker 1>Now, what if we want the probability X less than
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,89,99,99]}
+
+00:45:39.229 --> 00:45:39.919
+<v Speaker 2>35?
+
+NOTE CONF {"raw":[99]}
+
+00:45:41.540 --> 00:45:42.000
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:45:42.060 --> 00:45:43.169
+<v Speaker 2>So you can see here.
+
+NOTE CONF {"raw":[99,99,54,99,99]}
+
+00:45:43.260 --> 00:45:45.139
+<v Speaker 2>So here you want things cumulative.
+
+NOTE CONF {"raw":[99,99,99,63,54,25]}
+
+00:45:45.820 --> 00:45:46.280
+<v Speaker 1>OK?
+
+NOTE CONF {"raw":[99]}
+
+00:45:47.040 --> 00:45:52.840
+<v Speaker 3>But your X value she should be 34 right?
+
+NOTE CONF {"raw":[90,99,99,99,95,43,95,84,99]}
+
+00:45:53.239 --> 00:45:55.520
+<v Speaker 1>Because you don't wanna include 35.
+
+NOTE CONF {"raw":[99,99,99,94,99,99]}
+
+00:45:55.879 --> 00:46:00.290
+<v Speaker 1>So you go up to 34 you know, I have
+
+NOTE CONF {"raw":[99,99,99,99,99,99,72,72,99,97]}
+
+00:46:00.300 --> 00:46:01.110
+<v Speaker 2>it right over here.
+
+NOTE CONF {"raw":[88,99,99,99]}
+
+00:46:03.909 --> 00:46:05.449
+<v Speaker 3>And so if you put it in, you can see
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,78,99]}
+
+00:46:05.459 --> 00:46:08.889
+<v Speaker 1>you get point 999151, right?
+
+NOTE CONF {"raw":[98,98,99,85,52]}
+
+00:46:10.639 --> 00:46:17.760
+<v Speaker 1>And then if we wanted the probability that is greater
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,97,99,99]}
+
+00:46:17.770 --> 00:46:20.830
+<v Speaker 2>than, or equal to 37 OK.
+
+NOTE CONF {"raw":[99,82,99,94,99,99]}
+
+00:46:21.280 --> 00:46:24.629
+<v Speaker 2>So, or a state you have to use the compliment.
+
+NOTE CONF {"raw":[99,79,85,50,99,99,99,99,99,67]}
+
+00:46:25.919 --> 00:46:29.570
+<v Speaker 2>So that would be one less the probability X is
+
+NOTE CONF {"raw":[99,99,99,99,99,57,99,99,99,98]}
+
+00:46:29.580 --> 00:46:32.379
+<v Speaker 2>less than equal to 30 six.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:46:33.500 --> 00:46:37.659
+<v Speaker 2>All right, that's where students make a mistake is, is
+
+NOTE CONF {"raw":[74,99,99,99,99,99,99,99,79,99]}
+
+00:46:37.669 --> 00:46:41.590
+<v Speaker 2>that, you know, you should use the 36 here uh
+
+NOTE CONF {"raw":[99,99,99,99,99,99,97,99,99,98]}
+
+00:46:42.560 --> 00:46:46.399
+<v Speaker 3>just like this and it is cumulative and you get
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:46:46.409 --> 00:46:47.419
+<v Speaker 2>this very small one.
+
+NOTE CONF {"raw":[99,99,99,89]}
+
+00:46:53.020 --> 00:46:53.419
+<v Speaker 3>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:46:53.429 --> 00:46:56.209
+<v Speaker 3>So there, there's a lot of good applications for your
+
+NOTE CONF {"raw":[99,95,99,99,99,99,99,90,62,98]}
+
+00:46:56.229 --> 00:46:59.030
+<v Speaker 1>B I mean, it's, but it all comes down to
+
+NOTE CONF {"raw":[50,99,99,74,96,99,99,99,99,99]}
+
+00:46:59.040 --> 00:47:01.320
+<v Speaker 2>doing these basic calculations.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:47:01.560 --> 00:47:04.760
+<v Speaker 2>Uh All right.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:47:04.770 --> 00:47:11.199
+<v Speaker 2>So let's go on and what's distribution we're gonna look
+
+NOTE CONF {"raw":[99,99,99,99,98,56,99,85,93,99]}
+
+00:47:11.209 --> 00:47:15.060
+<v Speaker 1>at is called the hypergeometric.
+
+NOTE CONF {"raw":[99,98,99,91,99]}
+
+00:47:15.070 --> 00:47:19.399
+<v Speaker 1>And here's just an example, I'll give you the, the
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,62,85]}
+
+00:47:19.409 --> 00:47:22.419
+<v Speaker 3>formal description in a minute, but it's always nice to
+
+NOTE CONF {"raw":[99,99,99,99,99,99,35,99,99,99]}
+
+00:47:22.429 --> 00:47:24.040
+<v Speaker 3>do an example first.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:47:24.489 --> 00:47:32.739
+<v Speaker 2>Um Let's say we have a lot by that.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,96]}
+
+00:47:32.750 --> 00:47:38.439
+<v Speaker 2>I mean, you know, like a batch, a batch of
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99,99,99,99]}
+
+00:47:38.469 --> 00:47:39.989
+<v Speaker 1>100 light bulbs.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:47:40.290 --> 00:47:46.290
+<v Speaker 1>And you know that one of your defectives find the
+
+NOTE CONF {"raw":[99,99,99,99,97,98,91,63,99,99]}
+
+00:47:46.300 --> 00:47:54.469
+<v Speaker 3>probability that among a randomly selected sample of 10 you
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,97]}
+
+00:47:54.479 --> 00:47:55.399
+<v Speaker 2>are effective.
+
+NOTE CONF {"raw":[99,54]}
+
+00:47:56.429 --> 00:48:00.050
+<v Speaker 3>And here, now I'm gonna say, using basic understanding of
+
+NOTE CONF {"raw":[99,88,67,99,99,99,99,99,99,99]}
+
+00:48:00.060 --> 00:48:00.699
+<v Speaker 1>probability.
+
+NOTE CONF {"raw":[18]}
+
+00:48:04.120 --> 00:48:06.370
+<v Speaker 3>So this is the sort of thing that happens with
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:48:06.379 --> 00:48:08.340
+<v Speaker 1>quality inspections.
+
+NOTE CONF {"raw":[99,91]}
+
+00:48:09.100 --> 00:48:13.540
+<v Speaker 2>Why quality inspections are, aren't important.
+
+NOTE CONF {"raw":[96,99,99,99,47,99]}
+
+00:48:13.550 --> 00:48:15.629
+<v Speaker 3>I don't know if you watch the news, but Boeing
+
+NOTE CONF {"raw":[99,99,95,86,98,99,99,99,99,99]}
+
+00:48:15.639 --> 00:48:17.729
+<v Speaker 3>is getting in big trouble these days because they don't
+
+NOTE CONF {"raw":[92,99,99,99,99,99,99,71,99,99]}
+
+00:48:17.739 --> 00:48:19.429
+<v Speaker 1>have good quality control.
+
+NOTE CONF {"raw":[99,83,99,99]}
+
+00:48:19.649 --> 00:48:21.989
+<v Speaker 1>And then I just, you know, a part fell off
+
+NOTE CONF {"raw":[99,99,99,98,99,99,86,99,95,99]}
+
+00:48:22.000 --> 00:48:24.530
+<v Speaker 3>of one of the planes because it wasn't bolted down
+
+NOTE CONF {"raw":[73,99,99,63,99,98,99,99,99,99]}
+
+00:48:24.540 --> 00:48:27.060
+<v Speaker 2>properly and they're blaming everything on it.
+
+NOTE CONF {"raw":[99,96,85,99,99,99,89]}
+
+00:48:27.070 --> 00:48:33.010
+<v Speaker 1>The quality control people at Boeing anyway.
+
+NOTE CONF {"raw":[99,99,99,99,75,53,99]}
+
+00:48:33.179 --> 00:48:36.649
+<v Speaker 3>So here what we can do now, now what makes
+
+NOTE CONF {"raw":[99,99,99,99,63,99,88,86,99,99]}
+
+00:48:36.659 --> 00:48:41.770
+<v Speaker 3>us a little different and, you know, I don't come
+
+NOTE CONF {"raw":[98,99,99,99,99,97,98,99,99,99]}
+
+00:48:41.780 --> 00:48:44.820
+<v Speaker 1>out and say to you, but you don't have replacements.
+
+NOTE CONF {"raw":[99,99,99,90,93,99,99,99,99,99]}
+
+00:48:45.239 --> 00:48:45.850
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+00:48:46.399 --> 00:48:50.879
+<v Speaker 1>So, so what you have to think of is that,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:48:53.830 --> 00:48:58.699
+<v Speaker 3>um, there's 20 defects and we want to know sort
+
+NOTE CONF {"raw":[99,99,99,99,99,99,51,72,99,99]}
+
+00:48:58.709 --> 00:49:01.080
+<v Speaker 1>of the probability of, of getting two.
+
+NOTE CONF {"raw":[99,99,99,54,99,99,99]}
+
+00:49:01.090 --> 00:49:04.000
+<v Speaker 3>So, so the number of ways to get two feedbacks
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,39]}
+
+00:49:04.260 --> 00:49:08.760
+<v Speaker 3>is 22 2, but we'll take a sample of size
+
+NOTE CONF {"raw":[99,93,99,71,39,66,96,99,99,99]}
+
+00:49:08.770 --> 00:49:09.179
+<v Speaker 3>10.
+
+NOTE CONF {"raw":[99]}
+
+00:49:09.189 --> 00:49:12.320
+<v Speaker 3>So that means I need eight non deff effects.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,0,0]}
+
+00:49:13.020 --> 00:49:16.679
+<v Speaker 3>So the number of ways to get eight non defects
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,0]}
+
+00:49:17.050 --> 00:49:21.330
+<v Speaker 3>is 80 to 8 and the number of ways to
+
+NOTE CONF {"raw":[99,99,88,99,99,99,99,99,99,99]}
+
+00:49:21.340 --> 00:49:25.290
+<v Speaker 1>pick a sample size 10 is 100 cheese 10.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,97,99]}
+
+00:49:26.330 --> 00:49:26.729
+<v Speaker 0>Ok.
+
+NOTE CONF {"raw":[98]}
+
+00:49:27.080 --> 00:49:29.669
+<v Speaker 0>So we could, you know, work all of these out.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:49:31.350 --> 00:49:34.439
+<v Speaker 3>Um, and we get 0.318.
+
+NOTE CONF {"raw":[99,99,99,99,88]}
+
+00:49:37.300 --> 00:49:37.879
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:49:37.929 --> 00:49:42.560
+<v Speaker 2>So, so that's the probability that when you take some
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:49:42.570 --> 00:49:45.320
+<v Speaker 3>sample, think of this as some random sample out of
+
+NOTE CONF {"raw":[99,99,99,99,98,99,99,99,99,99]}
+
+00:49:45.330 --> 00:49:46.129
+<v Speaker 3>the box, right?
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:49:46.510 --> 00:49:48.580
+<v Speaker 3>Imagine you're starting out and you have a box of
+
+NOTE CONF {"raw":[99,99,99,99,97,99,99,99,99,99]}
+
+00:49:48.590 --> 00:49:52.280
+<v Speaker 3>100 let's say, and you're gonna take a random sample
+
+NOTE CONF {"raw":[99,99,99,99,94,86,99,99,99,99]}
+
+00:49:52.290 --> 00:49:56.389
+<v Speaker 3>of 10, this is the probability that two out of
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:49:56.399 --> 00:49:57.639
+<v Speaker 1>those 10 are defective.
+
+NOTE CONF {"raw":[99,99,99,19]}
+
+00:49:59.199 --> 00:49:59.659
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:50:00.100 --> 00:50:04.929
+<v Speaker 2>Um So now you could use this using a probability
+
+NOTE CONF {"raw":[99,99,99,99,98,99,99,99,99,99]}
+
+00:50:04.939 --> 00:50:05.320
+<v Speaker 3>function.
+
+NOTE CONF {"raw":[99]}
+
+00:50:05.330 --> 00:50:07.000
+<v Speaker 3>I'll show you the probability function.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:50:07.010 --> 00:50:12.500
+<v Speaker 1>So uh so let's take a look at what happens
+
+NOTE CONF {"raw":[89,99,99,99,99,99,99,99,99,99]}
+
+00:50:12.510 --> 00:50:17.270
+<v Speaker 2>here in the general said uh is called the hypergeometric
+
+NOTE CONF {"raw":[99,45,27,99,95,99,96,99,95,99]}
+
+00:50:17.280 --> 00:50:23.360
+<v Speaker 2>distribution or sometimes referred to as sampling without replacement.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,94]}
+
+00:50:26.409 --> 00:50:29.570
+<v Speaker 3>So the idea is if you have a finite population
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:50:30.139 --> 00:50:37.770
+<v Speaker 1>with an individuals and your sampling with no replacement, the
+
+NOTE CONF {"raw":[99,75,99,95,96,93,99,99,99,99]}
+
+00:50:37.780 --> 00:50:41.300
+<v Speaker 3>items can be classified as success or failure.
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99,99]}
+
+00:50:43.000 --> 00:50:48.669
+<v Speaker 3>And there's capital a successes in the population, you've taken
+
+NOTE CONF {"raw":[99,65,99,96,99,99,99,99,68,72]}
+
+00:50:48.679 --> 00:50:53.830
+<v Speaker 2>a sample of size N, you know, that's the lower
+
+NOTE CONF {"raw":[99,99,99,99,99,51,70,99,99,99]}
+
+00:50:53.840 --> 00:50:56.649
+<v Speaker 3>case N, right, lower case N is always sample size.
+
+NOTE CONF {"raw":[85,99,99,99,85,99,99,94,99,99]}
+
+00:50:56.659 --> 00:50:59.939
+<v Speaker 3>Capital N is the population size.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:51:00.479 --> 00:51:07.969
+<v Speaker 1>Then the probability that you have, let's say X, successes
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,97,99]}
+
+00:51:09.040 --> 00:51:12.790
+<v Speaker 2>in A two X on N MS A two nm
+
+NOTE CONF {"raw":[51,97,77,99,95,99,0,99,60,87]}
+
+00:51:13.159 --> 00:51:18.419
+<v Speaker 1>X over capital N choose lower case A.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,64,47]}
+
+00:51:22.199 --> 00:51:26.260
+<v Speaker 3>So you could say that's, that's what we call the,
+
+NOTE CONF {"raw":[99,99,99,69,99,99,99,99,99,99]}
+
+00:51:26.270 --> 00:51:27.659
+<v Speaker 3>the Pff.
+
+NOTE CONF {"raw":[99,98]}
+
+00:51:27.919 --> 00:51:34.100
+<v Speaker 1>Um And I don't know if you really needed, I
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99,99,67,99]}
+
+00:51:34.110 --> 00:51:38.689
+<v Speaker 2>mean, I think if it's hypergeometric, I find, you know,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:51:38.699 --> 00:51:41.370
+<v Speaker 3>all those letters to be a bit of a, of
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:51:41.379 --> 00:51:45.320
+<v Speaker 1>a nuisance and you know, you just, you know, think
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,87]}
+
+00:51:45.330 --> 00:51:48.379
+<v Speaker 1>along those lines there so that, you know, you have
+
+NOTE CONF {"raw":[99,99,99,99,99,93,99,99,99,99]}
+
+00:51:48.389 --> 00:51:52.100
+<v Speaker 1>to pick, you're picking subsets, you have a certain number
+
+NOTE CONF {"raw":[99,93,93,99,99,99,99,99,99,99]}
+
+00:51:52.110 --> 00:51:53.149
+<v Speaker 3>of defectives.
+
+NOTE CONF {"raw":[99,74]}
+
+00:51:53.550 --> 00:51:56.830
+<v Speaker 1>Um And then you have, you know, non defectives.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,43]}
+
+00:51:56.840 --> 00:52:00.399
+<v Speaker 2>That's typically what these problems uh look like.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+00:52:02.110 --> 00:52:02.570
+<v Speaker 3>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:52:02.580 --> 00:52:07.310
+<v Speaker 3>But there is one thing here, let's see if that
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,64,99]}
+
+00:52:07.320 --> 00:52:11.149
+<v Speaker 2>comes up, I guess I have it on another slide.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:52:11.439 --> 00:52:18.649
+<v Speaker 2>It's good to know these formulas as well, especially the,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:52:18.709 --> 00:52:24.949
+<v Speaker 3>the E of X, right, the, the, the expected value
+
+NOTE CONF {"raw":[99,99,58,98,99,99,98,99,99,99]}
+
+00:52:24.969 --> 00:52:31.469
+<v Speaker 3>or the, the average uh number of, of successes is
+
+NOTE CONF {"raw":[99,99,99,99,99,99,92,99,99,94]}
+
+00:52:31.479 --> 00:52:37.199
+<v Speaker 1>N times A over the population size.
+
+NOTE CONF {"raw":[90,77,99,99,99,99,99]}
+
+00:52:39.260 --> 00:52:39.719
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:52:41.070 --> 00:52:41.409
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:52:41.419 --> 00:52:43.300
+<v Speaker 2>So now let's just go back and take a look
+
+NOTE CONF {"raw":[99,99,99,97,99,99,99,99,99,99]}
+
+00:52:43.310 --> 00:52:44.429
+<v Speaker 2>at some more examples.
+
+NOTE CONF {"raw":[99,99,99,53]}
+
+00:52:49.310 --> 00:52:52.870
+<v Speaker 1>Let's say a, a shipping of 20 five cell phones
+
+NOTE CONF {"raw":[97,99,83,89,85,99,99,99,99,84]}
+
+00:52:52.939 --> 00:52:55.290
+<v Speaker 2>contains five that are defective.
+
+NOTE CONF {"raw":[99,99,99,99,44]}
+
+00:52:58.000 --> 00:53:03.340
+<v Speaker 3>If 12 of them are randomly chosen without replacement, what's
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:53:03.350 --> 00:53:08.300
+<v Speaker 3>the probability that two of the 12 will be effective?
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,82]}
+
+00:53:11.399 --> 00:53:15.379
+<v Speaker 3>So if we put it in the context of this
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:53:15.389 --> 00:53:20.350
+<v Speaker 3>formula that I just showed you we're interested in, in
+
+NOTE CONF {"raw":[99,99,99,99,99,99,97,99,92,99]}
+
+00:53:20.360 --> 00:53:24.959
+<v Speaker 3>the probability, our random variable X is equal to two,
+
+NOTE CONF {"raw":[99,99,95,99,99,99,99,99,99,99]}
+
+00:53:27.419 --> 00:53:31.719
+<v Speaker 3>the subset that we're choosing a size 12.
+
+NOTE CONF {"raw":[99,99,99,93,51,62,99,99]}
+
+00:53:32.800 --> 00:53:33.310
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[87]}
+
+00:53:33.659 --> 00:53:37.419
+<v Speaker 1>We know that, hey, think of this, this is the
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+00:53:37.429 --> 00:53:40.719
+<v Speaker 3>number of, of defects in the population.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:53:41.629 --> 00:53:41.850
+<v Speaker 2>OK?
+
+NOTE CONF {"raw":[0]}
+
+00:53:41.969 --> 00:53:45.870
+<v Speaker 2>It is five and the population is size 25.
+
+NOTE CONF {"raw":[57,57,99,94,99,99,97,99,99]}
+
+00:53:46.959 --> 00:53:52.669
+<v Speaker 2>So you get five, choose two, 22 10, divided by
+
+NOTE CONF {"raw":[99,64,99,99,99,99,50,99,99,99]}
+
+00:53:53.000 --> 00:53:55.030
+<v Speaker 2>25 to 12.
+
+NOTE CONF {"raw":[99,0,99]}
+
+00:53:56.790 --> 00:53:57.219
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+00:53:57.229 --> 00:53:59.000
+<v Speaker 1>So you can work these out.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:53:59.010 --> 00:54:03.649
+<v Speaker 3>And surprisingly, even though these numbers get fairly large.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99]}
+
+00:54:03.909 --> 00:54:07.129
+<v Speaker 2>Uh, it works out to be reasonable.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+00:54:07.139 --> 00:54:07.929
+<v Speaker 1>Probability.
+
+NOTE CONF {"raw":[99]}
+
+00:54:07.939 --> 00:54:09.219
+<v Speaker 1>Point 355.
+
+NOTE CONF {"raw":[99,74]}
+
+00:54:13.500 --> 00:54:14.050
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+00:54:14.060 --> 00:54:14.540
+<v Speaker 2>Let's see.
+
+NOTE CONF {"raw":[99,99]}
+
+00:54:14.550 --> 00:54:14.969
+<v Speaker 2>Let me have.
+
+NOTE CONF {"raw":[99,99,92]}
+
+00:54:15.310 --> 00:54:16.120
+<v Speaker 2>Sure I work here.
+
+NOTE CONF {"raw":[70,96,98,95]}
+
+00:54:21.030 --> 00:54:22.899
+<v Speaker 2>Well, this is the last one, let's say.
+
+NOTE CONF {"raw":[60,99,99,99,99,99,99,89]}
+
+00:54:23.159 --> 00:54:27.459
+<v Speaker 2>Um, how about you?
+
+NOTE CONF {"raw":[99,99,99,58]}
+
+00:54:27.510 --> 00:54:31.689
+<v Speaker 2>Suppose the 20 the company has 20 identical card chargers
+
+NOTE CONF {"raw":[69,43,97,99,99,99,99,99,99,99]}
+
+00:54:31.699 --> 00:54:34.510
+<v Speaker 3>for cell phones on hand.
+
+NOTE CONF {"raw":[99,99,80,99,95]}
+
+00:54:35.389 --> 00:54:41.729
+<v Speaker 3>But fiber defectives, the company randomly selects 10.
+
+NOTE CONF {"raw":[99,57,60,99,99,99,99,99]}
+
+00:54:43.280 --> 00:54:46.590
+<v Speaker 1>What's the probability that?
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+00:54:49.239 --> 00:54:52.219
+<v Speaker 3>Well, A is two of the 10 will be defective.
+
+NOTE CONF {"raw":[96,99,99,99,99,99,99,99,99,55]}
+
+00:54:52.409 --> 00:54:55.620
+<v Speaker 3>B, what's the probability at most?
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+00:54:55.810 --> 00:54:58.199
+<v Speaker 3>Two of the 10 will be defective.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,42]}
+
+00:54:58.840 --> 00:54:59.820
+<v Speaker 1>Let's do that.
+
+NOTE CONF {"raw":[99,99,99]}
+
+00:54:59.830 --> 00:55:05.469
+<v Speaker 1>Let's try to do part dr probably you can at
+
+NOTE CONF {"raw":[99,99,99,99,69,99,97,99,60,98]}
+
+00:55:05.479 --> 00:55:08.060
+<v Speaker 2>most two 10.
+
+NOTE CONF {"raw":[99,97,99]}
+
+00:55:08.070 --> 00:55:11.250
+<v Speaker 2>That will be the second question.
+
+NOTE CONF {"raw":[99,99,99,90,80,99]}
+
+00:55:11.280 --> 00:55:13.729
+<v Speaker 2>Do we get a cheap sheet for exams?
+
+NOTE CONF {"raw":[99,99,95,99,98,71,99,99]}
+
+00:55:14.520 --> 00:55:14.929
+<v Speaker 1>Yep.
+
+NOTE CONF {"raw":[93]}
+
+00:55:14.939 --> 01:00:07.469
+<v Speaker 1>I was the foremost that's just gone.
+
+NOTE CONF {"raw":[65,82,99,96,11,67,91]}
+
+01:00:07.489 --> 01:00:12.100
+<v Speaker 2>You gonna have to have an in, I'm gonna stop.
+
+NOTE CONF {"raw":[57,60,85,94,99,99,79,30,71,99]}
+
+01:00:29.189 --> 01:00:29.469
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[68]}
+
+01:00:31.250 --> 01:00:43.550
+<v Speaker 0>So nine point nine or yeah, times 10 N which
+
+NOTE CONF {"raw":[72,99,99,99,86,73,99,99,75,99]}
+
+01:00:43.560 --> 01:00:48.300
+<v Speaker 2>is just 3.000994.
+
+NOTE CONF {"raw":[99,99,99]}
+
+01:00:49.770 --> 01:00:50.080
+<v Speaker 2>Sorry.
+
+NOTE CONF {"raw":[99]}
+
+01:00:51.620 --> 01:00:52.030
+<v Speaker 2>Yes, sir.
+
+NOTE CONF {"raw":[99,87]}
+
+01:00:52.939 --> 01:00:55.520
+<v Speaker 2>Um, anybody else got an answer?
+
+NOTE CONF {"raw":[91,99,99,96,67,96]}
+
+01:00:57.330 --> 01:00:58.199
+<v Speaker 1>That's pretty small.
+
+NOTE CONF {"raw":[98,99,99]}
+
+01:00:58.209 --> 01:01:02.050
+<v Speaker 2>Yeah, 0.3 0.3 0.3 40.
+
+NOTE CONF {"raw":[98,99,82,99,99]}
+
+01:01:05.919 --> 01:01:06.169
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[98,93]}
+
+01:01:06.179 --> 01:01:08.459
+<v Speaker 2>Well, let's, let's see if we can work this out.
+
+NOTE CONF {"raw":[99,33,99,99,95,99,50,99,99,99]}
+
+01:01:10.419 --> 01:01:11.939
+<v Speaker 1>Probability.
+
+NOTE CONF {"raw":[99]}
+
+01:01:12.110 --> 01:01:15.540
+<v Speaker 3>Um, we wanna find the probability that there's at most
+
+NOTE CONF {"raw":[99,93,93,99,99,99,99,99,99,99]}
+
+01:01:15.550 --> 01:01:17.399
+<v Speaker 1>2 to 10 uh affected.
+
+NOTE CONF {"raw":[99,99,99,97,19]}
+
+01:01:17.449 --> 01:01:17.959
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+01:01:18.239 --> 01:01:20.510
+<v Speaker 2>So it's an at most question.
+
+NOTE CONF {"raw":[99,99,99,93,88,72]}
+
+01:01:21.580 --> 01:01:24.229
+<v Speaker 2>So we wanna break that down into the case case
+
+NOTE CONF {"raw":[99,99,99,99,99,99,74,80,99,99]}
+
+01:01:24.239 --> 01:01:27.399
+<v Speaker 1>where you have zero defects, one defect and two defects.
+
+NOTE CONF {"raw":[99,89,99,99,98,99,99,99,99,99]}
+
+01:01:27.780 --> 01:01:33.949
+<v Speaker 2>Uh, so the case with, with zero defects, we, we
+
+NOTE CONF {"raw":[99,99,99,99,59,94,99,99,90,99]}
+
+01:01:33.959 --> 01:01:37.290
+<v Speaker 3>know in the population that's five but this would just
+
+NOTE CONF {"raw":[99,99,99,99,79,80,99,99,99,99]}
+
+01:01:37.300 --> 01:01:40.469
+<v Speaker 1>be 52, zero.
+
+NOTE CONF {"raw":[99,49,99]}
+
+01:01:41.169 --> 01:01:48.070
+<v Speaker 3>And then if there's five defects, that means there's 15,
+
+NOTE CONF {"raw":[99,99,99,97,99,99,99,99,99,99]}
+
+01:01:48.100 --> 01:01:49.879
+<v Speaker 3>that are not defects.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+01:01:50.159 --> 01:01:57.590
+<v Speaker 1>So, then this would be 15 to 10 divided by
+
+NOTE CONF {"raw":[99,99,99,99,99,99,58,99,91,99]}
+
+01:01:57.600 --> 01:01:59.040
+<v Speaker 2>22 7.
+
+NOTE CONF {"raw":[61,97]}
+
+01:02:02.790 --> 01:02:07.489
+<v Speaker 1>And then, uh, the case where we're interested in the
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:02:07.500 --> 01:02:15.100
+<v Speaker 3>probability of one defect that would be 521, 5, 15
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,45,39,99]}
+
+01:02:15.110 --> 01:02:20.179
+<v Speaker 2>to 9 over the same denominator 2210.
+
+NOTE CONF {"raw":[77,99,99,94,99,0,82]}
+
+01:02:22.860 --> 01:02:24.439
+<v Speaker 2>And then five tubes too.
+
+NOTE CONF {"raw":[99,99,99,29,98]}
+
+01:02:26.439 --> 01:02:27.389
+<v Speaker 2>I was 15.
+
+NOTE CONF {"raw":[51,51,67]}
+
+01:02:27.629 --> 01:02:29.840
+<v Speaker 2>She, Ok.
+
+NOTE CONF {"raw":[70,17]}
+
+01:02:31.489 --> 01:02:31.879
+<v Speaker 2>One.
+
+NOTE CONF {"raw":[92]}
+
+01:02:37.840 --> 01:02:38.419
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+01:02:38.429 --> 01:02:47.969
+<v Speaker 2>So now, um, I don't know, does anybody have these
+
+NOTE CONF {"raw":[99,99,99,98,61,95,99,99,99,99]}
+
+01:02:47.979 --> 01:02:49.290
+<v Speaker 2>broken down?
+
+NOTE CONF {"raw":[99,99]}
+
+01:02:49.300 --> 01:02:52.500
+<v Speaker 1>Is it one by one this see a few different
+
+NOTE CONF {"raw":[87,89,99,99,99,62,99,99,99,99]}
+
+01:02:52.510 --> 01:02:54.120
+<v Speaker 2>ways we can go back to this.
+
+NOTE CONF {"raw":[99,99,65,99,61,97,95]}
+
+01:03:05.649 --> 01:03:10.439
+<v Speaker 2>What I would do here is at first it depends.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,91,99,52,22]}
+
+01:03:10.459 --> 01:03:10.669
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[46,51]}
+
+01:03:10.679 --> 01:03:12.709
+<v Speaker 2>Well, I think we have a common denominator.
+
+NOTE CONF {"raw":[97,99,99,99,99,99,99,99]}
+
+01:03:13.080 --> 01:03:16.020
+<v Speaker 2>The denominator is 2210.
+
+NOTE CONF {"raw":[88,99,99,83]}
+
+01:03:16.850 --> 01:03:20.570
+<v Speaker 2>Um, so you could work that out if you want
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99,98,99,99]}
+
+01:03:20.580 --> 01:03:22.639
+<v Speaker 1>to figure out what number that is.
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99]}
+
+01:03:23.219 --> 01:03:26.330
+<v Speaker 2>Uh, a lot of calculators would go through that.
+
+NOTE CONF {"raw":[99,99,99,99,99,98,84,99,99]}
+
+01:03:26.860 --> 01:03:29.909
+<v Speaker 2>So let's see if we just think in terms of
+
+NOTE CONF {"raw":[99,99,99,90,96,99,99,99,99,99]}
+
+01:03:31.290 --> 01:03:35.100
+<v Speaker 2>calculate, let's see if this is gonna work for you.
+
+NOTE CONF {"raw":[95,98,99,99,99,99,99,99,99,93]}
+
+01:03:47.040 --> 01:03:47.580
+<v Speaker 2>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+01:03:47.590 --> 01:03:50.360
+<v Speaker 2>Excel does a lot of these calculations.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+01:03:50.370 --> 01:03:53.540
+<v Speaker 2>So if you wanted, let's say 2210.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,98]}
+
+01:03:55.330 --> 01:03:59.909
+<v Speaker 2>Well, like cell calls, this comin sort of a combinatorial.
+
+NOTE CONF {"raw":[56,36,13,99,99,55,99,99,97,99]}
+
+01:04:03.010 --> 01:04:04.979
+<v Speaker 2>I been £20.
+
+NOTE CONF {"raw":[68,64,76]}
+
+01:04:07.709 --> 01:04:08.929
+<v Speaker 2>So let's say if you wanted that.
+
+NOTE CONF {"raw":[66,99,74,97,99,98,92]}
+
+01:04:10.300 --> 01:04:10.689
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[60]}
+
+01:04:11.540 --> 01:04:15.090
+<v Speaker 2>Uh One 84 7 50 six, you should have seen
+
+NOTE CONF {"raw":[99,99,99,99,99,99,56,99,86,99]}
+
+01:04:15.100 --> 01:04:15.919
+<v Speaker 3>that somewhere.
+
+NOTE CONF {"raw":[99,99]}
+
+01:04:16.290 --> 01:04:21.439
+<v Speaker 2>So 184756.
+
+NOTE CONF {"raw":[90,54]}
+
+01:04:22.879 --> 01:04:23.459
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+01:04:23.870 --> 01:04:26.709
+<v Speaker 1>Yeah, five 20 plus one.
+
+NOTE CONF {"raw":[67,99,99,52,99]}
+
+01:04:27.439 --> 01:04:29.540
+<v Speaker 3>So I need 15 shoes.
+
+NOTE CONF {"raw":[99,99,99,99,96]}
+
+01:04:29.550 --> 01:04:33.229
+<v Speaker 3>10 so I could eat well, same thing.
+
+NOTE CONF {"raw":[99,99,99,93,89,41,99,99]}
+
+01:04:35.409 --> 01:04:41.889
+<v Speaker 2>Comin 15 comma hands some of the stay somewhere.
+
+NOTE CONF {"raw":[11,99,90,62,32,47,70,56,89]}
+
+01:04:41.899 --> 01:04:42.179
+<v Speaker 2>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+01:04:43.429 --> 01:04:50.070
+<v Speaker 2>Um, be a 15 to 10.
+
+NOTE CONF {"raw":[99,72,52,98,99,99]}
+
+01:04:50.500 --> 01:04:51.570
+<v Speaker 2>3003.
+
+NOTE CONF {"raw":[99]}
+
+01:04:52.530 --> 01:04:55.120
+<v Speaker 2>I, that would be the first one.
+
+NOTE CONF {"raw":[63,99,99,99,99,99,99]}
+
+01:04:56.899 --> 01:05:00.179
+<v Speaker 3>Now the second one, if I choose one it's gonna
+
+NOTE CONF {"raw":[98,99,99,99,86,97,99,99,92,99]}
+
+01:05:00.189 --> 01:05:01.080
+<v Speaker 1>be five.
+
+NOTE CONF {"raw":[99,99]}
+
+01:05:01.899 --> 01:05:05.189
+<v Speaker 2>So let's get your ass 15 to 9.
+
+NOTE CONF {"raw":[99,99,3,83,98,99,26,99]}
+
+01:05:12.389 --> 01:05:13.739
+<v Speaker 2>So that's 15 shoes.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+01:05:13.750 --> 01:05:15.659
+<v Speaker 2>Nine, 5000 five.
+
+NOTE CONF {"raw":[99,99,99]}
+
+01:05:15.669 --> 01:05:19.429
+<v Speaker 3>But I have to multiply that by five, the people's
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,75,46]}
+
+01:05:19.439 --> 01:05:27.820
+<v Speaker 2>five times this, so that becomes 25 05.
+
+NOTE CONF {"raw":[71,99,99,99,99,99,99,65]}
+
+01:05:34.699 --> 01:05:40.689
+<v Speaker 2>And then this last one when I said five choose
+
+NOTE CONF {"raw":[99,99,99,99,99,54,67,89,99,99]}
+
+01:05:40.699 --> 01:05:43.280
+<v Speaker 1>two for whatever reason it comes up a lot, it's
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:05:43.290 --> 01:05:45.629
+<v Speaker 2>worth remembering that that's equal to 10.
+
+NOTE CONF {"raw":[99,99,98,99,99,99,99]}
+
+01:05:46.000 --> 01:05:46.429
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+01:05:46.439 --> 01:05:49.070
+<v Speaker 2>So we did a five choose 4/2.
+
+NOTE CONF {"raw":[99,99,60,80,99,99,99]}
+
+01:05:49.399 --> 01:05:52.229
+<v Speaker 2>Um So let me figure out 15 choose eight.
+
+NOTE CONF {"raw":[99,99,96,97,99,99,99,99,99]}
+
+01:06:00.949 --> 01:06:05.469
+<v Speaker 2>So that's 6430 five and then multiplying by 10 just
+
+NOTE CONF {"raw":[99,99,99,99,65,82,97,99,99,99]}
+
+01:06:05.479 --> 01:06:09.330
+<v Speaker 1>puts a zero line to 6435.
+
+NOTE CONF {"raw":[99,99,99,99,82,79]}
+
+01:06:14.949 --> 01:06:18.870
+<v Speaker 1>So if you add them all up divided by 1
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,89,99,99]}
+
+01:06:18.879 --> 01:06:21.250
+<v Speaker 3>84 7 56 did you get this number?
+
+NOTE CONF {"raw":[99,99,99,43,99,89,99,99]}
+
+01:06:22.979 --> 01:06:24.350
+<v Speaker 3>You get 0.5?
+
+NOTE CONF {"raw":[99,98,99]}
+
+01:06:24.489 --> 01:06:25.080
+<v Speaker 3>Let's see.
+
+NOTE CONF {"raw":[99,99]}
+
+01:06:25.090 --> 01:06:26.889
+<v Speaker 1>Do I have the number in my notes?
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+01:06:27.129 --> 01:06:31.169
+<v Speaker 2>I think they were not sure as I do.
+
+NOTE CONF {"raw":[63,60,99,98,99,99,58,99,99]}
+
+01:06:35.090 --> 01:06:41.600
+<v Speaker 2>Uh Well, here I said I got 2 500.6988.
+
+NOTE CONF {"raw":[98,99,99,99,82,99,93,99,99]}
+
+01:06:42.989 --> 01:06:49.860
+<v Speaker 2>Uh But then right, that's using r anybody have my
+
+NOTE CONF {"raw":[99,56,59,51,99,99,99,99,99,78]}
+
+01:06:49.870 --> 01:06:50.510
+<v Speaker 2>number here.
+
+NOTE CONF {"raw":[99,99]}
+
+01:06:50.520 --> 01:06:53.209
+<v Speaker 2>I look, let's, what's that?
+
+NOTE CONF {"raw":[96,92,40,35,99]}
+
+01:06:55.070 --> 01:06:55.649
+<v Speaker 3>Ok.
+
+NOTE CONF {"raw":[99]}
+
+01:06:55.659 --> 01:06:57.469
+<v Speaker 3>So let's, let's go ahead and add it up and
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:06:57.479 --> 01:06:58.129
+<v Speaker 1>see if we have it.
+
+NOTE CONF {"raw":[99,74,99,77,98]}
+
+01:06:59.189 --> 01:07:07.139
+<v Speaker 2>Um So I'm going to add some 3003 for us.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,98,99,83,77]}
+
+01:07:08.820 --> 01:07:13.699
+<v Speaker 2>25 025 for us.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+01:07:14.729 --> 01:07:16.669
+<v Speaker 2>64 350.
+
+NOTE CONF {"raw":[99,74]}
+
+01:07:19.409 --> 01:07:29.739
+<v Speaker 2>Close the parenthesis divide by 1 84 756 0.5 CC.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,42]}
+
+01:07:30.750 --> 01:07:32.729
+<v Speaker 2>Say to get exactly 0.5.
+
+NOTE CONF {"raw":[74,53,74,99,99]}
+
+01:07:32.739 --> 01:07:43.070
+<v Speaker 2>But ok, so it looks like we need to correct
+
+NOTE CONF {"raw":[99,96,99,49,99,99,99,99,59,99]}
+
+01:07:44.219 --> 01:07:44.689
+<v Speaker 2>this.
+
+NOTE CONF {"raw":[87]}
+
+01:07:45.080 --> 01:07:46.239
+<v Speaker 2>Uh Yeah, I'm not sure.
+
+NOTE CONF {"raw":[18,99,97,99,99]}
+
+01:07:52.860 --> 01:07:53.370
+<v Speaker 0>Acid.
+
+NOTE CONF {"raw":[82]}
+
+01:08:00.129 --> 01:08:02.110
+<v Speaker 2>Yeah there there's something wrong here.
+
+NOTE CONF {"raw":[99,98,94,99,99,99]}
+
+01:08:02.120 --> 01:08:06.179
+<v Speaker 2>I'm gonna have to fix that but all right.
+
+NOTE CONF {"raw":[71,98,99,99,99,78,99,99,99]}
+
+01:08:06.189 --> 01:08:08.070
+<v Speaker 3>So let's go with I'll go with this.
+
+NOTE CONF {"raw":[99,99,99,99,59,99,99,99]}
+
+01:08:08.300 --> 01:08:09.699
+<v Speaker 3>This is an answer here.
+
+NOTE CONF {"raw":[99,80,99,99,99]}
+
+01:08:09.929 --> 01:08:13.070
+<v Speaker 1>Um Any questions about that?
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+01:08:15.320 --> 01:08:15.969
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+01:08:16.200 --> 01:08:23.179
+<v Speaker 2>So I wanna um introduce the pla on distribution.
+
+NOTE CONF {"raw":[99,99,91,99,96,99,64,32,99]}
+
+01:08:24.809 --> 01:08:31.080
+<v Speaker 2>Um So I would say next to the binomial, this
+
+NOTE CONF {"raw":[97,96,99,99,99,99,99,99,81,99]}
+
+01:08:31.088 --> 01:08:36.140
+<v Speaker 2>is probably the second most important discrete situation just in
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,52,99,99]}
+
+01:08:36.149 --> 01:08:38.060
+<v Speaker 3>terms of the number of times that I see it
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:08:38.068 --> 01:08:41.649
+<v Speaker 1>being used in a lot of different applications.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99]}
+
+01:08:41.959 --> 01:08:45.390
+<v Speaker 3>I have seen the hypergeometric use in one case where
+
+NOTE CONF {"raw":[99,99,99,99,96,60,99,99,99,90]}
+
+01:08:45.399 --> 01:08:47.540
+<v Speaker 2>somebody's doing a lot of sampling.
+
+NOTE CONF {"raw":[61,99,99,99,99,99]}
+
+01:08:47.548 --> 01:08:50.689
+<v Speaker 2>They worked at the prime lab and I don't know
+
+NOTE CONF {"raw":[99,97,99,99,99,99,96,99,93,99]}
+
+01:08:50.700 --> 01:08:53.528
+<v Speaker 2>if I told you the story yet, but they used
+
+NOTE CONF {"raw":[99,99,98,99,99,99,99,99,99,99]}
+
+01:08:53.540 --> 01:08:56.528
+<v Speaker 1>to make these arrests and they would, you know, do
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:08:56.540 --> 01:08:59.959
+<v Speaker 3>make these drug arrests that would come in and they
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:08:59.970 --> 01:09:04.720
+<v Speaker 3>would get like 500 packets of a certain drug might
+
+NOTE CONF {"raw":[99,99,99,99,99,99,98,99,99,99]}
+
+01:09:04.729 --> 01:09:06.520
+<v Speaker 3>have been crack heroin and so on.
+
+NOTE CONF {"raw":[95,99,99,99,86,99,99]}
+
+01:09:07.818 --> 01:09:13.919
+<v Speaker 3>And in order to get the maximum sentence when, when
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:09:13.930 --> 01:09:17.209
+<v Speaker 3>the person came up for trial, the, the lab, the
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:09:17.220 --> 01:09:20.660
+<v Speaker 1>crime lab had to check every packet and they thought
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:09:20.669 --> 01:09:23.298
+<v Speaker 1>that was a waste of their time because, you know,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:09:23.310 --> 01:09:25.640
+<v Speaker 1>doing 500 packets of the same thing.
+
+NOTE CONF {"raw":[94,99,99,99,99,99,99]}
+
+01:09:25.810 --> 01:09:28.560
+<v Speaker 3>So they wanted to do a lot of random sampling
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:09:29.318 --> 01:09:32.149
+<v Speaker 1>and they were testing their sort of, you know, uh
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:09:32.160 --> 01:09:35.169
+<v Speaker 3>ways of, of getting a sample and that's where they
+
+NOTE CONF {"raw":[99,65,99,99,99,99,99,99,99,99]}
+
+01:09:35.180 --> 01:09:37.810
+<v Speaker 3>had to use, you know, the Hypergeometric in a lot
+
+NOTE CONF {"raw":[99,99,99,98,99,99,99,97,99,99]}
+
+01:09:37.818 --> 01:09:39.540
+<v Speaker 2>of the work that they were, you know, doing.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99]}
+
+01:09:40.200 --> 01:09:42.189
+<v Speaker 3>So that's the only place I've seen it.
+
+NOTE CONF {"raw":[99,86,97,80,99,99,99,80]}
+
+01:09:42.459 --> 01:09:45.859
+<v Speaker 1>Um, and in a lot of, you know, statistical things
+
+NOTE CONF {"raw":[94,70,86,99,99,99,99,99,99,99]}
+
+01:09:45.870 --> 01:09:51.000
+<v Speaker 1>that I've read and done, I sort of once anyway,
+
+NOTE CONF {"raw":[99,95,99,99,99,96,87,97,99,99]}
+
+01:09:51.008 --> 01:09:53.028
+<v Speaker 3>the place you see a lot of different places.
+
+NOTE CONF {"raw":[99,32,56,66,98,99,99,99,76]}
+
+01:09:53.680 --> 01:09:58.799
+<v Speaker 1>So, so here are the conditions, let's say that the
+
+NOTE CONF {"raw":[99,96,99,99,99,99,99,99,99,99]}
+
+01:09:58.810 --> 01:10:06.290
+<v Speaker 3>probability that an event occurs in a certain interval is
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:10:06.299 --> 01:10:10.140
+<v Speaker 3>often proportional to the length of the in B.
+
+NOTE CONF {"raw":[99,99,99,99,92,99,99,96,29]}
+
+01:10:11.259 --> 01:10:12.040
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+01:10:12.069 --> 01:10:14.919
+<v Speaker 1>So, you know, by that, I mean, let's say, you
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:10:14.930 --> 01:10:18.879
+<v Speaker 1>know, a certain event happens twice in a minute.
+
+NOTE CONF {"raw":[99,99,99,96,99,99,99,99,99]}
+
+01:10:20.549 --> 01:10:25.009
+<v Speaker 1>Well, then if this condition held, then it would happen
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:10:25.020 --> 01:10:26.759
+<v Speaker 3>four times in two minutes.
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+01:10:27.580 --> 01:10:29.750
+<v Speaker 1>And if it happens twice in one minute and it
+
+NOTE CONF {"raw":[84,92,99,99,99,99,99,99,55,98]}
+
+01:10:29.759 --> 01:10:31.419
+<v Speaker 1>happens four times in two minutes.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+01:10:31.430 --> 01:10:31.830
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+01:10:32.149 --> 01:10:33.589
+<v Speaker 1>And so on, that's the sort of thing that we
+
+NOTE CONF {"raw":[99,99,98,99,99,99,99,99,99,99]}
+
+01:10:33.600 --> 01:10:38.819
+<v Speaker 3>mean here, two events cannot occur at exactly the same
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:10:38.830 --> 01:10:42.000
+<v Speaker 1>time, the events occur independently.
+
+NOTE CONF {"raw":[99,99,99,99,99]}
+
+01:10:42.290 --> 01:10:42.500
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+01:10:42.859 --> 01:10:46.390
+<v Speaker 3>But notice there's, there's no sort of upper bound here,
+
+NOTE CONF {"raw":[67,99,53,99,99,99,99,99,99,99]}
+
+01:10:46.399 --> 01:10:50.779
+<v Speaker 3>like with the binomial, you had end trials here here,
+
+NOTE CONF {"raw":[99,99,99,96,99,99,98,99,99,99]}
+
+01:10:50.910 --> 01:10:52.910
+<v Speaker 3>this could go on to infinity.
+
+NOTE CONF {"raw":[99,99,99,99,99,96]}
+
+01:10:52.919 --> 01:10:54.259
+<v Speaker 3>I, I mean, it never really does.
+
+NOTE CONF {"raw":[95,99,99,99,99,99,99]}
+
+01:10:54.270 --> 01:10:55.459
+<v Speaker 3>But in theory, it could.
+
+NOTE CONF {"raw":[98,99,99,99,99]}
+
+01:10:56.759 --> 01:11:01.410
+<v Speaker 3>So the probability of X events occurring in a time
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,98,99]}
+
+01:11:01.419 --> 01:11:07.470
+<v Speaker 1>period, T or a poison random variable with the parameter
+
+NOTE CONF {"raw":[99,99,72,95,0,87,31,97,76,99]}
+
+01:11:07.479 --> 01:11:13.450
+<v Speaker 1>Glanda is given by this function F of X is
+
+NOTE CONF {"raw":[34,99,99,99,99,99,97,99,99,99]}
+
+01:11:13.459 --> 01:11:18.410
+<v Speaker 3>equal to lambda, to the X, even the minus lambda
+
+NOTE CONF {"raw":[99,99,72,99,99,99,99,99,99,97]}
+
+01:11:19.330 --> 01:11:20.799
+<v Speaker 1>over X factor.
+
+NOTE CONF {"raw":[99,99,93]}
+
+01:11:23.830 --> 01:11:24.359
+<v Speaker 3>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+01:11:24.370 --> 01:11:26.779
+<v Speaker 3>So, so it's interesting that this comes up.
+
+NOTE CONF {"raw":[99,99,96,99,94,99,99,99]}
+
+01:11:26.790 --> 01:11:30.529
+<v Speaker 3>So e you've probably seen before, right?
+
+NOTE CONF {"raw":[99,99,52,99,89,99,99]}
+
+01:11:30.540 --> 01:11:34.310
+<v Speaker 3>It's the base of the natural log function approximately a
+
+NOTE CONF {"raw":[49,99,99,99,99,99,90,99,99,65]}
+
+01:11:34.319 --> 01:11:40.299
+<v Speaker 2>two point 72 lambda is actually the average number of
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:11:40.310 --> 01:11:41.660
+<v Speaker 2>occurrences.
+
+NOTE CONF {"raw":[99]}
+
+01:11:41.830 --> 01:11:43.759
+<v Speaker 2>So you can see here that E of X is
+
+NOTE CONF {"raw":[99,99,78,99,99,91,99,99,99,99]}
+
+01:11:43.770 --> 01:11:44.450
+<v Speaker 2>lambda.
+
+NOTE CONF {"raw":[97]}
+
+01:11:44.799 --> 01:11:48.060
+<v Speaker 2>And oddly enough, it's also the V of X.
+
+NOTE CONF {"raw":[99,99,99,98,99,99,44,99,99]}
+
+01:11:49.910 --> 01:11:55.649
+<v Speaker 3>So some examples of, you know, the Poisson distribution might
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99,24,99,99]}
+
+01:11:55.660 --> 01:12:00.640
+<v Speaker 1>be um the number of hurricanes in Florida during a
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,98,99]}
+
+01:12:00.649 --> 01:12:01.410
+<v Speaker 3>certain year.
+
+NOTE CONF {"raw":[99,99]}
+
+01:12:02.299 --> 01:12:02.919
+<v Speaker 2>Ok.
+
+NOTE CONF {"raw":[99]}
+
+01:12:03.069 --> 01:12:03.330
+<v Speaker 2>Right.
+
+NOTE CONF {"raw":[98]}
+
+01:12:03.339 --> 01:12:05.830
+<v Speaker 2>There, there is no upper bound, but we know that
+
+NOTE CONF {"raw":[94,64,62,98,99,98,99,99,99,99]}
+
+01:12:06.180 --> 01:12:10.640
+<v Speaker 2>it doesn't get that high, you know, um the number
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:12:10.649 --> 01:12:14.330
+<v Speaker 3>of arrivals, let's say at a toll booth or really
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,93,99,99]}
+
+01:12:14.339 --> 01:12:16.240
+<v Speaker 1>any place where there's a waiting line.
+
+NOTE CONF {"raw":[99,97,99,93,99,99,97]}
+
+01:12:16.470 --> 01:12:16.680
+<v Speaker 1>Ok.
+
+NOTE CONF {"raw":[98]}
+
+01:12:16.689 --> 01:12:20.069
+<v Speaker 1>The number of arrivals that you get follows a croissant
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,75,0]}
+
+01:12:20.089 --> 01:12:23.669
+<v Speaker 2>distribution, the number of hits of a website.
+
+NOTE CONF {"raw":[55,98,99,99,99,99,99,99]}
+
+01:12:24.399 --> 01:12:27.540
+<v Speaker 1>Ok, let's say in one minute, you know, the number
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:12:27.549 --> 01:12:31.899
+<v Speaker 1>of hits of, I don't know what's your favorite website,
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:12:33.529 --> 01:12:36.529
+<v Speaker 2>their website these days, right.
+
+NOTE CONF {"raw":[66,99,99,99,93]}
+
+01:12:36.540 --> 01:12:37.259
+<v Speaker 1>Space.
+
+NOTE CONF {"raw":[99]}
+
+01:12:37.600 --> 01:12:39.430
+<v Speaker 1>Yeah, it's a good one.
+
+NOTE CONF {"raw":[82,95,99,99,99]}
+
+01:12:39.439 --> 01:12:40.350
+<v Speaker 1>It's a good answer.
+
+NOTE CONF {"raw":[83,97,99,99]}
+
+01:12:41.149 --> 01:12:43.529
+<v Speaker 1>I don't know what else, what else, what else you
+
+NOTE CONF {"raw":[73,0,97,99,99,99,99,99,99,99]}
+
+01:12:43.540 --> 01:12:47.299
+<v Speaker 3>guys got going on tiktokers?
+
+NOTE CONF {"raw":[99,99,99,99,0]}
+
+01:12:47.319 --> 01:12:51.819
+<v Speaker 2>I uh I have tiktok, Instagram.
+
+NOTE CONF {"raw":[61,83,96,33,50,99]}
+
+01:12:51.830 --> 01:12:52.169
+<v Speaker 1>OK.
+
+NOTE CONF {"raw":[99]}
+
+01:12:52.180 --> 01:12:52.640
+<v Speaker 1>There you go.
+
+NOTE CONF {"raw":[99,99,99]}
+
+01:12:52.649 --> 01:12:53.310
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+01:12:53.649 --> 01:12:56.459
+<v Speaker 2>Um Facebook is no longer popular.
+
+NOTE CONF {"raw":[99,99,99,99,99,99]}
+
+01:12:56.669 --> 01:12:56.919
+<v Speaker 2>Is it right?
+
+NOTE CONF {"raw":[92,82,90]}
+
+01:12:56.939 --> 01:12:59.330
+<v Speaker 2>I use Facebook anymore?
+
+NOTE CONF {"raw":[37,56,99,95]}
+
+01:12:59.560 --> 01:13:02.189
+<v Speaker 2>Um Messenger.
+
+NOTE CONF {"raw":[65,22]}
+
+01:13:03.740 --> 01:13:04.439
+<v Speaker 2>OK.
+
+NOTE CONF {"raw":[99]}
+
+01:13:04.729 --> 01:13:06.939
+<v Speaker 3>So just imagine you know, the number of hits, you
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:13:06.950 --> 01:13:08.899
+<v Speaker 1>know, this website might get in a minute.
+
+NOTE CONF {"raw":[99,96,95,99,99,97,99,99]}
+
+01:13:09.229 --> 01:13:11.669
+<v Speaker 3>Uh It's important that, you know, it gets man as
+
+NOTE CONF {"raw":[99,99,99,99,99,99,93,40,98,99]}
+
+01:13:11.680 --> 01:13:12.169
+<v Speaker 3>well.
+
+NOTE CONF {"raw":[99]}
+
+01:13:12.830 --> 01:13:18.169
+<v Speaker 3>So, so if you're trying to study probabilities, this would
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99,99,99,99]}
+
+01:13:18.180 --> 01:13:20.330
+<v Speaker 1>require a Poisson distribution.
+
+NOTE CONF {"raw":[99,99,35,99]}
+
+01:13:22.020 --> 01:13:22.459
+<v Speaker 3>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+01:13:22.470 --> 01:13:24.899
+<v Speaker 3>So let's, let's check out this, this example here.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99]}
+
+01:13:24.910 --> 01:13:29.080
+<v Speaker 3>It says the average number of homes sold by the
+
+NOTE CONF {"raw":[96,99,99,99,99,99,99,99,99,99]}
+
+01:13:29.390 --> 01:13:32.200
+<v Speaker 3>Acme Realty Company, two homes per day.
+
+NOTE CONF {"raw":[71,99,99,99,99,99,99]}
+
+01:13:32.770 --> 01:13:36.240
+<v Speaker 3>What's the probability that three homes will get sold tomorrow?
+
+NOTE CONF {"raw":[99,99,99,99,98,99,95,99,99,99]}
+
+01:13:38.229 --> 01:13:42.279
+<v Speaker 1>I want to think of this as a croissant lambda
+
+NOTE CONF {"raw":[88,46,71,99,99,99,99,99,31,96]}
+
+01:13:42.290 --> 01:13:45.220
+<v Speaker 3>would be two because that's your average on a daily
+
+NOTE CONF {"raw":[99,99,99,94,99,99,99,99,99,99]}
+
+01:13:45.229 --> 01:13:46.080
+<v Speaker 3>basis.
+
+NOTE CONF {"raw":[99]}
+
+01:13:46.990 --> 01:13:48.759
+<v Speaker 3>X would be three.
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+01:13:50.359 --> 01:13:52.439
+<v Speaker 3>So instead of having to do all that stuff that
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,91,99,99]}
+
+01:13:52.450 --> 01:13:55.109
+<v Speaker 3>we didn't check the two here, we just look at,
+
+NOTE CONF {"raw":[99,83,52,95,99,94,99,99,99,99]}
+
+01:13:55.120 --> 01:13:59.459
+<v Speaker 3>you know, two Q, this is our number for ee
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:13:59.470 --> 01:14:04.660
+<v Speaker 3>to the minus 2/3 factorial, we could get our probability
+
+NOTE CONF {"raw":[99,99,99,99,79,99,90,99,99,89]}
+
+01:14:04.910 --> 01:14:08.660
+<v Speaker 2>um 0.180.
+
+NOTE CONF {"raw":[99,99]}
+
+01:14:10.470 --> 01:14:12.810
+<v Speaker 1>And then I would normally have, you know, what's the
+
+NOTE CONF {"raw":[99,99,99,94,99,99,99,99,99,99]}
+
+01:14:12.819 --> 01:14:17.049
+<v Speaker 3>probability that five houses are sold in the next two
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:14:17.060 --> 01:14:17.810
+<v Speaker 3>days?
+
+NOTE CONF {"raw":[99]}
+
+01:14:19.049 --> 01:14:21.120
+<v Speaker 2>All right, let's just think about that.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99]}
+
+01:14:21.569 --> 01:14:23.549
+<v Speaker 3>What would your land to be?
+
+NOTE CONF {"raw":[99,99,99,66,0,99]}
+
+01:14:29.430 --> 01:14:31.250
+<v Speaker 1>Your lambda would be?
+
+NOTE CONF {"raw":[99,99,99,99]}
+
+01:14:31.259 --> 01:14:35.759
+<v Speaker 1>Not two because it sells on the average two a
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:14:35.770 --> 01:14:36.799
+<v Speaker 3>day, right?
+
+NOTE CONF {"raw":[99,98]}
+
+01:14:36.810 --> 01:14:38.459
+<v Speaker 3>It was due up over here.
+
+NOTE CONF {"raw":[99,99,69,99,99,99]}
+
+01:14:38.970 --> 01:14:41.060
+<v Speaker 3>But now I have a question about the two day
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,85,99,96]}
+
+01:14:41.069 --> 01:14:41.580
+<v Speaker 3>period.
+
+NOTE CONF {"raw":[99]}
+
+01:14:41.589 --> 01:14:42.799
+<v Speaker 3>So you have to double lambda.
+
+NOTE CONF {"raw":[99,99,99,99,99,83]}
+
+01:14:43.979 --> 01:14:45.799
+<v Speaker 1>So now it's now the new Lambda for this was
+
+NOTE CONF {"raw":[99,99,63,99,99,99,96,99,99,51]}
+
+01:14:45.810 --> 01:14:49.549
+<v Speaker 3>before X would be five and we would put it
+
+NOTE CONF {"raw":[88,99,99,99,99,99,99,99,99,99]}
+
+01:14:49.560 --> 01:14:53.009
+<v Speaker 3>into our formula and we could work out the probability.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,99,99,99]}
+
+01:14:54.479 --> 01:14:54.979
+<v Speaker 3>All right.
+
+NOTE CONF {"raw":[99,99]}
+
+01:14:56.930 --> 01:15:00.890
+<v Speaker 3>So, so lots of good, uh, applications of this.
+
+NOTE CONF {"raw":[99,99,99,99,99,99,99,96,99]}
+
+01:15:00.899 --> 01:15:05.959
+<v Speaker 1>We'll be going through these, uh, next time I'll sort
+
+NOTE CONF {"raw":[83,99,99,99,98,90,99,99,51,94]}
+
+01:15:05.970 --> 01:15:07.310
+<v Speaker 1>of start with this.
+
+NOTE CONF {"raw":[87,99,99,99]}
+
+01:15:08.759 --> 01:15:14.830
+<v Speaker 0>It is, uh, we show up, uh, on Monday and
+
+NOTE CONF {"raw":[50,86,94,42,0,94,86,99,99,99]}
+
+01:15:14.839 --> 01:15:17.180
+<v Speaker 0>then, and then we will start chapter four.
+
+NOTE CONF {"raw":[98,99,99,99,99,99,99,99]}
+
+01:15:17.209 --> 01:15:18.799
+<v Speaker 0>You ask me that first.
+
+NOTE CONF {"raw":[70,81,65,98,94]}
+
+01:15:18.810 --> 01:15:21.470
+<v Speaker 0>It has the three chapters, 12 and three.
+
+NOTE CONF {"raw":[68,88,43,55,87,66,99,99]}
+
+01:15:22.370 --> 01:15:25.850
+<v Speaker 3>But you gotta know, start working on that before, on
+
+NOTE CONF {"raw":[99,64,72,91,92,97,99,38,97,77]}
+
+01:15:25.870 --> 01:15:26.470
+<v Speaker 3>the course.
+
+NOTE CONF {"raw":[61,57]}
+
+01:15:28.549 --> 01:15:28.790
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+01:15:28.799 --> 01:15:29.029
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+01:15:29.040 --> 01:15:29.250
+<v Speaker 0>Yeah.
+
+NOTE CONF {"raw":[99]}
+
+01:15:29.259 --> 01:15:33.709
+<v Speaker 0>Yeah, you'll have to c this is for you.
+
+NOTE CONF {"raw":[85,45,98,69,45,53,48,64,55]}
+
+01:15:39.209 --> 01:15:39.899
+<v Speaker 0>Oh, ok.
+
+NOTE CONF {"raw":[68,99]}
+
+01:15:41.430 --> 01:16:07.529
+<v Speaker 0>I, I how, oh my God and ice cream that
+
+NOTE CONF {"raw":[60,79,45,77,75,41,71,97,94,55]}
+
+01:16:09.299 --> 01:16:09.339
+<v Speaker 0>yeah.
+
+NOTE CONF {"raw":[32]}
+
+01:16:10.709 --> 01:16:21.660
+<v Speaker 0>Point to, to the same address.
+
+NOTE CONF {"raw":[51,47,53,94,98,89]}
+
+01:16:22.200 --> 01:16:22.609
+<v Speaker 0>Don't try to go.
+
+NOTE CONF {"raw":[69,76,64,72]}
+
+01:16:28.939 --> 01:16:29.709
+<v Speaker 0>Where are you going?
+
+NOTE CONF {"raw":[99,97,99,99]}
+
+01:16:32.290 --> 01:16:43.180
+<v Speaker 0>I saw but it's not like honestly you have to
+
+NOTE CONF {"raw":[94,85,58,60,98,99,41,0,98,99]}
+
+01:16:43.189 --> 01:16:43.620
+<v Speaker 0>comment about.
+
+NOTE CONF {"raw":[92,86]}
+
+01:16:45.040 --> 01:16:58.140
+<v Speaker 0>No, you think I can answer this question today.
+
+NOTE CONF {"raw":[58,94,42,93,95,61,76,99,57]}
+
+01:16:59.640 --> 01:17:03.770
+<v Speaker 0>Pass that right?
+
+NOTE CONF {"raw":[67,75,32]}
+
+01:17:04.870 --> 01:17:05.120
+<v Speaker 0>Ok.
+
+NOTE CONF {"raw":[98]}
+
+01:17:06.060 --> 01:17:09.850
+<v Speaker 0>Remember what, like what's good?
+
+NOTE CONF {"raw":[98,85,81,72,81]}
+
+01:17:10.359 --> 01:17:11.089
+<v Speaker 0>Is it a good one?
+
+NOTE CONF {"raw":[99,96,97,92,66]}
+
+01:17:13.029 --> 01:17:21.299
+<v Speaker 0>Oh, this one not going to like try and see
+
+NOTE CONF {"raw":[50,47,80,47,94,50,92,99,99,97]}
+
+01:17:21.399 --> 01:17:26.720
+<v Speaker 0>how you honest to yourself and be like, oh, I,
+
+NOTE CONF {"raw":[82,71,87,73,99,78,93,99,81,83]}
+
+01:17:28.649 --> 01:17:36.870
+<v Speaker 0>and I think I'm going well when I got to
+
+NOTE CONF {"raw":[44,81,90,50,86,98,89,99,97,79]}
+
+01:17:36.979 --> 01:17:48.470
+<v Speaker 0>rar a position like I thought Wednesday, Australia.
+
+NOTE CONF {"raw":[94,86,99,93,90,72,0,28]}
+
+01:17:49.259 --> 01:17:56.649
+<v Speaker 0>Thank you one last time.
+
+NOTE CONF {"raw":[89,62,83,77,69]}
+
+01:17:58.700 --> 01:18:01.620
+<v Speaker 0>Where can we find the when?
+
+NOTE CONF {"raw":[50,62,46,63,70,69]}
+
+01:18:27.049 --> 01:18:27.069
+<v Speaker 0>No?
+
+NOTE CONF {"raw":[62]}
+
+01:18:27.839 --> 01:18:33.560
+<v Speaker 0>Well, but there are not there for the weekend at
+
+NOTE CONF {"raw":[66,54,69,54,92,0,95,99,99,99]}
+
+01:18:33.569 --> 01:18:33.870
+<v Speaker 0>all.
+
+NOTE CONF {"raw":[99]}
+
+01:18:43.279 --> 01:18:44.020
+<v Speaker 0>Ok.
+
+NOTE CONF {"raw":[99]}
+
+01:18:51.919 --> 01:18:52.129
+<v Speaker 0>Ok.
+
+NOTE CONF {"raw":[96]}
+
+01:18:56.839 --> 01:18:56.919
+<v Speaker 0>Happy.
+
+NOTE CONF {"raw":[56]}
+
+01:18:59.790 --> 01:19:00.259
+<v Speaker 0>What home.
+
+NOTE CONF {"raw":[65,56]}
+
+01:19:05.799 --> 01:19:05.830
+<v Speaker 0>Ok.
+
+NOTE CONF {"raw":[0]}
+
+01:19:13.790 --> 01:19:14.250
+<v Speaker 0>Ok.
+
+NOTE CONF {"raw":[99]}
+
+01:19:18.589 --> 01:19:18.620
+<v Speaker 0>Ok.
+
+NOTE CONF {"raw":[33]}
